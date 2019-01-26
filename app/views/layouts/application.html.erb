@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-light bg-light">
+        <div class="navbar-brand col text-center">
+          <%= link_to image_tag("fitness_innovator_logo.png", width: "30%", height: "30%"), root_path, class: "img-fluid" %>
+        </div>
+      </nav>
+    </header>
+
     <%= yield %>
+
   </body>
 </html>
