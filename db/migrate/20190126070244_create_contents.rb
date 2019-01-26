@@ -6,7 +6,6 @@ class CreateContents < ActiveRecord::Migration[5.2]
       t.integer :after_body_weight
       t.string :period
       t.integer :user_id
-
       t.timestamps
     end
   end
