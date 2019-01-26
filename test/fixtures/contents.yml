@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  before_body_weight: 1
+  after_body_weight: 1
+  period: MyString
+  user_id: 1
+
+two:
+  title: MyString
+  before_body_weight: 1
+  after_body_weight: 1
+  period: MyString
+  user_id: 1

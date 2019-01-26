@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Before body weight</th>
+      <th>After body weight</th>
+      <th>Period</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |content| %>
+      <tr>
+        <td><%= content.title %></td>
+        <td><%= content.before_body_weight %></td>
+        <td><%= content.after_body_weight %></td>
+        <td><%= content.period %></td>
+        <td><%= content.user_id %></td>
+        <td><%= link_to 'Show', content %></td>
+        <td><%= link_to 'Edit', edit_content_path(content) %></td>
+        <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Content', new_content_path %>
