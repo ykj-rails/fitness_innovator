@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <% @contents.each do |content| %>
-<div class="col-12">
-    <div class="card mx-auto bg-white shadow-sm" style="width: 50%;">
+<div class="container">
+    <div class="card mx-auto bg-white shadow-sm mb-4" style="width: 50%;">
     <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text">
           <h3><%= content.title %>
+          <%= content.before_body_weight %>
           <%= content.before_body_weight %>Kg ➡︎
           <%= content.after_body_weight %>Kg
           <%= content.period %>
@@ -15,8 +16,6 @@
       </div>
   </div>
 </div>
-<br>
-<br>
 <% end %>
 
 
