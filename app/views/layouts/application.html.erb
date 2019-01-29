@@ -7,15 +7,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
   </head>
 
-  <body class="bg-light">
-    <header class="sticky-top shadow-sm">
-      <nav class="navbar navbar-light bg-white mb-4">
-        <div class="navbar-brand col text-center">
-          <%= link_to image_tag("fitness_innovator_logo.png", width: "30%", height: "30%"), root_path, class: "img-fluid" %>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <%= link_to image_tag("fitness_innovator_logo.png", width: "410px", height: "80px"), root_path, class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item"><%= link_to "#{current_user.name}", user_path(current_user), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to '投稿する', new_content_path, class: "nav-link" %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: "nav-link" %></li>
+            <% end %>
+          </ul>
         </div>
-        
       </nav>
     </header>
 

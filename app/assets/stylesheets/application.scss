@@ -16,6 +16,24 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
 
-a:hover {
-  background-color: transparent;
+body{
+  background-color:#FAFAFA;
+  font-family:'Lato', 'Noto Sans JP', '游ゴシック Medium',
+              '游ゴシック体', 'Yu Gothic Medium', YuGothic,
+              'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN',
+              'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+.navbar-expand-lg{
+  height: 80px;
+}
+
+.navbar-brand img{
+  padding-top: 8px;
+}
+
+.nav-link{
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 15px
 }
