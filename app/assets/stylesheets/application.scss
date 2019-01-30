@@ -16,6 +16,7 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
 
+
 body{
   background-color:#FAFAFA;
   font-family:'Lato', 'Noto Sans JP', '游ゴシック Medium',
@@ -36,4 +37,14 @@ body{
   font-size: 18px;
   font-weight: 600;
   margin-right: 15px
+}
+
+.form-control{
+  max-width: 330px;
+  margin: auto;
+}
+
+.btn-block{
+  max-width: 330px;
+  margin: auto;
 }
