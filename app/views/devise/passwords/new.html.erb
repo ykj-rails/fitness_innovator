@@ -1,16 +1,24 @@
-<h2>Forgot your password?</h2>
+<div class="text-center">
+  <h2 class="mt-4 mb-5">パスワード再設定</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <form>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
+      <div class="form-group border-bottom">
+          <%= f.submit "パスワードを再設定する", class: "btn  btn-lg btn-primary btn-block mt-5 mb-4" %>
+      </div>
+    </form>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="more_link_box">
+    <%= link_to "新しいアカウントを作成する", new_registration_path(resource_name), class: "new_account" %>
+  </div>
+
+</div>
