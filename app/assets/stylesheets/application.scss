@@ -39,12 +39,21 @@ body{
   margin-right: 15px
 }
 
-.form-control{
+.btn-block{
   max-width: 330px;
   margin: auto;
 }
 
-.btn-block{
+.form-group{
   max-width: 330px;
-  margin: auto;
+  margin: 12px auto;
+}
+
+.more_link_box a{
+  border: 1px solid;
+  border-radius: 5px;
+  display: block;
+  margin: 20px auto;
+  max-width: 135px;
+  padding: 5px 10px;
 }
