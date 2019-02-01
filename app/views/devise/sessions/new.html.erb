@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h2 class="mt-4 mb-5">ログイン</h2>
+  <h2 class="title">ログイン</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -35,4 +35,5 @@
     <div class="more_link_box">
       <%= render "devise/shared/links" %>
     </div>
+    <%= link_to "登録確認メールが届かない場合", new_confirmation_path(resource_name) %>
 </div>
