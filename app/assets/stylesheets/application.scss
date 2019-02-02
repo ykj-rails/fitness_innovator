@@ -25,6 +25,14 @@ body{
               'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
+a:hover{
+text-decoration: none;
+}
+
+p#notice{
+  display:none;
+}
+
 h2.title{
   margin: 30px auto 20px;
 }
