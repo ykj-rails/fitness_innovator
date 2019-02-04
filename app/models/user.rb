@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :timeoutable, :confirmable, :trackable
 
   has_many :contents
+  has_one_attached :avatar
 
   validates :nickname, presence: true, length: { maximum: 10 }
+
 end

@@ -1,0 +1,24 @@
+  <div class="text-center">
+    <% if current_user.avatar.attached? %>
+        <%= image_tag(current_user.avatar, class: "user-image")  %>
+    <% end %>
+    <h2 class="title">プロフィール編集</h2>
+
+    <%= form_for current_user do |f| %>
+
+        <form>
+          <div class="form-group">
+            <%= f.file_field :avatar, class: "floating-label", placeholder: "プロフィール写真を変更" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :nickname %>
+            <%= f.text_field :nickname, placeholder: "10文字以内で入力", autofocus: true, autocomplete: "name", class: "form-control" %>
+          </div>
+
+          <div class="form-group border-bottom">
+              <%= f.submit "プロフィールを編集する", class: "btn  btn-lg btn-primary btn-block mt-5 mb-4" %>
+          </div>
+        </form>
+      <% end %>
+  </div>

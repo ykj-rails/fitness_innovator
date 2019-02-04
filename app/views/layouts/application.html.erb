@@ -8,26 +8,37 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="signin.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
   </head>
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-        <%= link_to image_tag("fitness_innovator_logo.png", width: "410px", height: "80px"), root_path, class: "navbar-brand" %>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
+      <div class="header-nav">
+        <%= link_to image_tag("fitness_innovator_logo.png"), root_path, class: "header-logo"%>
+        <ul>
+          <li>
             <% if user_signed_in? %>
-              <li class="nav-item"><%= link_to current_user.nickname, user_path(current_user), class: "nav-link" %></li>
+              <% if current_user.avatar.attached? %>
+                <%= link_to image_tag(current_user.avatar, class: "user-image-icon"), user_path(current_user) %>
+              <% else %>
+                <%= link_to user_path(current_user), class: "user-image-icon" do %>
+                  <i class="fas fa-user-check fa-lg"></i>
+                <% end %>
+              <% end %>
+              <%= link_to current_user.nickname, user_path(current_user), class: "user-name" %>
+          </li>
             <% else %>
-              <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: "nav-link" %></li>
-              <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: "nav-link" %></li>
+              <li>
+                <%= link_to new_user_session_path do %>
+                <span class="faa-parent animated-hover">
+                  <i class="fas fa-user-plus fa-lg faa-bounce"></i>
+                </span>
+                <% end %>
+              </li>
             <% end %>
-          </ul>
-        </div>
-      </nav>
+        </ul>
+      </div>
     </header>
 
     <% if notice %>
