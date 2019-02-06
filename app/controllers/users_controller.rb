@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_content, only: [:show, :edit, :update, :avatar_destroy]
+
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
@@ -11,8 +12,17 @@ class UsersController < ApplicationController
     redirect_to current_user
   end
 
+  def avatar_destroy
+    @user.avatar.purge if @user.id == current_user.id
+    redirect_to action: :edit
+  end
+
   private
+  def set_content
+    @user = User.find(params[:id])
+  end
+
   def update_params
-    params.require(:user).permit(:nickname, :email, :avatar)
+    params.require(:user).permit(:nickname, :profile, :email, :avatar)
   end
 end

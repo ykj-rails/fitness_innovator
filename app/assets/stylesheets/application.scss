@@ -16,6 +16,51 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
 
+h4{
+  margin: 30px 0;
+  text-align:center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.label-font{
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.denger-link a{
+  font-weight: 600;
+  font-size: 12px;
+  color: #ed4956;
+}
+
+.denger-link {
+  font-weight: 600;
+  font-size: 12px;
+  color: #ed4956;
+}
+
+a.user-name:hover{
+  color: #262626;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.btn:hover{
+  text-decoration: none;
+}
+
+// deviseのログイン/ログアウト表示の二重を強制的に非表示
+p#notice{
+  display:none;
+}
+
 header{
   height: 77px;
   width: 100%;
@@ -34,7 +79,6 @@ header{
 
 .header-nav ul{
   display: flex;
-  list-style-type: none;
   margin: auto 0;
 }
 
@@ -65,26 +109,12 @@ header{
   font-size: 12px;
 }
 
-a.user-name:hover{
-  color: #262626;
-}
-
 body{
   background-color:#FAFAFA;
   font-family:'Lato', 'Noto Sans JP', '游ゴシック Medium',
               '游ゴシック体', 'Yu Gothic Medium', YuGothic,
               'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN',
               'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-}
-
-// リンクの下線を非表示
-a:hover{
-  text-decoration: none;
-}
-
-// deviseのログイン/ログアウト表示の二重を強制的に非表示
-p#notice{
-  display:none;
 }
 
 // deviseビューファイルのタイトル
@@ -118,4 +148,35 @@ h2.title{
   margin: 20px auto;
   max-width: 250px;
   padding: 5px 10px;
+}
+
+.user-edit{
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin: 60px auto 0;
+  max-width: 740px;
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+}
+
+.left-content{
+  width: 290px;
+  float: left;
+}
+
+.prof-title{
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.left-content .user-image{
+  margin: 10px 70px;
+}
+
+.right-content{
+  padding: 50px 0;
+  width: 440px;
+  float: right;
 }

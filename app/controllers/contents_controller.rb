@@ -26,12 +26,10 @@ class ContentsController < ApplicationController
   end
 
   def update
-    @content = Content.find(params[:id])
     @content.update(content_params) if @content.user_id == current_user.id
   end
 
   def destroy
-    @content = Content.find(params[:id])
     @content.destroy if @content.user_id == current_user.id
   end
 
