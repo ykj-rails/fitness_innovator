@@ -27,6 +27,11 @@
                 <% end %>
               <% end %>
               <%= link_to current_user.nickname, user_path(current_user), class: "user-name" %>
+              <%= link_to new_content_path do %>
+                <span class="faa-parent animated-hover">
+                  <i class="fas fa-dumbbell fa-lg"></i>
+                </span>
+              <% end %>
           </li>
             <% else %>
               <li>

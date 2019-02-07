@@ -38,6 +38,10 @@ ul{
   color: #ed4956;
 }
 
+a.denger-link:hover{
+  color: #ed4956;
+}
+
 .denger-link {
   font-weight: 600;
   font-size: 12px;
@@ -54,11 +58,6 @@ a:hover{
 
 .btn:hover{
   text-decoration: none;
-}
-
-// deviseのログイン/ログアウト表示の二重を強制的に非表示
-p#notice{
-  display:none;
 }
 
 header{
@@ -107,6 +106,13 @@ header{
   color: #262626;
   font-weight: 600;
   font-size: 12px;
+}
+
+.user-name-show{
+  color: #262626;
+  font-weight: 300;
+  font-size: 24px;
+  margin: 2px 25px 0 15px;
 }
 
 body{
@@ -161,6 +167,14 @@ h2.title{
   height: 500px;
 }
 
+.user-show{
+  margin: 60px auto 0;
+  max-width: 740px;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+}
+
 .left-content{
   width: 290px;
   float: left;
@@ -179,4 +193,17 @@ h2.title{
   padding: 50px 0;
   width: 440px;
   float: right;
+}
+
+.user-right-content{
+  width: 440px;
+  float: right;
+}
+
+.user-profile{
+  margin: 25px auto;
+  text-align: left;
+  color: #262626;
+  font-size: 16px;
+  height: 100%
 }

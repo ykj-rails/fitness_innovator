@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_content, only: [:show, :edit, :update, :avatar_destroy]
+  before_action :set_content
+  before_action :authenticate_user!, except: [:show]
 
   def show
   end
