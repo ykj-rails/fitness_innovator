@@ -1,5 +1,35 @@
 <h1>New Content</h1>
 
-<%= render 'form', content: @content %>
+<%= form_with(model: @content, local: true) do |form| %>
+<div class="field">
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+</div>
 
-<%= link_to 'Back', contents_path %>
+<div class="field">
+  <%= form.label :before_body_weight %>
+  <%= form.number_field :before_body_weight %>
+</div>
+
+<div class="field">
+  <%= form.label :after_body_weight %>
+  <%= form.number_field :after_body_weight %>
+</div>
+
+<div class="field">
+  <%= form.label :period %>
+  <%= form.text_field :period %>
+</div>
+
+<div class="field">
+  <%= form.label :user_id %>
+  <%= form.number_field :user_id %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
+
+
+<%= link_to '戻る', contents_path %>
