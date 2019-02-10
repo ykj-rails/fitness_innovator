@@ -11,6 +11,8 @@ class ContentsController < ApplicationController
 
   def new
     @content = Content.new
+    @content.workouts.build
+    @content.meals.build
   end
 
 
@@ -18,11 +20,7 @@ class ContentsController < ApplicationController
   end
 
   def create
-    if @content.present?
-      @content = Content.create(content_params)
-    else
-      redirect_to action: :new
-    end
+    @content = Content.create(content_params)
   end
 
   def update
@@ -39,6 +37,9 @@ class ContentsController < ApplicationController
     end
 
     def content_params
-      params.require(:content).permit(:title, :before_body_weight, :after_body_weight, :period).merge(user_id: current_user.id)
+      params.require(:content).permit(
+        :title, :before_body_weight, :after_body_weight, :period, :comment, :befor_image, :after_image,
+        workouts_attributes: [:title, :menu, :week_id],
+        meals_attributes: [:title, :menu]).merge(user_id: current_user.id)
     end
 end

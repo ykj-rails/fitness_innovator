@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   validates :nickname, presence: true, length: { maximum: 10 }
-
+  validates :profile, length: { maximum: 150 } 
 end

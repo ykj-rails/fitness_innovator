@@ -1,35 +1,68 @@
-<h1>New Content</h1>
+<h1>投稿を作成</h1>
 
-<%= form_with(model: @content, local: true) do |form| %>
-<div class="field">
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-</div>
+  <%= form_for @content do |f| %>
+    <!-- <div class="field"> -->
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    <!-- </div> -->
 
-<div class="field">
-  <%= form.label :before_body_weight %>
-  <%= form.number_field :before_body_weight %>
-</div>
+    <!-- <div class="field"> -->
+      <%= f.label :period %>
+      <%= f.text_field :period %>
+    <!-- </div> -->
 
-<div class="field">
-  <%= form.label :after_body_weight %>
-  <%= form.number_field :after_body_weight %>
-</div>
+    <div class="form-group">
+      <%= f.label :befor_image, "ビフォーの写真をアップロードする", class: "label-font mb-2" %>
+      <%= f.file_field :befor_image, class: "form-control-sm", id: "File" %>
+    </div>
 
-<div class="field">
-  <%= form.label :period %>
-  <%= form.text_field :period %>
-</div>
+    <div class="form-group">
+      <%= f.label :after_image, "アフターの写真をアップロードする", class: "label-font mb-2" %>
+      <%= f.file_field :after_image, class: "form-control-sm", id: "File" %>
+    </div>
 
-<div class="field">
-  <%= form.label :user_id %>
-  <%= form.number_field :user_id %>
-</div>
+    <!-- <div class="field"> -->
+      <%= f.label :before_body_weight %>
+      <%= f.number_field :before_body_weight %>
+    <!-- </div> -->
 
-<div class="actions">
-  <%= form.submit %>
-</div>
-<% end %>
+    <!-- <div class="field"> -->
+      <%= f.label :after_body_weight %>
+      <%= f.number_field :after_body_weight %><br /><br />
+    <!-- </div> -->
+
+      <!-- <div class="field"> -->
+        <%= f.label :workouts, "ワークアウトルーティーン" %><br />
+        <%= f.fields_for :workouts do |w| %>
+          <%= w.label :week_id, "曜日" %>
+          <%= w.text_field :week_id %><br />
+          <%= w.label :title, "部位" %>
+          <%= w.text_field :title %><br />
+          <%= w.label :menu, "トレーニングメニュー" %>
+          <%= w.text_area :menu %><br /><br />
+        <% end %>
+      <!-- </div> -->
+
+      <!-- <div class="field"> -->
+        <%= f.label :meals, "食事" %><br />
+        <%= f.fields_for :meals do |m| %>
+          <%= m.label :title, "食事名" %>
+          <%= m.text_field :title %><br />
+          <%= m.label :menu, "メニュー" %>
+          <%= m.text_area :menu %><br />
+        <% end %>
+      <!-- </div> -->
+
+
+    <!-- <div class="field"> -->
+      <%= f.label :comment, "コメント" %>
+      <%= f.text_area :comment %>
+    <!-- </div> -->
+
+    <div class="form-group">
+      <%= f.submit "送信する", class: "btn btn-primary btn-sm mt-4" %>
+    </div>
+  <% end %>
 
 
 <%= link_to '戻る', contents_path %>
