@@ -15,7 +15,6 @@ class ContentsController < ApplicationController
     @content.meals.build
   end
 
-
   def edit
   end
 
@@ -39,7 +38,7 @@ class ContentsController < ApplicationController
     def content_params
       params.require(:content).permit(
         :title, :before_body_weight, :after_body_weight, :period, :comment, :befor_image, :after_image,
-        workouts_attributes: [:title, :menu, :week_id],
-        meals_attributes: [:title, :menu]).merge(user_id: current_user.id)
+        workouts_attributes: [:id, :title, :menu, :week_id, :_destroy],
+        meals_attributes: [:id, :title, :menu, :_destroy]).merge(user_id: current_user.id)
     end
 end

@@ -1,0 +1,28 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="col-6 col-lg-6 my-2">
+      <%= f.label :week_id, "曜日", class: "label-font" %><br />
+      <%= f.select :week_id, [
+        ["月曜日", 1],
+        ["火曜日", 2],
+        ["水曜日", 3],
+        ["木曜日", 4],
+        ["金曜日", 5],
+        ["土曜日", 6],
+        ["日曜日", 7]], {}, class: "form-control" %>
+        <small class="text-muted">※未入力の曜日は自動でオフ日になります</small>
+    </div>
+
+    <div class="col-6 col-lg-6 my-2">
+      <%= f.label :title, "部位", class: "label-font" %>
+      <%= f.text_field :title, class: "form-control" %>
+      <small class="text-muted">例: 「胸と背中」,「レッグDay」等</small>
+    </div>
+
+    <div class="col-12 col-lg-10 my-2">
+      <%= f.label :menu, "トレーニングメニュー", class: "label-font mt-3" %>
+      <%= f.text_area :menu, rows: 5, placeholder: "例: ベンチプレス 10x3" ,class: "form-control" %>
+      <%= link_to_remove_association "フォームを削除", f , class: "label-font float-right" %>
+    </div>
+  </div>
+</div>

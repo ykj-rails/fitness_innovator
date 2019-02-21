@@ -1,0 +1,15 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="col-12 col-lg-6 my-2">
+      <%= f.label :title, "食事名", class: "label-font" %>
+      <%= f.text_field :title, class: "form-control" %>
+      <small class="text-muted">例: 「朝食」,「トレーニング後」</small>
+    </div>
+
+    <div class="col-12 col-lg-10 my-2">
+      <%= f.label :menu, "食事メニュー", class: "label-font mt-3" %>
+      <%= f.text_area :menu, rows: 5, placeholder: "例: オートミール60g", class: "form-control" %>
+      <%= link_to_remove_association "フォームを削除", f, class: "label-font float-right" %>
+    </div>
+  </div>
+</div>
