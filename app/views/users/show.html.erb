@@ -2,9 +2,9 @@
   <div class="text-center">
     <div class="left-content">
       <% if @user.avatar.attached? %>
-        <%= image_tag(@user.avatar, class: "user-image") %><br />
+        <%= image_tag(@user.avatar, id: "user-image") %><br />
       <% else %>
-        <%= image_tag("rip-rich.jpg", class: "user-image") %>
+        <%= image_tag("rip-rich.jpg", id: "user-image") %>
       <% end %>
     </div>
 

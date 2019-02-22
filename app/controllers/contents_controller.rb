@@ -30,6 +30,7 @@ class ContentsController < ApplicationController
 
   def destroy
     @content.destroy if @content.user_id == current_user.id
+    redirect_to :root
   end
 
   private

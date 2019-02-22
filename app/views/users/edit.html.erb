@@ -1,39 +1,46 @@
 <div class="user-edit">
   <div class="text-center">
+
     <div class="left-content">
       <h4>プロフィールを編集</h4>
         <% if @user.avatar.attached? %>
-          <%= image_tag(@user.avatar, class: "user-image")  %><br />
+          <%= image_tag(@user.avatar, id: "user-image") %><br />
           <span class="denger-link">
             <%= link_to "現在の写真を削除", avatar_destroy_user_path(@user), method: :delete %>
           </span>
         <% else %>
-        <%= image_tag("rip-rich.jpg", class: "user-image") %>
-          <span class="denger-link">プロフィール写真を変更しよう!</span>
+        <%= image_tag("rip-rich.jpg", id: "user-image") %>
+          <div class="denger-link">プロフィール写真を変更しよう!</div>
         <% end %>
       </div>
     </div>
 
   <div class="right-content">
-    <%= form_for @user do |f| %>
-    <div class="form-group mb-4">
-      <%= f.label :nickname, class: "label-font mb-2" %>
-      <%= f.text_field :nickname, placeholder: "10文字以内で入力", autofocus: true, autocomplete: "name", class: "form-control" %>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-10">
+          <%= form_for @user do |f| %>
+          <div class="form-group mb-4">
+            <%= f.label :nickname, class: "label-font mb-2" %>
+            <%= f.text_field :nickname, placeholder: "10文字以内で入力", autofocus: true, autocomplete: "name", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :自己紹介, class: "label-font mb-2" %>
+            <%= f.text_area :profile, placeholder: "筋トレ歴◯◯年", rows: 5, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :avatar, class: "label-font mb-2", id: "file-user" do %>
+              <span>プロフィール写真をアップロードする</span>
+              <i class="fab fa-instagram fa-2x"></i>
+              <%= f.file_field :avatar, accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
+            <% end %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "送信する", class: "btn btn-primary btn-sm mt-4" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-
-    <div class="form-group">
-      <%= f.label :自己紹介, class: "label-font mb-2" %>
-      <%= f.text_area :profile, placeholder: "筋トレ歴◯◯年", autofocus: true, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :プロフィール写真をアップロードする, class: "label-font mb-2" %>
-      <%= f.file_field :avatar, class: "form-control-sm", id: "File" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.submit "送信する", class: "btn btn-primary btn-sm mt-4" %>
-    </div>
-    <% end %>
   </div>
 </div>

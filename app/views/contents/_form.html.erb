@@ -13,17 +13,26 @@
 
       <div class="row">
         <div class="col-12 col-lg-6 text-center">
-          <img id="file-preview"><br />
-          <%= f.label :befor_image, class: "label-font mt-2 mb-5", id: "file-sample" do %>
+          <% if @content.befor_image.attached? %>
+            <%= image_tag(@content.befor_image, id: "before-preview") %><br />
+          <% else %>
+            <img id="before-preview"><br />
+          <% end %>
+          <%= f.label :befor_image, class: "label-font mt-2 mb-5", id: "before-sample" do %>
             <span>beforeの写真をアップロードする</span>
             <i class="fab fa-instagram fa-2x"></i>
             <%= f.file_field :befor_image,
                 accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
           <% end %>
         </div>
+
         <div class="col-12 col-lg-6 text-center">
-          <img id="file-preview2"><br />
-          <%= f.label :after_image, class: "label-font mt-2 mb-5", id: "file-sample" do %>
+          <% if @content.after_image.attached? %>
+            <%= image_tag(@content.after_image, id: "after-preview") %><br />
+          <% else %>
+            <img id="after-preview"><br />
+          <% end %>
+          <%= f.label :after_image, class: "label-font mt-2 mb-5", id: "after-sample" do %>
             <span>afterの写真をアップロードする</span>
             <i class="fab fa-instagram fa-2x"></i>
             <%= f.file_field :after_image,
