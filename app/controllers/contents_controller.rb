@@ -20,10 +20,12 @@ class ContentsController < ApplicationController
 
   def create
     @content = Content.create(content_params)
+    redirect_to :root
   end
 
   def update
     @content.update(content_params) if @content.user_id == current_user.id
+    redirect_to :root
   end
 
   def destroy

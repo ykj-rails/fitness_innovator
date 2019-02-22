@@ -1,12 +1,103 @@
+<div class="container mt-5">
+  <%= form_for @content do |f| %>
+    <form>
+      <div class="row">
+        <div class="col-12 col-lg-12 mb-4">
+          <div class="form-group">
+            <%= f.label :title, "タイトル", class: "label-font" %>
+            <%= f.text_field :title, class: "form-control form-control-lg" %>
+            <small class="text-muted">例: 「増量期」, 「夏に向けて減量」</small>
+          </div>
+        </div>
+      </div>
 
-  <% if content.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
+      <div class="row">
+        <div class="col-12 col-lg-6 text-center">
+          <img id="file-preview"><br />
+          <%= f.label :befor_image, class: "label-font mt-2 mb-5", id: "file-sample" do %>
+            <span>beforeの写真をアップロードする</span>
+            <i class="fab fa-instagram fa-2x"></i>
+            <%= f.file_field :befor_image,
+                accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
+          <% end %>
+        </div>
+        <div class="col-12 col-lg-6 text-center">
+          <img id="file-preview2"><br />
+          <%= f.label :after_image, class: "label-font mt-2 mb-5", id: "file-sample" do %>
+            <span>afterの写真をアップロードする</span>
+            <i class="fab fa-instagram fa-2x"></i>
+            <%= f.file_field :after_image,
+                accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
+          <% end %>
+        </div>
+      </div>
 
-      <ul>
-      <% content.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+      <div class="row">
+        <div class="col-6 col-lg-6 my-2">
+          <div class="form-group">
+            <%= f.label :period, "期間", class: "label-font" %>
+            <%= f.text_field :period, class: "form-control" %>
+            <small class="text-muted">例: 「3ヶ月」, 「10週間」</small>
+          </div>
+        </div>
+        <div class="col-2 col-lg-2 my-2">
+          <div class="form-group">
+            <%= f.label :before_body_weight, "体重(before)", class: "label-font" %>
+            <%= f.number_field :before_body_weight, class: "form-control" %>
+            <small class="text-muted">例: 70kgは、70と入力</small>
+          </div>
+        </div>
+        <div class="col-2 col-lg-2 my-2">
+          <div class="form-group">
+            <%= f.label :after_body_weight, "体重(after)", class: "label-font" %>
+            <%= f.number_field :after_body_weight, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-6 my-2">
+          <div class="form-group">
+            <%= link_to_add_association 'ワークアウトを追加', f, :workouts,
+                data: {
+                association_insertion_node: '#workouts',
+                association_insertion_method: 'append'
+                }, class: "btn btn-outline-info mt-4 mb-2" %>
+            <div id="workouts">
+              <%= f.fields_for :workouts do |w| %>
+                <%= render 'workout_fields', f: w %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 my-2">
+          <div class="form-group">
+            <%= link_to_add_association '食事を追加', f, :meals,
+                data: {
+                association_insertion_node: '#meals',
+                association_insertion_method: 'append'
+                }, class: "btn btn-outline-info mt-4 mb-2" %>
+            <div id="meals">
+              <%= f.fields_for :meals do |m| %>
+                <%= render 'meal_fields', f: m %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-6 my-2">
+          <div class="form-group">
+            <%= f.label :comment, "コメント", class: "label-font" %>
+            <%= f.text_area :comment, rows: 5, placeholder: "例: 減量期であったが、重量を落とさないように気を付けた。", class: "form-control" %>
+          </div>
+          <div class="form-group float-right">
+            <%= f.submit "送信する", class: "btn btn-primary my-4" %>
+          </div>
+        </div>
+      </div>
+    </form>
   <% end %>
+</div>
