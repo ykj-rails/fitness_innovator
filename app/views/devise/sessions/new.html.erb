@@ -1,39 +1,35 @@
-<div class="text-center">
-  <h2 class="title">ログイン</h2>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-      <form>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-6 mx-auto text-center">
+      <h3 class="mb-5">ログイン</h3>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <form>
+            <div class="form-group col-8">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+            <div class="form-group col-8">
+              <%= f.label :password %>
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+            <div class="form-group form-check">
+              <% if devise_mapping.rememberable? -%>
+                <%= f.check_box :remember_me, class: "form-check-input" %>
+                <%= f.label :remember_me, class: "form-check-label" %><br />
+              <% end -%>
+            </div>
+            <div class="form-group">
+              <%= link_to "パスワードを忘れた場合", new_password_path(resource_name) %>
+            </div>
+            <div class="form-group border-bottom col-8">
+              <%= f.submit "ログインする", class: "btn btn-primary mt-4 mb-4" %>
+            </div>
+          </form>
+        <% end %>
+        <div class="more_link_box">
+          <%= render "devise/shared/links" %>
         </div>
-
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-        </div>
-
-        <div class="form-group form-check">
-          <% if devise_mapping.rememberable? -%>
-            <%= f.check_box :remember_me, class: "form-check-input" %>
-            <%= f.label :remember_me, class: "form-check-label" %><br />
-          <% end -%>
-        </div>
-
-        <div class="form-group">
-          <%= link_to "パスワードを忘れた場合", new_password_path(resource_name) %>
-        </div>
-
-        <div class="form-group border-bottom">
-            <%= f.submit "ログインする", class: "btn  btn-lg btn-primary btn-block mt-5 mb-4" %>
-        </div>
-      </form>
-
-    <% end %>
-
-    <div class="more_link_box">
-      <%= render "devise/shared/links" %>
+        <%= link_to "登録確認メールが届かない場合", new_confirmation_path(resource_name) %>
     </div>
-    <%= link_to "登録確認メールが届かない場合", new_confirmation_path(resource_name) %>
+  </div>
 </div>
