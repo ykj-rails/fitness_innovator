@@ -2,17 +2,17 @@
   <%= form_for @content do |f| %>
     <form>
       <div class="row">
-        <div class="col-12 col-lg-12 mb-4">
+        <div class="col-12 col-lg-10 col-xl-8 mx-auto mb-4">
           <div class="form-group">
             <%= f.label :title, "タイトル", class: "label-font" %>
             <%= f.text_field :title, class: "form-control form-control-lg" %>
-            <small class="text-muted">例: 「増量期」, 「夏に向けて減量」</small>
+            <small class="text-muted">例: 増量期 / 夏に向けて減量</small>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-12 col-lg-6 text-center">
+        <div class="col-6 text-center">
           <% if @content.befor_image.attached? %>
             <%= image_tag(@content.befor_image, id: "before-preview") %><br />
           <% else %>
@@ -26,7 +26,7 @@
           <% end %>
         </div>
 
-        <div class="col-12 col-lg-6 text-center">
+        <div class="col-6 text-center">
           <% if @content.after_image.attached? %>
             <%= image_tag(@content.after_image, id: "after-preview") %><br />
           <% else %>
@@ -42,21 +42,21 @@
       </div>
 
       <div class="row">
-        <div class="col-6 col-lg-6 my-2">
+        <div class="col-6 col-lg-4 col-xl-4 my-2 ml-auto">
           <div class="form-group">
             <%= f.label :period, "期間", class: "label-font" %>
             <%= f.text_field :period, class: "form-control" %>
-            <small class="text-muted">例: 「3ヶ月」, 「10週間」</small>
+            <small class="text-muted">例: 3ヶ月 / 10週間</small>
           </div>
         </div>
-        <div class="col-2 col-lg-2 my-2">
+        <div class="col-3 col-lg-2 col-xl-2 my-2">
           <div class="form-group">
             <%= f.label :before_body_weight, "体重(before)", class: "label-font" %>
             <%= f.number_field :before_body_weight, class: "form-control" %>
-            <small class="text-muted">例: 70kgは、70と入力</small>
+            <small class="text-muted">※数字のみで入力 単位/kg</small>
           </div>
         </div>
-        <div class="col-2 col-lg-2 my-2">
+        <div class="col-3 col-lg-2 col-xl-2 my-2 mr-auto">
           <div class="form-group">
             <%= f.label :after_body_weight, "体重(after)", class: "label-font" %>
             <%= f.number_field :after_body_weight, class: "form-control" %>
@@ -65,7 +65,7 @@
       </div>
 
       <div class="row">
-        <div class="col-12 col-lg-6 my-2">
+        <div class="col-6 col-lg-5 col-xl-5 ml-auto my-2">
           <div class="form-group">
             <%= link_to_add_association 'ワークアウトを追加', f, :workouts,
                 data: {
@@ -80,7 +80,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6 my-2">
+        <div class="col-6 col-lg-4 col-xl-4 mr-auto my-2">
           <div class="form-group">
             <%= link_to_add_association '食事を追加', f, :meals,
                 data: {
@@ -97,13 +97,13 @@
       </div>
 
       <div class="row">
-        <div class="col-12 col-lg-6 my-2">
+        <div class="col-10 col-lg-7 col-xl-7 my-2 mx-auto">
           <div class="form-group">
             <%= f.label :comment, "コメント", class: "label-font" %>
             <%= f.text_area :comment, rows: 5, placeholder: "例: 減量期であったが、重量を落とさないように気を付けた。", class: "form-control" %>
           </div>
-          <div class="form-group float-right">
-            <%= f.submit "送信する", class: "btn btn-primary my-4" %>
+          <div class="form-group text-center">
+            <%= f.submit "記録する", class: "btn btn-primary my-4" %>
           </div>
         </div>
       </div>
