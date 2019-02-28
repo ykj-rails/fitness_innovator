@@ -28,8 +28,15 @@ ul{
 }
 
 .label-font{
+  color: #262626;
   font-weight: 600;
   font-size: 14px;
+}
+
+.title-font{
+  color: #262626;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .denger-link a{
@@ -48,7 +55,7 @@ a.denger-link:hover{
   color: #ed4956;
 }
 
-a.user-name:hover{
+a.label-font:hover{
   color: #262626;
 }
 
@@ -92,8 +99,19 @@ a:hover{
   width: 50px;
   height: 50px;
   overflow: hidden;
+  border: 1px solid #C1BFC0;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.user-image-icon-sm{
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #C1BFC0;
+  margin: 5px 15px;
 }
 
 #user-image{
@@ -101,17 +119,24 @@ a:hover{
   width: 150px;
   height: 150px;
   overflow: hidden;
+  border: 1px solid #C1BFC0;
   border-radius: 50%;
 }
 
 .header-user{
-  width: 100%;
+  width: 720px;
   height: 50px;
   border: 1px solid #dbdbdb;
   border-bottom: none;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   padding-top: 5px;
+}
+
+.show-preview{
+  object-fit: cover;
+  width: 360px;
+  height: 360px;
 }
 
 #before-preview{
@@ -131,7 +156,7 @@ a:hover{
 .user-name{
   color: #262626;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .user-name-show{
@@ -238,4 +263,19 @@ body{
   color: #262626;
   font-size: 16px;
   height: 100%
+}
+
+.content-show{
+  width: 720px;
+  min-height: 90px;
+  max-height: 100%;
+  border: 1px solid #dbdbdb;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  padding: 12px;
+}
+
+.content-show-img{
+  width: 720px;
+  height: 360px;
 }

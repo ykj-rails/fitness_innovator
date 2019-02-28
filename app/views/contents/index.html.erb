@@ -4,9 +4,11 @@
     <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text">
-          <% if current_user.id == content.user_id %>
-            <%= link_to "編集する", edit_content_path(content) %>
-          <% end %>
+          <% if user_signed_in? %>
+            <% if current_user.id == content.user_id %>
+              <%= link_to "編集する", edit_content_path(content) %>
+              <% end %>
+            <% end %>
 
           <%= link_to "詳細", content_path(content) %>
           <%= content.title %>

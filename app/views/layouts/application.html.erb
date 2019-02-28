@@ -26,9 +26,9 @@
                   <i class="fas fa-user-check fa-lg"></i>
                 <% end %>
               <% end %>
-              <%= link_to current_user.nickname, user_path(current_user), class: "user-name" %>
-              <%= link_to new_content_path do %>
-                <i class="fas fa-dumbbell fa-lg ml-2"></i>
+              <%= link_to current_user.nickname, user_path(current_user), class: "label-font" %>
+              <%= link_to new_content_path, class: "ml-2" do %>
+                <i class="fas fa-running fa-lg"></i>
               <% end %>
           </li>
             <% else %>

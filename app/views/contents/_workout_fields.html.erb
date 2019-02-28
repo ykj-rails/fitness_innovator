@@ -22,7 +22,9 @@
     <div class="col-12 col-lg-12 col-xl-10 my-2">
       <%= f.label :menu, "トレーニングメニュー", class: "label-font mt-3" %>
       <%= f.text_area :menu, rows: 5, placeholder: "例: ベンチプレス 10x3" ,class: "form-control" %>
-      <%= link_to_remove_association "フォームを削除", f , class: "label-font float-right" %>
+      <%= link_to_remove_association f , class: "label-font float-right" do %>
+        <span class="denger-link"><i class="fas fa-times fa-lg"></i></span>
+      <% end %>
     </div>
   </div>
 </div>
