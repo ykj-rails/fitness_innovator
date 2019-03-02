@@ -14,11 +14,11 @@
           </span>
         </div>
       </header>
-      <div class="content-show-img d-flex mx-auto">
+      <div class="content-show-img">
         <%= image_tag(@content.befor_image, class: "show-preview") %>
         <%= image_tag(@content.after_image, class: "show-preview") %>
       </div>
-      <div class="content-show d-flex mx-auto">
+      <div class="content-show-t">
         <span>
           <div class="title-font mb-1">
             <%= @content.title %>
@@ -27,18 +27,31 @@
           <%= simple_format @content.comment %>
         </span>
       </div>
+      <div class="content-show-b">
+        <div class="row">
+          <div class="col-12">
+            <div class="label-font mb-1">
+              ワークアウトルーティーン
+              <i class="fas fa-running"></i>
+            </div>
+            <%= render @content.workouts %>
+          </div>
+        </div>
+
+          <div class="col-12">
+            <div class="label-font mb-1">
+              食事内容
+              <i class="fas fa-pizza-slice"></i>
+            </div>
+            <%= render @content.meals %>
+          </div>
+
+
+      </div>
     </div>
 
-    <% @content.workouts.each do |workout| %>
-      <%= workout.title %><br />
-      <%= workout.week_id %>
-      <%= simple_format workout.menu %>
-    <% end %>
 
-    <% @content.meals.each do |meal| %>
-      <%= meal.title %><br />
-      <%= simple_format meal.menu %>
-    <% end %>
+
 
 
 </div>
