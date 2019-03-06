@@ -1,6 +1,5 @@
 <div class="user-edit">
   <div class="text-center">
-
     <div class="left-content">
       <h4>プロフィールを編集</h4>
         <% if @user.avatar.attached? %>
@@ -10,7 +9,7 @@
           </span>
         <% else %>
         <%= image_tag("rip-rich.jpg", id: "user-image") %>
-          <div class="denger-link">プロフィール写真を変更しよう!</div>
+          <div class="denger-link mt-2">プロフィール写真を変更しよう!</div>
         <% end %>
       </div>
     </div>
@@ -31,7 +30,7 @@
           <div class="form-group">
             <%= f.label :avatar, class: "label-font mb-2", id: "file-user" do %>
               <span>プロフィール写真をアップロードする</span>
-              <i class="fab fa-instagram fa-2x"></i>
+              <i class="fas fa-camera-retro fa-2x"></i>
               <%= f.file_field :avatar, accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
             <% end %>
           </div>

@@ -1,22 +1,19 @@
-<div class="user-show">
-  <div class="text-center">
-    <div class="left-content">
-      <% if @user.avatar.attached? %>
-        <%= image_tag(@user.avatar, id: "user-image") %><br />
-      <% else %>
-        <%= image_tag("rip-rich.jpg", id: "user-image") %>
-      <% end %>
-    </div>
-
-    <div class="user-right-content">
-      <div class="row">
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="user-show">
+        <% if @user.avatar.attached? %>
+          <%= image_tag(@user.avatar, id: "user-image") %>
+        <% else %>
+          <%= image_tag("power-icon.jpg", id: "user-image") %>
+        <% end %>
         <div class="user-name-show">
           <%= @user.nickname %>
         </div>
         <% if current_user.id == @user.id %>
-          <div class="dropdown">
+          <div class="dropdown my-auto">
             <!-- 切替ボタンの設定 -->
-            <a class="btn btn-outline-secondary btn-sm dropdown-toggle mt-1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-outline-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               プロフィール設定
             </a>
             <!-- ドロップメニューの設定 -->
@@ -29,7 +26,6 @@
       </div>
       <div class="user-profile">
         <%= simple_format @user.profile %>
-      </div>
       </div>
     </div>
   </div>

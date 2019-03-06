@@ -10,43 +10,40 @@
     <link href="signin.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+    <!-- <meta name="viewport" content="width=780"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
   </head>
 
   <body>
     <header class="site-header sticky-top">
       <div class="header-nav">
-        <%= link_to image_tag("fitness_innovator_logo.png"), root_path, class: "header-logo"%>
-        <ul>
-          <li>
+        <div class="header-content">
+          <%= link_to image_tag("fitness_innovator_logo.png"), root_path, class: "header-logo mx-2"%>
             <% if user_signed_in? %>
               <% if current_user.avatar.attached? %>
-                <%= link_to image_tag(current_user.avatar, class: "user-image-icon"), user_path(current_user) %>
+                <%= link_to image_tag(current_user.avatar, class: "user-image-icon mx-2"), user_path(current_user) %>
               <% else %>
-                <%= link_to user_path(current_user), class: "user-image-icon" do %>
+                <%= link_to user_path(current_user), class: "mx-2" do %>
                   <i class="fas fa-user-check fa-lg"></i>
                 <% end %>
               <% end %>
-              <%= link_to current_user.nickname, user_path(current_user), class: "label-font" %>
-              <%= link_to new_content_path, class: "ml-2" do %>
-                <i class="fas fa-running fa-lg"></i>
+              <%= link_to new_content_path, class: "mx-2" do %>
+                <i class="fas fa-dumbbell fa-lg faa-tada animated-hover my-black"></i>
               <% end %>
-          </li>
             <% else %>
-              <li>
                 <%= link_to new_user_session_path do %>
                 <span class="faa-parent animated-hover">
                   <i class="fas fa-user-plus fa-lg faa-bounce"></i>
                 </span>
                 <% end %>
-              </li>
             <% end %>
-        </ul>
+          </div>
       </div>
     </header>
 
     <div class=main-content>
       <% if notice %>
-          <div class="alert alert-info alert-dismissible" role="alert">
+          <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert">
               <span aria-hidden="true">&times;</span>
               <span class="sr-only">close</span>
@@ -66,6 +63,7 @@
       <% end %>
 
       <%= yield %>
+
     </div>
   </body>
 </html>

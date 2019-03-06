@@ -14,7 +14,18 @@
  *= require_self
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
- @import "bootstrap";
+@import "bootstrap";
+
+body{
+  background-color:#FAFAFA;
+  color: #262626;
+  font-family: -apple-system,BlinkMacSystemFont,
+  "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+ul{
+  list-style-type: none;
+}
 
 h4{
   margin: 30px 0;
@@ -23,44 +34,50 @@ h4{
   font-size: 18px;
 }
 
-ul{
-  list-style-type: none;
+.my-black{
+  color: #5e5e5e;
 }
 
 .label-font{
-  color: #262626;
   font-weight: 600;
   font-size: 14px;
 }
 
+.form-font{
+  color: #696969;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.link-font{
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .title-font{
-  color: #262626;
   font-weight: 600;
   font-size: 18px;
-}
-
-.denger-link a{
-  font-weight: 600;
-  font-size: 12px;
-  color: #ed4956;
-}
-
-a.denger-link:hover{
-  color: #ed4956;
 }
 
 .denger-link {
   font-weight: 600;
   font-size: 12px;
   color: #ed4956;
+  a{
+    color: #ed4956;
+  }
+}
+
+a:hover{
+  text-decoration: none;
 }
 
 a.label-font:hover{
   color: #262626;
 }
 
-a:hover{
-  text-decoration: none;
+a.denger-link:hover{
+  color: #ed4956;
 }
 
 .btn:hover{
@@ -77,60 +94,49 @@ a:hover{
 .header-nav{
   margin: auto;
   height: 100%;
-  max-width: 1010px;
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
-.header-nav ul{
-  display: flex;
-  margin: auto 0;
+.header-content{
+  margin: auto 0px;
+  margin-right: 10px;
 }
 
 .header-logo img{
-  margin-top: 20px;
+  margin-top: 8px;
   width: 230px;
   height: 45px;
+}
+
+.main-content{
+  margin-bottom: 50px;
 }
 
 .user-image-icon{
   object-fit: cover;
   width: 50px;
   height: 50px;
-  overflow: hidden;
   border: 1px solid #C1BFC0;
   border-radius: 50%;
-  margin-right: 10px;
 }
 
 .user-image-icon-sm{
   object-fit: cover;
   width: 30px;
   height: 30px;
-  overflow: hidden;
   border-radius: 50%;
   border: 1px solid #C1BFC0;
-  margin: 5px 15px;
+  margin: 7px 15px;
 }
 
 #user-image{
   object-fit: cover;
   width: 150px;
   height: 150px;
-  overflow: hidden;
   border: 1px solid #C1BFC0;
   border-radius: 50%;
-}
-
-.header-user{
-  width: 720px;
-  height: 50px;
-  border: 1px solid #dbdbdb;
-  border-bottom: none;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  padding-top: 5px;
 }
 
 .show-preview{
@@ -154,63 +160,26 @@ a:hover{
 }
 
 .user-name{
-  color: #262626;
   font-weight: 600;
   font-size: 14px;
 }
 
 .user-name-show{
-  color: #262626;
-  font-weight: 300;
   font-size: 24px;
-  margin: 2px 25px 0 15px;
-}
-
-
-body{
-  background-color:#FAFAFA;
-  color: #333;
-  font-family:'Lato', 'Noto Sans JP', '游ゴシック Medium',
-              '游ゴシック体', 'Yu Gothic Medium', YuGothic,
-              'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN',
-              'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-}
-
-
-.btn-block{
-  max-width: 330px;
-  margin: auto;
-}
-
-.wrap{
-  display: flex;
-  max-width: 800px;
-  justify-content: center;
-  margin: 10px auto;
+  margin: auto 20px;
 }
 
 .form-group{
   margin: 12px auto;
 }
 
-
-
 .more_link_box a{
   border: 1px solid;
   border-radius: 5px;
   display: block;
   margin: 25px auto 10px;
-  max-width: 135px;
-  padding: 5px 10px;
-}
-
-.more_link_box .new_account{
-  border: 1px solid;
-  border-radius: 5px;
-  display: block;
-  margin: 20px auto;
-  max-width: 250px;
-  padding: 5px 10px;
+  width: 70%;
+  padding: 5px;
 }
 
 .user-edit{
@@ -221,20 +190,13 @@ body{
   max-width: 740px;
   overflow: hidden;
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
 
 .user-show{
-  margin: 60px auto 0;
-  max-width: 740px;
-  overflow: hidden;
   width: 100%;
-  height: 300px;
-}
-
-.left-content{
-  width: 290px;
-  float: left;
+  height: auto;
+  display: flex;
 }
 
 .prof-title{
@@ -242,17 +204,8 @@ body{
   font-size: 14px;
 }
 
-.left-content .user-image{
-  margin: 10px 70px;
-}
-
 .right-content{
-  padding: 50px 0;
-  width: 440px;
-  float: right;
-}
-
-.user-right-content{
+  padding: 35px 0;
   width: 440px;
   float: right;
 }
@@ -260,9 +213,19 @@ body{
 .user-profile{
   margin: 25px auto;
   text-align: left;
-  color: #262626;
-  font-size: 16px;
-  height: 100%
+  height: auto;
+}
+
+.header-user{
+  width: 720px;
+  height: 55px;
+  border: 1px solid #dbdbdb;
+  border-bottom: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding-top: 5px;
+  margin: 0 auto;
+  display: flex;
 }
 
 .content-show-img{
@@ -278,6 +241,7 @@ body{
   max-height: 100%;
   border: 1px solid #dbdbdb;
   border-top: none;
+  border-bottom: none;
   padding: 12px;
   margin: 0 auto;
   display: flex;
@@ -292,5 +256,18 @@ body{
   border-radius: 0 0 3px 3px;
   padding: 12px;
   margin: 0 auto 100px;
-  display: flex;
+}
+
+@media (min-width: 1200px) , (max-width: 1200px) {
+  .container, .container-fluid {
+    min-width: 320px;
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 576px) {
+  #user-image{
+    width: 75px;
+    height: 75px;
+  }
 }
