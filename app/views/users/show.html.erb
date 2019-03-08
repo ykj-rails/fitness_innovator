@@ -2,27 +2,31 @@
   <div class="row">
     <div class="col-12">
       <div class="user-show">
-        <% if @user.avatar.attached? %>
-          <%= image_tag(@user.avatar, id: "user-image") %>
-        <% else %>
-          <%= image_tag("power-icon.jpg", id: "user-image") %>
-        <% end %>
-        <div class="user-name-show">
-          <%= @user.nickname %>
+        <div class="user-image-show">
+          <% if @user.avatar.attached? %>
+            <%= image_tag(@user.avatar, id: "user-image") %>
+          <% else %>
+            <%= image_tag("power-icon.jpg", id: "user-image") %>
+          <% end %>
         </div>
-        <% if current_user.id == @user.id %>
-          <div class="dropdown my-auto">
-            <!-- 切替ボタンの設定 -->
-            <a class="btn btn-outline-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              プロフィール設定
-            </a>
-            <!-- ドロップメニューの設定 -->
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <%= link_to 'プロフィールを編集', edit_user_path(@user), class: "label-font dropdown-item" %>
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "denger-link dropdown-item" %>
-            </div><!-- /.dropdown-menu -->
-          </div><!-- /.dropdown -->
-        <% end %>
+        <div class="user-show-right">
+          <div class="user-name-show">
+            <%= @user.nickname %>
+          </div>
+          <% if current_user.id == @user.id %>
+            <div class="dropdown">
+              <!-- 切替ボタンの設定 -->
+              <a class="btn btn-outline-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                プロフィール設定
+              </a>
+              <!-- ドロップメニューの設定 -->
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <%= link_to 'プロフィールを編集', edit_user_path(@user), class: "label-font dropdown-item" %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "denger-link dropdown-item" %>
+              </div><!-- /.dropdown-menu -->
+            </div><!-- /.dropdown -->
+          <% end %>
+        </div>
       </div>
       <div class="user-profile">
         <%= simple_format @user.profile %>

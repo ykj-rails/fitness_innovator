@@ -1,6 +1,6 @@
 <div class="nested-fields">
   <div class="row">
-    <div class="col-6 col-lg-5 col-xl-4 my-2">
+    <div class="col-6 mt-2">
       <%= f.label :week_id, "曜日", class: "label-font" %><br />
       <%= f.select :week_id, [
         ["月曜日", 1],
@@ -13,14 +13,14 @@
         <small class="text-muted">※オフの場合は未入力</small>
     </div>
 
-    <div class="col-6 col-lg-7 col-xl-6 my-2">
+    <div class="col-6 mt-2">
       <%= f.label :title, "部位", class: "label-font" %>
       <%= f.text_field :title, class: "form-control" %>
       <small class="text-muted">胸と背中 / レッグDay等</small>
     </div>
 
-    <div class="col-12 col-lg-12 col-xl-10 my-2">
-      <%= f.label :menu, "トレーニングメニュー", class: "label-font mt-3" %>
+    <div class="col-12 mt-3">
+      <%= f.label :menu, "トレーニングメニュー", class: "label-font" %>
       <%= f.text_area :menu, rows: 5, placeholder: "例: ベンチプレス 10x3" ,class: "form-control" %>
       <%= link_to_remove_association f , class: "label-font float-right" do %>
         <span class="denger-link"><i class="fas fa-times fa-lg"></i></span>

@@ -28,8 +28,6 @@ ul{
 }
 
 h4{
-  margin: 30px 0;
-  text-align:center;
   font-weight: 600;
   font-size: 18px;
 }
@@ -39,19 +37,37 @@ h4{
 }
 
 .label-font{
+  color: #262626;
   font-weight: 600;
   font-size: 14px;
 }
 
 .form-font{
-  color: #696969;
+  color: #4F4F4F;
   font-weight: 600;
-  font-size: 16px;
 }
 
 .link-font{
+  color: #3897F0;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+.link-border{
+  color: #3897F0;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+.work-font{
+  color: #0070BF;
+}
+
+.meal-font{
+  color: #FFDD33;
 }
 
 .title-font{
@@ -70,10 +86,15 @@ h4{
 
 a:hover{
   text-decoration: none;
+  color: none;
 }
 
 a.label-font:hover{
   color: #262626;
+}
+
+a.link-font{
+  color: #3897F0;
 }
 
 a.denger-link:hover{
@@ -146,27 +167,18 @@ a.denger-link:hover{
 }
 
 #before-preview{
-  object-fit: cover;
-  width: 360px;
-  height: 360px;
-  border: 1px solid #dbdbdb;
+  width: 100%;
+  height: auto;
 }
 
 #after-preview{
-  object-fit: cover;
-  width: 360px;
-  height: 360px;
-  border: 1px solid #dbdbdb;
+  width: 100%;
+  height: auto;
 }
 
 .user-name{
   font-weight: 600;
   font-size: 14px;
-}
-
-.user-name-show{
-  font-size: 24px;
-  margin: auto 20px;
 }
 
 .form-group{
@@ -182,38 +194,56 @@ a.denger-link:hover{
   padding: 5px;
 }
 
-.user-edit{
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: 3px;
-  margin: 60px auto 0;
-  max-width: 740px;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-
 .user-show{
   width: 100%;
+  max-width: 680px;
   height: auto;
   display: flex;
+  flex-wrap: wrap;
 }
 
-.prof-title{
-  font-weight: 600;
-  font-size: 14px;
+.user-image-show{
+  margin: 20px 50px 20px 0;
+  text-align: center;
 }
 
-.right-content{
-  padding: 35px 0;
-  width: 440px;
-  float: right;
+.user-show-right{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name-show{
+  font-size: 24px;
+  margin: 30px 0 15px;
 }
 
 .user-profile{
-  margin: 25px auto;
-  text-align: left;
+  max-width: 500px;
   height: auto;
+  margin: 20px 0;
+  padding: 0 7px;
+  p{
+    font-size: 15px;
+  }
+}
+
+.user-edit{
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin-top: 60px;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.user-edit-right{
+  margin: auto 0;
+  width: 340px;
 }
 
 .header-user{
@@ -258,16 +288,48 @@ a.denger-link:hover{
   margin: 0 auto 100px;
 }
 
+
 @media (min-width: 1200px) , (max-width: 1200px) {
   .container, .container-fluid {
     min-width: 320px;
-    max-width: 560px;
+    max-width: 760px;
   }
 }
 
 @media (max-width: 576px) {
+
+  .header-logo img{
+    width: 184px;
+    height: 36px;
+  }
+
+  .user-name-show{
+    font-size: 20px;
+    margin: 20px 0 10px;
+  }
+
+  .user-image-show{
+    margin: 20px 20px 0 8px;
+  }
+
+  .user-profile{
+    p{
+      font-size: 14px;
+    }
+  }
+
   #user-image{
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .user-image-icon{
+    width: 40px;
+    height: 40px;
+  }
+
+  .user-edit{
+    margin-top: 15px;
+    padding: 15px;
   }
 }

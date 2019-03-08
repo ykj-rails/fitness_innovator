@@ -1,7 +1,7 @@
 <!-- パスワード再設定送信フォーム -->
 <div class="container-fluid mt-4">
   <div class="row">
-    <div class="col-10 col-sm-8 mx-auto text-center">
+    <div class="col-10 col-sm-6 mx-auto text-center">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= devise_error_messages! %>
         <form>

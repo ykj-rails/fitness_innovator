@@ -1,7 +1,7 @@
 <!-- ログイン画面 -->
 <div class="container-fluid mt-4">
   <div class="row">
-    <div class="col-10 col-sm-8 mx-auto text-center">
+    <div class="col-10 col-sm-6 mx-auto text-center">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <form>
             <div class="form-group mb-3">
@@ -23,7 +23,7 @@
               <% end -%>
             </div>
             <div class="form-group border-bottom">
-              <%= f.submit "ログイン", class: "btn btn-primary btn-block link-font my-4" %>
+              <%= f.submit "ログイン", class: "btn btn-primary btn-block label-font my-4" %>
             </div>
             <div class="form-group">
               <%= link_to "パスワードを忘れた場合", new_password_path(resource_name), class: "link-font"%>

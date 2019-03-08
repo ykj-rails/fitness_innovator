@@ -1,8 +1,8 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-4">
   <%= form_for @content do |f| %>
     <form>
       <div class="row">
-        <div class="col-12 col-lg-10 col-xl-8 mx-auto mb-4">
+        <div class="col-12 col-sm-10 mx-auto mb-2">
           <div class="form-group">
             <%= f.label :title, "タイトル", class: "label-font" %>
             <%= f.text_field :title, class: "form-control form-control-lg" %>
@@ -12,29 +12,29 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-6 col-lg-5 col-xl-4 text-center">
+        <div class="col-6 text-center">
           <% if @content.befor_image.attached? %>
-            <%= image_tag(@content.befor_image, id: "before-preview") %><br />
+            <%= image_tag(@content.befor_image, id: "before-preview") %>
           <% else %>
             <img id="before-preview"><br />
           <% end %>
-          <%= f.label :befor_image, class: "label-font mt-2 mb-5", id: "before-sample" do %>
-            <span>beforeの写真をアップロードする</span>
-            <i class="fas fa-camera-retro fa-2x"></i>
+          <%= f.label :befor_image, class: "link-border mt-3", id: "before-sample" do %>
+            <span>beforeの写真を<br />アップロード</span>
+            <i class="fas fa-camera-retro fa-lg"></i>
             <%= f.file_field :befor_image,
                 accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
           <% end %>
         </div>
 
-        <div class="col-6 col-lg-5 col-xl-4 text-center">
+        <div class="col-6 text-center">
           <% if @content.after_image.attached? %>
-            <%= image_tag(@content.after_image, id: "after-preview") %><br />
+            <%= image_tag(@content.after_image, id: "after-preview") %>
           <% else %>
             <img id="after-preview"><br />
           <% end %>
-          <%= f.label :after_image, class: "label-font mt-2 mb-5", id: "after-sample" do %>
-            <span>afterの写真をアップロードする</span>
-            <i class="fas fa-camera-retro fa-2x"></i>
+          <%= f.label :after_image, class: "link-border mt-3", id: "after-sample" do %>
+            <span>afterの写真を<br />アップロード</span>
+            <i class="fas fa-camera-retro fa-lg"></i>
             <%= f.file_field :after_image,
                 accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
           <% end %>
@@ -42,7 +42,7 @@
       </div>
 
       <div class="row">
-        <div class="col-6 col-lg-4 col-xl-4 my-2 ml-auto">
+        <div class="col-12 col-sm-6 my-2">
           <div class="form-group">
             <%= f.label :period, class: "label-font" do %>
               期間 <i class="far fa-calendar-alt fa-lg"></i>
@@ -51,7 +51,7 @@
             <small class="text-muted">例: 3ヶ月 / 10週間</small>
           </div>
         </div>
-        <div class="col-3 col-lg-2 col-xl-2 my-2">
+        <div class="col-6 col-sm-3 my-2">
           <div class="form-group">
             <%= f.label :before_body_weight , class: "label-font" do %>
               体重 <i class="fas fa-weight"></i> (before)
@@ -60,7 +60,7 @@
             <small class="text-muted">※数字のみで入力 単位/kg</small>
           </div>
         </div>
-        <div class="col-3 col-lg-2 col-xl-2 my-2 mr-auto">
+        <div class="col-6 col-sm-3 my-2">
           <div class="form-group">
             <%= f.label :after_body_weight, class: "label-font" do %>
               体重 <i class="fas fa-weight"></i> (after)
@@ -71,13 +71,13 @@
       </div>
 
       <div class="row">
-        <div class="col-6 col-lg-5 col-xl-5 ml-auto my-2">
+        <div class="col-12 col-sm-6 my-2">
           <div class="form-group">
             <%= link_to_add_association f, :workouts,
               data: {
               association_insertion_node: '#workouts',
-              association_insertion_method: 'append'
-              }, class: "btn btn-outline-info mt-4 mb-2" do %>
+              association_insertion_method: 'before'
+              }, class: "btn btn-outline-primary work-font mt-3 mb-1" do %>
                 ワークアウトを追加 <i class="fas fa-running fa-lg"></i>
             <% end %>
             <div id="workouts">
@@ -88,14 +88,14 @@
           </div>
         </div>
 
-        <div class="col-6 col-lg-4 col-xl-4 mr-auto my-2">
+        <div class="col-12 col-sm-6 my-2">
           <div class="form-group">
             <%= link_to_add_association f, :meals,
               data: {
               association_insertion_node: '#meals',
-              association_insertion_method: 'append'
-              }, class: "btn btn-outline-info mt-4 mb-2" do %>
-                食事を追加 <i class="fas fa-pizza-slice fa-lg"></i>
+              association_insertion_method: 'before'
+              }, class: "btn btn-outline-success mt-3 mb-1" do %>
+                食事を追加 <i class="fas fa-hamburger fa-lg"></i>
             <% end %>
             <div id="meals">
               <%= f.fields_for :meals do |m| %>
@@ -107,12 +107,12 @@
       </div>
 
       <div class="row">
-        <div class="col-10 col-lg-7 col-xl-7 my-2 mx-auto">
+        <div class="col-12 col-sm-10 mx-auto">
           <div class="form-group">
             <%= f.label :comment, class: "label-font" do %>
-              コメント<i class="fab fa-angellist fa-lg"></i>
+              コメント<i class="far fa-comment-dots fa-lg mb-1"></i>
             <% end %>
-            <%= f.text_area :comment, rows: 5, placeholder: "例: 減量期であったが、重量を落とさないように気を付けた。", class: "form-control" %>
+            <%= f.text_area :comment, rows: 6, placeholder: "例: 減量期であったが、重量を落とさないように気を付けた。", class: "form-control" %>
           </div>
           <div class="form-group text-center">
             <%= f.submit "記録する", class: "btn btn-primary my-4" %>

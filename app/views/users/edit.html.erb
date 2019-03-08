@@ -1,44 +1,41 @@
-<div class="user-edit">
-  <div class="text-center">
-    <div class="left-content">
-      <h4>プロフィールを編集</h4>
-        <% if @user.avatar.attached? %>
-          <%= image_tag(@user.avatar, id: "user-image") %><br />
-          <span class="denger-link">
-            <%= link_to "現在の写真を削除", avatar_destroy_user_path(@user), method: :delete %>
-          </span>
-        <% else %>
-        <%= image_tag("rip-rich.jpg", id: "user-image") %>
-          <div class="denger-link mt-2">プロフィール写真を変更しよう!</div>
-        <% end %>
-      </div>
-    </div>
-
-  <div class="right-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-10">
-          <%= form_for @user do |f| %>
-          <div class="form-group mb-4">
-            <%= f.label :nickname, class: "label-font mb-2" %>
-            <%= f.text_field :nickname, placeholder: "10文字以内で入力", autofocus: true, autocomplete: "name", class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :自己紹介, class: "label-font mb-2" %>
-            <%= f.text_area :profile, placeholder: "筋トレ歴◯◯年", rows: 5, autofocus: true, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :avatar, class: "label-font mb-2", id: "file-user" do %>
-              <span>プロフィール写真をアップロードする</span>
-              <i class="fas fa-camera-retro fa-2x"></i>
-              <%= f.file_field :avatar, accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="user-edit">
+        <div class="user-image-show">
+            <%= form_for @user do |f| %>
+              <h4 class="p-2">プロフィールを編集</h4>
+                <% if @user.avatar.attached? %>
+                  <%= image_tag(@user.avatar, id: "user-image") %><br />
+                  <span class="denger-link">
+                    <%= link_to "写真を削除", avatar_destroy_user_path(@user), method: :delete %>
+                  </span>
+                <% else %>
+                  <%= image_tag("power-icon.jpg", id: "user-image") %>
+                  <div class="denger-link mt-3">プロフィール写真を変更しよう!</div>
+                <% end %>
+                <div class="form-group">
+                  <%= f.label :avatar, class: "link-border", id: "file-user" do %>
+                    <span>写真をアップロード</span>
+                    <i class="fas fa-camera-retro fa-lg"></i>
+                    <%= f.file_field :avatar, accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
+                  <% end %>
+                </div>
+              </div>
+                <div class="user-edit-right">
+                  <div class="form-group col-12 mb-4">
+                    <%= f.label :nickname, class: "label-font mb-2" %>
+                    <%= f.text_field :nickname, placeholder: "10文字以内で入力", autofocus: true, autocomplete: "name", class: "form-control" %>
+                  </div>
+                  <div class="form-group col-12 mb-4">
+                    <%= f.label :自己紹介, class: "label-font mb-2" %>
+                    <%= f.text_area :profile, placeholder: "筋トレ歴◯◯年", rows: 5, autofocus: true, class: "form-control" %>
+                  </div>
+                  <div class="form-group col-12">
+                    <%= f.submit "送信する", class: "btn btn-primary btn-sm" %>
+                  </div>
+                </div>
             <% end %>
-          </div>
-          <div class="form-group">
-            <%= f.submit "送信する", class: "btn btn-primary btn-sm mt-4" %>
-          </div>
-          <% end %>
-        </div>
       </div>
     </div>
   </div>
