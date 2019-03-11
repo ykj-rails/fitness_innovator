@@ -1,59 +1,61 @@
 <div class="container-fluid mt-4">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-10">
-      <header class="header-user">
-        <% if @content.user.avatar.attached? %>
-          <%= link_to image_tag(@content.user.avatar, class: "user-image-icon-sm"), user_path(@content) %>
-        <% else %>
-          <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content) %>
-        <% end %>
-        <%= link_to @content.user.nickname, user_path(@content), class: "user-name my-auto" %>
-      </header>
-      <div class="content-show-img">
-        <%= image_tag(@content.befor_image, class: "show-preview") %>
-        <%= image_tag(@content.after_image, class: "show-preview") %>
-      </div>
-      <div class="content-show-t">
-        <div class="row content-border">
-          <div class="col-12 col-sm-6">
-            <span class="s-font">
-              <i class="fas fa-weight"></i> 体重
-              <span class="l-font fw ml-1"><%= @content.before_body_weight %></span>kg
-              <i class="fas fa-arrow-right faa-horizontal animated"></i>
-              <span class="l-font fw"><%= @content.after_body_weight %></span>kg
-              <span class="denger-round m-font ml-1">
-                <%= weight_difference(@content.before_body_weight,@content.after_body_weight) %>kg
+      <div class="content-show-main">
+        <header class="header-user">
+          <% if @content.user.avatar.attached? %>
+            <%= link_to image_tag(@content.user.avatar, class: "user-image-icon-sm"), user_path(@content) %>
+          <% else %>
+            <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content) %>
+          <% end %>
+          <%= link_to @content.user.nickname, user_path(@content), class: "user-name my-auto" %>
+        </header>
+        <div class="content-show-img">
+          <%= image_tag(@content.befor_image, class: "show-preview") %>
+          <%= image_tag(@content.after_image, class: "show-preview") %>
+        </div>
+        <div class="content-show">
+          <div class="row content-border">
+            <div class="col-12 col-sm-6">
+              <span class="s-font">
+                <i class="fas fa-weight"></i> 体重
+                <span class="l-font fw ml-1"><%= @content.before_body_weight %></span>kg
+                <i class="fas fa-arrow-right faa-horizontal animated"></i>
+                <span class="l-font fw"><%= @content.after_body_weight %></span>kg
+                <span class="denger-round m-font ml-1">
+                  <%= weight_difference(@content.before_body_weight,@content.after_body_weight) %>kg
+                </span>
               </span>
-            </span>
-          </div>
-          <div class="col-12 col-sm-6">
-            <span class="s-font">
-              <i class="far fa-calendar-alt"></i> 期間
-              <span class="l-font fw ml-1"><%= @content.period %></span>
-            </span>
-          </div>
-          <div class="col-12 user-profile">
-            <span class="user-name"><%= @content.user.nickname %></span>
-            <span class="l-font"><%= @content.title %></span>
-            <div class="mt-1"><%= simple_format @content.comment %></div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <span class="s-font">
+                <i class="far fa-calendar-alt"></i> 期間
+                <span class="l-font fw ml-1"><%= @content.period %></span>
+              </span>
+            </div>
+            <div class="col-12 user-profile">
+              <span class="user-name"><%= @content.user.nickname %></span>
+              <span class="l-font"><%= @content.title %></span>
+              <div class="mt-1"><%= simple_format @content.comment %></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="content-show-b">
-        <div class="row content-border">
-          <div class="col-12 col-sm-6">
-            <div class="title-border work-font">
-              ワークアウトルーティーン
-              <i class="fas fa-running fa-lg"></i>
+        <div class="content-show">
+          <div class="row content-border">
+            <div class="col-12 col-sm-6">
+              <div class="title-border work-font">
+                ワークアウトルーティーン
+                <i class="fas fa-running fa-lg"></i>
+              </div>
+              <%= render @content.workouts %>
             </div>
-            <%= render @content.workouts %>
-          </div>
-          <div class="col-12 col-sm-6">
-            <div class="title-border meal-font">
-              食事内容
-              <i class="fas fa-utensils"></i>
+            <div class="col-12 col-sm-6">
+              <div class="title-border meal-font">
+                食事内容
+                <i class="fas fa-utensils"></i>
+              </div>
+              <%= render @content.meals %>
             </div>
-            <%= render @content.meals %>
           </div>
         </div>
       </div>
