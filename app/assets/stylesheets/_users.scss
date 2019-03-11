@@ -1,0 +1,51 @@
+.user-show{
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-image-show{
+  margin: 20px 50px 20px 0;
+  text-align: center;
+}
+
+.user-show-right{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name-show{
+  font-size: 24px;
+  margin: 30px 0 15px;
+}
+
+.user-profile{
+  max-width: 500px;
+  height: auto;
+  margin: 20px 0;
+  padding: 0 7px;
+  p{
+    font-size: 15px;
+  }
+}
+
+.user-edit{
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin: 60px auto;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.user-edit-right{
+  margin: auto 0;
+  width: 340px;
+}

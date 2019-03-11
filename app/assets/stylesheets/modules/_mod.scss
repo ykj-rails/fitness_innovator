@@ -1,0 +1,69 @@
+// ヘッダー
+.site-header{
+  height: 77px;
+  width: 100%;
+  background-color:#FFF;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.header-nav{
+  margin: auto;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.header-content{
+  margin: auto 0px;
+  margin-right: 10px;
+}
+
+.header-logo img{
+  margin-top: 8px;
+  width: 230px;
+  height: 45px;
+}
+
+// ユーザーアイコン
+.user-image-icon{
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #C1BFC0;
+  border-radius: 50%;
+}
+
+.user-image-icon-sm{
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #C1BFC0;
+  margin: 12px 15px;
+}
+
+// ユーザーアイコン画像プレビュー
+#user-image{
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #C1BFC0;
+  border-radius: 50%;
+}
+
+// 投稿時の画像プレビュー
+#before-preview, #after-preview{
+  width: 100%;
+  height: auto;
+}
+
+// devise画面下リンクボタン
+.more_link_box a{
+  border: 1px solid;
+  border-radius: 5px;
+  display: block;
+  margin: 25px auto 10px;
+  width: 70%;
+  padding: 5px;
+}

@@ -1,0 +1,102 @@
+h4{
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.my-black{
+  color: #4b4b4b;
+}
+
+.user-name, a.user-name{
+  color: #262626;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.label-font, a.label-font:hover{
+  color: #262626;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.label-border, a.label-border:hover{
+  color: #262626;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  padding: 5px 25px;
+  cursor: pointer;
+}
+
+.form-font{
+  color: #4F4F4F;
+  font-weight: 600;
+}
+
+.link-font, a.link-font{
+  color: #3897F0;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.link-border{
+  color: #3897F0;
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.work-font{
+  color: #0070BF;
+}
+
+.meal-font{
+  color: #FFDD33;
+}
+
+.xs-font{
+  font-size: 12px;
+}
+
+.s-font{
+  font-size: 14px;
+}
+
+.m-font{
+  font-size: 16px;
+}
+
+.title-font{
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.l-font{
+  font-size: 18px;
+}
+.xl-font{
+  font-size: 24px;
+}
+
+.denger-link, a.denger-link:hover{
+  font-weight: 600;
+  font-size: 14px;
+  color: #ed4956;
+}
+
+.denger-border{
+  color: #ed4956;
+  font-weight: 600;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 4px 6px;
+}

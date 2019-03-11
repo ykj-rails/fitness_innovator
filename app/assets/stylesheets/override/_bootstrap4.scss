@@ -1,0 +1,47 @@
+// コンテナ幅を一定に設定
+.container, .container-fluid {
+  min-width: 320px;
+  max-width: 760px;
+}
+
+// コンテナ左右のpadding打ち消し
+.container-fluid{
+  padding: 0;
+}
+
+// 入力フォームのmargin
+.form-group{
+  margin: 12px auto;
+}
+
+// モーダル設定
+.modal.fade .modal-dialog.modal-dialog-centered{
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal-content{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  border: 0px;
+  border-radius: 12px;
+}
+
+.modal-header{
+  padding: 25px;
+  border-bottom: 1px solid #efefef;
+}
+
+.modal-body{
+  padding: 11px;
+  border-bottom: 1px solid #efefef;
+}
+
+.modal-body label{
+  margin-bottom: 0;
+}
+
+.modal-body-b{
+  padding: 11px;
+}
