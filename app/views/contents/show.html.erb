@@ -18,9 +18,9 @@
           <div class="col-12 col-sm-6">
             <span class="s-font">
               <i class="fas fa-weight"></i> 体重
-              <span class="l-font"><%= @content.before_body_weight %></span>kg
+              <span class="l-font fw ml-1"><%= @content.before_body_weight %></span>kg
               <i class="fas fa-arrow-right faa-horizontal animated"></i>
-              <span class="l-font"><%= @content.after_body_weight %></span>kg
+              <span class="l-font fw"><%= @content.after_body_weight %></span>kg
               <span class="denger-round m-font ml-1">
                 <%= weight_difference(@content.before_body_weight,@content.after_body_weight) %>kg
               </span>
@@ -29,7 +29,7 @@
           <div class="col-12 col-sm-6">
             <span class="s-font">
               <i class="far fa-calendar-alt"></i> 期間
-              <span class="l-font"><%= @content.period %></span>
+              <span class="l-font fw ml-1"><%= @content.period %></span>
             </span>
           </div>
           <div class="col-12 user-profile">
@@ -41,14 +41,14 @@
       </div>
       <div class="content-show-b">
         <div class="row content-border">
-          <div class="col-12">
+          <div class="col-12 col-sm-6">
             <div class="title-border work-font">
               ワークアウトルーティーン
               <i class="fas fa-running fa-lg"></i>
             </div>
             <%= render @content.workouts %>
           </div>
-          <div class="col-12">
+          <div class="col-12 col-sm-6">
             <div class="title-border meal-font">
               食事内容
               <i class="fas fa-utensils"></i>
