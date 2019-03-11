@@ -1,6 +1,9 @@
-<div class="row">
-  <div class="col-12">
-    <%= meal.title %>
-    <%= simple_format meal.menu %>
+<div class="content-menu">
+  <div class="content-menu-header">
+    <div class="label-font">
+      <i class="fas fa-utensils"></i>
+      <span class="mx-1"><%= meal.title %></span>
+    </div>
   </div>
+  <%= simple_format meal.menu %>
 </div>

@@ -28,36 +28,44 @@
 }
 
 .content-show-t{
+  background-color:#FFF;
   width: 100%;
   min-height: 90px;
   max-height: 100%;
   border: 1px solid #dbdbdb;
   border-top: none;
   border-bottom: none;
-  padding: 14px;
-  margin: 0 auto;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 }
 
-.content-border{
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: 5px;
-  width: 97%;
-  margin: 10px 0;
-  padding: 20px 8px 0;
-  p{
-    margin-bottom: 0px;
-  }
-}
-
 .content-show-b{
+  background-color:#FFF;
   width: 100%;
   min-height: 90px;
   max-height: 100%;
   border: 1px solid #dbdbdb;
   border-top: none;
   border-radius: 0 0 3px 3px;
-  padding: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-border{
+  width: 98%;
+  padding: 8px 4px 0;
+  p{
+    margin-bottom: 0px;
+  }
+}
+
+.content-menu{
+  margin: 23px 0;
+}
+
+.content-menu-header{
+  display: flex;
+  margin: 20px 0 8px;
+  align-items: center;
 }

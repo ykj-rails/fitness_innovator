@@ -60,7 +60,17 @@ h4{
 }
 
 .meal-font{
-  color: #FFDD33;
+  color: #29A745;
+}
+
+.title-border{
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px 5px;
+  max-width: 240px;
 }
 
 .xs-font{
@@ -93,7 +103,7 @@ h4{
   color: #ed4956;
 }
 
-.denger-border{
+.denger-round{
   color: #ed4956;
   font-weight: 600;
   border: 2px solid;

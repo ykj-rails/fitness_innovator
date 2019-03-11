@@ -1,7 +1,10 @@
-<div class="row">
-  <div class="col-12">
-    <%= day_of_the_week(workout.week_id) %>
-    <%= workout.title %>
-    <%= simple_format workout.menu %>
+<div class="content-menu">
+  <div class="content-menu-header">
+    <div class="label-font">
+      <i class="far fa-calendar-check fa-lg"></i>
+      <%= day_of_the_week(workout.week_id) %>
+      <span class="mx-2"><%= workout.title %></span>
+    </div>
   </div>
+  <%= simple_format workout.menu %>
 </div>

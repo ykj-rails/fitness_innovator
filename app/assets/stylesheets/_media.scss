@@ -1,9 +1,14 @@
 // スマートフォン画面
 @media (max-width: 576px){
+  // ヘッダー
+  .site-header{
+    height: 57px;
+  }
   .header-logo img{
     width: 184px;
     height: 36px;
   }
+  // フォント
   .user-name-show{
     font-size: 20px;
     margin: 20px 0 10px;
@@ -16,6 +21,7 @@
       font-size: 14px;
     }
   }
+  // ユーザー画像アイコン
   #user-image{
     width: 80px;
     height: 80px;
@@ -24,6 +30,7 @@
     width: 40px;
     height: 40px;
   }
+  // レイアウト
   .user-edit{
     margin-top: 30px;
     padding: 15px;
