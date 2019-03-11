@@ -1,11 +1,11 @@
-<div class="container-fluid mt-4">
+<div class="container mt-4">
   <%= form_for @content do |f| %>
     <form>
       <div class="row">
         <div class="col-12 col-sm-10 mx-auto mb-2">
           <div class="form-group">
             <%= f.label :title, "タイトル", class: "label-font" %>
-            <%= f.text_field :title, class: "form-control form-control-lg" %>
+            <%= f.text_field :title, class: "form-control" %>
             <small class="text-muted">例: 増量期 / 夏に向けて減量</small>
           </div>
         </div>

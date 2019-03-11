@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    redirect_to @user unless @user.id == current_user.id
   end
 
   def update
