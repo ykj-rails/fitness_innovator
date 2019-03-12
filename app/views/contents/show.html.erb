@@ -57,17 +57,35 @@
               <%= render @content.meals %>
             </div>
 
-            <div class="col-12 col-sm-6">
-              <%= form_for [@content, @comment] do |f| %>
-              <div class="form-group">
-                <%= f.label :text, "コメント", class: "label-font" %>
-                <%= f.text_field :text, class: "form-control" %>
-                <%= f.submit class: "form-control" %>
-
+            <% if @comments %>
+              <div class="">
+                <% @comments.each do |comment| %>
+                  <%= link_to comment.user.nickname, user_path(comment.user), class: "user-name" %>
+                  <%= comment.text %>
+                  <% if comment.user.id == current_user.id %>
+                    <%= link_to "削除", content_comment_path(@content,comment), method: :delete %>
+                  <% end %>
+                <% end %>
               </div>
-              <% end %>
-            </div>
+            <% end %>
 
+            <% if current_user %>
+              <%= form_for [@content, @comment] do |f| %>
+                <div class="form-group">
+                  <% if current_user.avatar.attached? %>
+                    <%= link_to image_tag(current_user.avatar, class: "user-image-icon-sm"), user_path(@content) %>
+                  <% else %>
+                    <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content) %>
+                  <% end %>
+                  <%= link_to current_user.nickname, user_path(@content), class: "user-name my-auto" %>
+                  <%= f.label :text, "コメント", class: "label-font" %>
+                  <%= f.text_field :text, class: "form-control" %>
+                  <%= f.submit class: "form-control" %>
+                </div>
+              <% end %>
+            <% end %>
+
+            </div>
           </div>
         </div>
       </div>
