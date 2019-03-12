@@ -2,6 +2,7 @@ class Content < ApplicationRecord
   belongs_to :user
   has_many :workouts
   has_many :meals
+  has_many :comments
 
   accepts_nested_attributes_for :workouts, allow_destroy: true
   accepts_nested_attributes_for :meals, allow_destroy: true
