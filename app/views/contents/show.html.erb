@@ -56,19 +56,10 @@
               </div>
               <%= render @content.meals %>
             </div>
-
+            <div class="my-border"></div>
             <% if @comments %>
-              <div class="col-12">
-                <% @comments.each do |comment| %>
-                  <%= link_to comment.user.nickname, user_path(comment.user), class: "user-name" %>
-                  <%= comment.text %>
-                  <% if comment.user.id == current_user.id %>
-                    <%= link_to "削除", content_comment_path(@content,comment), method: :delete %>
-                  <% end %>
-                <% end %>
-              </div>
+              <%= render @comments %>
             <% end %>
-
             <% if current_user %>
               <div class="col-12">
                 <%= form_for [@content, @comment] do |f| %>

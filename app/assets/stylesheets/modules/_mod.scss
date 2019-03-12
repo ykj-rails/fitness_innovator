@@ -72,9 +72,12 @@ footer{
   height: auto;
 }
 
-// コメント投稿フォーム
-.form-round{
-  width: 100%
+// 境界線
+.my-border{
+  border-top: 1px solid #efefef;
+  margin-top: 10px;
+  margin: 15px auto;
+  width: 95%;
 }
 
 // devise画面下リンクボタン
