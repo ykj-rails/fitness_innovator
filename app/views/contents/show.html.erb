@@ -56,6 +56,18 @@
               </div>
               <%= render @content.meals %>
             </div>
+
+            <div class="col-12 col-sm-6">
+              <%= form_for [@content, @comment] do |f| %>
+              <div class="form-group">
+                <%= f.label :text, "コメント", class: "label-font" %>
+                <%= f.text_field :text, class: "form-control" %>
+                <%= f.submit class: "form-control" %>
+
+              </div>
+              <% end %>
+            </div>
+
           </div>
         </div>
       </div>
