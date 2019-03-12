@@ -55,7 +55,6 @@ footer{
   height: 30px;
   border-radius: 50%;
   border: 1px solid #C1BFC0;
-  margin: 12px 15px;
 }
 
 // ユーザーアイコン画像プレビュー
@@ -71,6 +70,11 @@ footer{
 #before-preview, #after-preview{
   width: 100%;
   height: auto;
+}
+
+// コメント投稿フォーム
+.form-round{
+  width: 100%
 }
 
 // devise画面下リンクボタン

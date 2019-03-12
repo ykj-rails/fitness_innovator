@@ -8,7 +8,7 @@
           <% else %>
             <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content) %>
           <% end %>
-          <%= link_to @content.user.nickname, user_path(@content), class: "user-name my-auto" %>
+          <%= link_to @content.user.nickname, user_path(@content), class: "user-name mx-2" %>
         </header>
         <div class="content-show-img">
           <%= image_tag(@content.befor_image, class: "show-preview") %>
@@ -58,7 +58,7 @@
             </div>
 
             <% if @comments %>
-              <div class="">
+              <div class="col-12">
                 <% @comments.each do |comment| %>
                   <%= link_to comment.user.nickname, user_path(comment.user), class: "user-name" %>
                   <%= comment.text %>
@@ -70,22 +70,21 @@
             <% end %>
 
             <% if current_user %>
-              <%= form_for [@content, @comment] do |f| %>
-                <div class="form-group">
-                  <% if current_user.avatar.attached? %>
-                    <%= link_to image_tag(current_user.avatar, class: "user-image-icon-sm"), user_path(@content) %>
-                  <% else %>
-                    <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content) %>
-                  <% end %>
-                  <%= link_to current_user.nickname, user_path(@content), class: "user-name my-auto" %>
-                  <%= f.label :text, "コメント", class: "label-font" %>
-                  <%= f.text_field :text, class: "form-control" %>
-                  <%= f.submit class: "form-control" %>
-                </div>
-              <% end %>
+              <div class="col-12">
+                <%= form_for [@content, @comment] do |f| %>
+                  <div class="form-comment">
+                    <% if current_user.avatar.attached? %>
+                      <%= image_tag(current_user.avatar, class: "user-image-icon-sm mr-2") %>
+                    <% else %>
+                      <%= image_tag("power-icon.jpg", class: "user-image-icon-sm mr-2") %>
+                    <% end %>
+                    <%= f.text_field :text, placeholder: "コメントを追加...", class: "form-control" do %>
+                      <%= f.submit %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
             <% end %>
-
-            </div>
           </div>
         </div>
       </div>

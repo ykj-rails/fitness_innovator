@@ -10,7 +10,6 @@
           </div>
         </div>
       </div>
-
       <div class="row justify-content-center">
         <div class="col-6 text-center">
           <% if @content.befor_image.attached? %>
@@ -25,7 +24,6 @@
                 accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
           <% end %>
         </div>
-
         <div class="col-6 text-center">
           <% if @content.after_image.attached? %>
             <%= image_tag(@content.after_image, id: "after-preview") %>
@@ -40,7 +38,6 @@
           <% end %>
         </div>
       </div>
-
       <div class="row">
         <div class="col-12 col-sm-6 my-2">
           <div class="form-group">
@@ -69,7 +66,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-12 col-sm-6 my-2">
           <div class="form-group">
@@ -87,7 +83,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-12 col-sm-6 my-2">
           <div class="form-group">
             <%= link_to_add_association f, :meals,
@@ -105,7 +100,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-12 col-sm-10 mx-auto">
           <div class="form-group">
