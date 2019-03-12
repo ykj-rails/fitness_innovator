@@ -69,7 +69,7 @@
                     <% else %>
                       <%= image_tag("power-icon.jpg", class: "user-image-icon-sm mr-2") %>
                     <% end %>
-                    <%= f.text_field :text, placeholder: "コメントを追加...", class: "form-control" do %>
+                    <%= f.text_field :text, autocomplete: "off", placeholder: "コメントを追加...", class: "form-control" do %>
                       <%= f.submit %>
                     <% end %>
                   </div>

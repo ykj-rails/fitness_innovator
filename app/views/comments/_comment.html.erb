@@ -4,10 +4,26 @@
   <% else %>
     <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(comment.user) %>
   <% end %>
-  <%= link_to comment.user.nickname, user_path(comment), class: "user-name ml-1" %>
+  <%= link_to comment.user.nickname, user_path(comment), class: "user-name mx-1" %>
   <span class="s-font"><%= comment.text %></span>
-  <% if comment.user.id == current_user.id %>
-    <i class="fas fa-ellipsis-h"></i>
-    <%= link_to "削除", content_comment_path(@content,comment), method: :delete %>
+  <% if comment.user.id == current_user.id || @content.user_id %>
+    <span class="float-right">
+      <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#myModal"></i>
+    </span>
   <% end %>
 </div>
+
+<!-- モーダルの設定 -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= link_to "コメントを削除", content_comment_path(@content,comment), method: :delete, class: "denger-link" %>
+      </div>
+      <div class="modal-body-b">
+        <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- モーダルの設定 -->
