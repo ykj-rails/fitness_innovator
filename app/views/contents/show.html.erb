@@ -56,6 +56,9 @@
               </div>
               <%= render @content.meals %>
             </div>
+            <div class="col-12">
+              <time><%= time_ago_in_words @content.created_at %>前</time>
+            </div>
             <div class="my-border"></div>
             <% if @comments %>
               <%= render @comments %>
