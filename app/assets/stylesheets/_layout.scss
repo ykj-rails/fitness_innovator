@@ -15,6 +15,13 @@ a:hover{
   text-decoration: none;
 }
 
+// フッター固定
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .main-content{
   margin-bottom: 20px;
 }
