@@ -57,10 +57,10 @@
               <%= render @content.meals %>
             </div>
             <div class="col-12">
-              <time><%= time_ago_in_words @content.created_at %>前</time>
+              <time><%= simple_time(@content[:created_at]) %></time>
             </div>
-            <div class="my-border"></div>
-            <% if @comments %>
+            <% if @comments.present? %>
+              <div class="my-border"></div>
               <%= render @comments %>
             <% end %>
             <% if current_user %>
