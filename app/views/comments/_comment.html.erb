@@ -7,10 +7,12 @@
   <%= link_to comment.user.nickname, user_path(comment), class: "user-name mx-1" %>
   <span class="s-font"><%= comment.text %></span><br />
   <time><%= time_ago_in_words comment.created_at %>前</time>
-  <% if comment.user.id == current_user.id || @content.user_id %>
-    <span class="float-right">
-      <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#myModal"></i>
-    </span>
+  <% if user_signed_in? %>
+    <% if comment.user.id == current_user.id || @content.user_id %>
+      <span class="float-right">
+        <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#myModal"></i>
+      </span>
+    <% end %>
   <% end %>
 </div>
 
