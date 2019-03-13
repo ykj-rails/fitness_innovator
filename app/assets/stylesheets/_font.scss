@@ -10,16 +10,24 @@ time{
   color: #999;
 }
 
-.fw{
-  font-weight: 600;
-}
-
 .pointer{
   cursor: pointer;
 }
 
+.fw{
+  font-weight: 600;
+}
+
 .my-black{
   color: #4b4b4b;
+}
+
+.work-font{
+  color: #0070BF;
+}
+
+.meal-font{
+  color: #29A745;
 }
 
 .user-name, a.user-name{
@@ -64,14 +72,6 @@ time{
   border-radius: 5px;
   padding: 5px 8px;
   cursor: pointer;
-}
-
-.work-font{
-  color: #0070BF;
-}
-
-.meal-font{
-  color: #29A745;
 }
 
 .title-border{
