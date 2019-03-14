@@ -127,6 +127,12 @@ time{
   padding: 2px 4px;
 }
 
-.field_with_errors .form-control {
+.field_with_errors .form-control{
   border: 2px solid #ed4956;
+}
+
+// フォームバリデーション
+input:focus:invalid{
+  font-size: 14px;
+  color: #ed4956;
 }
