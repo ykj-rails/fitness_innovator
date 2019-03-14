@@ -126,3 +126,7 @@ time{
   border-radius: 4px;
   padding: 2px 4px;
 }
+
+.field_with_errors .form-control {
+  border: 2px solid #ed4956;
+}

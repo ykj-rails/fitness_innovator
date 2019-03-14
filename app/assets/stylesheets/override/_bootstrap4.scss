@@ -9,6 +9,27 @@
   padding: 0;
 }
 
+// フラッシュメッセージサイズ変更
+.alert{
+  font-size: 14px;
+  padding: 0.5rem 1.25rem;
+}
+
+// アラートスタイル新定義
+.alert-custom{
+  color: #FFF;
+  background-color: #0070BF;
+  border-color: #0070BF;
+  opacity: 0.9;
+}
+
+// 警告アラートカスタム
+.alert-mydanger {
+  color: #ed4956;
+  text-align: center;
+  font-weight: 600;
+}
+
 // 入力フォームのmargin
 .form-group{
   margin: 12px auto;
@@ -47,7 +68,7 @@
 }
 
 // カラー上書き
-.btn-primary {
+.btn-primary, .btn-primary:hover{
   background-color: #0070BF;
   border-color: #0070BF;
 }

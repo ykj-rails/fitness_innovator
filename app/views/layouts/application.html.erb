@@ -14,54 +14,46 @@
   </head>
 
   <body>
-     <div id="wrapper">
-    <header class="site-header sticky-top">
-      <div class="header-nav">
-        <div class="header-content">
-          <%= link_to image_tag("fitness_innovator_logo.png"), root_path, class: "header-logo mx-2"%>
-            <% if user_signed_in? %>
-              <% if current_user.avatar.attached? %>
-                <%= link_to image_tag(current_user.avatar, class: "user-image-icon mx-2"), user_path(current_user) %>
+    <div id="wrapper">
+      <header class="site-header sticky-top">
+        <div class="header-nav">
+          <div class="header-content">
+            <%= link_to image_tag("fitness_innovator_logo.png"), root_path, class: "header-logo mx-2"%>
+              <% if user_signed_in? %>
+                <% if current_user.avatar.attached? %>
+                  <%= link_to image_tag(current_user.avatar, class: "user-image-icon mx-2"), user_path(current_user) %>
+                <% else %>
+                  <%= link_to image_tag("power-icon.jpg", class: "user-image-icon mx-2"), user_path(current_user) %>
+                <% end %>
+                <%= link_to new_content_path, class: "mx-2" do %>
+                  <i class="fas fa-dumbbell fa-lg my-black"></i>
+                <% end %>
               <% else %>
-                <%= link_to image_tag("power-icon.jpg", class: "user-image-icon mx-2"), user_path(current_user) %>
-              <% end %>
-              <%= link_to new_content_path, class: "mx-2" do %>
-                <i class="fas fa-dumbbell fa-lg my-black"></i>
-              <% end %>
-            <% else %>
                 <%= link_to new_user_session_path do %>
                 <span class="faa-parent animated-hover">
                   <i class="fas fa-user-plus fa-lg faa-bounce"></i>
                 </span>
                 <% end %>
-            <% end %>
-          </div>
-      </div>
-    </header>
-    <div class=main-content>
-      <% if notice %>
-          <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert">
-              <span aria-hidden="true">&times;</span>
-              <span class="sr-only">close</span>
-            </button>
+              <% end %>
+            </div>
+        </div>
+      </header>
+      <div class=main-content>
+        <% if notice %>
+          <div class="alert alert-custom" role="alert">
             <%= notice %>
           </div>
-      <% end %>
-      <% if alert %>
-      <div class="alert alert-danger alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert">
-          <span aria-hidden="true">&times;</span>
-          <span class="sr-only">close</span>
-        </button>
-        <%= alert %>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-mydanger" role="alert">
+            <%= alert %>
+          </div>
+        <% end %>
+        <%= yield %>
       </div>
-      <% end %>
-      <%= yield %>
-    </div>
-    <footer>
-      <span>© 2019 FITNESS INNOVATOR</span>
-    </footer>
+      <footer>
+        <span>© 2019 FITNESS INNOVATOR</span>
+      </footer>
     </div>
   </body>
 </html>

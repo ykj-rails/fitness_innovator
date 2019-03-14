@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col-10 col-sm-6 mx-auto text-center">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
           <form>
             <div class="form-group mb-3">
               <%= f.label :email, class: "form-font" do %>
