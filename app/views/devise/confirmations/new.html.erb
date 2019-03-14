@@ -9,7 +9,7 @@
             <%= f.label :email, class: "form-font" do %>
               <i class="far fa-envelope"></i> 登録認証メールの再送信
             <% end %>
-            <%= f.email_field :email, placeholder: "メールアドレスを入力",autofocus: true, autocomplete: "email",
+            <%= f.email_field :email, required: true, placeholder: "メールアドレスを入力",autofocus: true, autocomplete: "email",
              value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control" %>
           </div>
           <div class="form-group border-bottom">

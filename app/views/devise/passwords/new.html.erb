@@ -9,7 +9,7 @@
             <%= f.label :email, class: "form-font" do %>
               <i class="far fa-envelope"></i> パスワード再設定メールの送信
             <% end %>
-            <%= f.email_field :email, placeholder: "メールアドレスを入力", autofocus: true,
+            <%= f.email_field :email, required: true, placeholder: "メールアドレスを入力", autofocus: true,
                 autocomplete: "email", class: "form-control" %>
           </div>
           <div class="form-group border-bottom">

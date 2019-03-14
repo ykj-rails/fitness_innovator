@@ -9,25 +9,28 @@
             <%= f.label :nickname, class: "form-font" do %>
               <i class="far fa-user"></i> アカウント名
             <% end %>
-            <%= f.text_field :nickname, placeholder: "10文字以内で入力", autofocus: true, autocomplete: "name", class: "form-control" %>
+            <%= f.text_field :nickname, required: true, maxlength: "10",
+                placeholder: "10文字以内で入力", autofocus: true, class: "form-control" %>
           </div>
           <div class="form-group mb-3">
             <%= f.label :email, class: "form-font" do %>
               <i class="far fa-envelope"></i> メールアドレス
             <% end %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            <%= f.email_field :email, required: true, autocomplete: "email", class: "form-control" %>
           </div>
           <div class="form-group mb-3">
             <%= f.label :password, class: "form-font" do %>
               <i class="fas fa-key"></i> パスワード
             <% end %>
-            <%= f.password_field :password, placeholder: "#{@minimum_password_length}文字以上で入力", autocomplete: "new-password", class: "form-control" %>
+            <%= f.password_field :password, required: true, minlength: "6", autocomplete: "new-password",
+                placeholder: "#{@minimum_password_length}文字以上で入力", class: "form-control" %>
           </div>
           <div class="form-group">
             <%= f.label :password_confirmation, class: "form-font" do %>
               <i class="fas fa-key"></i> パスワード確認
             <% end %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            <%= f.password_field :password_confirmation, required: true,
+                minlength: "6", class: "form-control" %>
           </div>
           <div class="form-group border-bottom">
             <%= f.submit "新規登録する", class: "btn btn-primary btn-block my-4" %>

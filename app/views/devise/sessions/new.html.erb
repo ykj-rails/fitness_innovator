@@ -9,13 +9,13 @@
               <%= f.label :email, class: "form-font" do %>
                 <i class="far fa-envelope"></i> メールアドレス
               <% end %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              <%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", class: "form-control" %>
             </div>
             <div class="form-group">
               <%= f.label :password, class: "form-font" do %>
                 <i class="fas fa-key"></i> パスワード
               <% end %>
-              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+              <%= f.password_field :password, equired: true, autocomplete: "current-password", class: "form-control" %>
             </div>
             <div class="form-group form-check mt-4">
               <% if devise_mapping.rememberable? -%>
