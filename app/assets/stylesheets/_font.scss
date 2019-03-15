@@ -36,6 +36,11 @@ time{
   font-size: 12px;
 }
 
+.modal-font, a.modal-font:hover{
+  color: #262626;
+  font-size: 14px;
+}
+
 .label-font, a.label-font:hover{
   color: #262626;
   font-weight: 600;
@@ -50,11 +55,6 @@ time{
   border-radius: 5px;
   padding: 5px 25px;
   cursor: pointer;
-}
-
-.form-font{
-  color: #4F4F4F;
-  font-weight: 600;
 }
 
 .link-font, a.link-font{
@@ -125,6 +125,11 @@ time{
   border: 2px solid;
   border-radius: 4px;
   padding: 2px 4px;
+}
+
+.form-font{
+  color: #4F4F4F;
+  font-weight: 600;
 }
 
 .field_with_errors .form-control{
