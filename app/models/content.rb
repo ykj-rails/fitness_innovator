@@ -1,8 +1,8 @@
 class Content < ApplicationRecord
   belongs_to :user
-  has_many :workouts
-  has_many :meals
-  has_many :comments
+  has_many :workouts, dependent: :destroy
+  has_many :meals, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   accepts_nested_attributes_for :workouts, allow_destroy: true
   accepts_nested_attributes_for :meals, allow_destroy: true
