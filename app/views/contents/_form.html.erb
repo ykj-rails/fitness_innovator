@@ -5,7 +5,7 @@
         <div class="col-12 col-sm-10 mx-auto mb-2">
           <div class="form-group">
             <%= f.label :title, "タイトル", class: "label-font" %>
-            <%= f.text_field :title, class: "form-control" %>
+            <%= f.text_field :title, required: true, class: "form-control" %>
             <small class="text-muted">例: 増量期 / 夏に向けて減量</small>
           </div>
         </div>
@@ -33,7 +33,7 @@
           <%= f.label :after_image, class: "link-border mt-3", id: "after-sample" do %>
             <span>afterの写真を<br />アップロード</span>
             <i class="fas fa-camera-retro fa-lg"></i>
-            <%= f.file_field :after_image,
+            <%= f.file_field :after_image, required: true,
                 accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
           <% end %>
         </div>
@@ -44,16 +44,16 @@
             <%= f.label :period, class: "label-font" do %>
               期間 <i class="far fa-calendar-alt fa-lg"></i>
             <% end %>
-            <%= f.text_field :period, class: "form-control" %>
+            <%= f.text_field :period, required: true, class: "form-control" %>
             <small class="text-muted">例: 3ヶ月 / 10週間</small>
           </div>
         </div>
         <div class="col-6 col-sm-3 my-2">
           <div class="form-group">
-            <%= f.label :before_body_weight , class: "label-font" do %>
+            <%= f.label :before_body_weight, class: "label-font" do %>
               体重 <i class="fas fa-weight"></i> (before)
             <% end %>
-            <%= f.number_field :before_body_weight, class: "form-control" %>
+            <%= f.number_field :before_body_weight, required: true, class: "form-control" %>
             <small class="text-muted">※数字のみで入力 単位/kg</small>
           </div>
         </div>
@@ -62,7 +62,7 @@
             <%= f.label :after_body_weight, class: "label-font" do %>
               体重 <i class="fas fa-weight"></i> (after)
             <% end %>
-            <%= f.number_field :after_body_weight, class: "form-control" %>
+            <%= f.number_field :after_body_weight, required: true, class: "form-control" %>
           </div>
         </div>
       </div>

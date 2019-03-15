@@ -15,7 +15,7 @@
               <%= f.label :password, class: "form-font" do %>
                 <i class="fas fa-key"></i> パスワード
               <% end %>
-              <%= f.password_field :password, equired: true, autocomplete: "current-password", class: "form-control" %>
+              <%= f.password_field :password, required: true, autocomplete: "current-password", class: "form-control" %>
             </div>
             <div class="form-group form-check mt-4">
               <% if devise_mapping.rememberable? -%>
