@@ -1,0 +1,14 @@
+<div class="col-12">
+  <%= form_for [@content, @comment], html: {name: "new_comment", onsubmit: "return check()"} do |f| %>
+    <div class="form-comment">
+      <% if current_user.avatar.attached? %>
+        <%= image_tag(current_user.avatar, class: "user-image-icon-sm mr-2") %>
+      <% else %>
+        <%= image_tag("power-icon.jpg", class: "user-image-icon-sm mr-2") %>
+      <% end %>
+      <%= f.text_field :text, autocomplete: "off", placeholder: "コメントを追加...", class: "form-control" do %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
 <div class="col-12 my-1">
   <% if comment.user.avatar.attached? %>
-    <%= link_to image_tag(@content.user.avatar, class: "user-image-icon-sm"), user_path(comment.user) %>
+    <%= link_to image_tag(comment.user.avatar, class: "user-image-icon-sm"), user_path(comment.user) %>
   <% else %>
     <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(comment.user) %>
   <% end %>
@@ -8,20 +8,19 @@
   <span class="s-font"><%= comment.text %></span><br />
   <time><%= time_ago_in_words comment.created_at %>前</time>
   <% if user_signed_in? %>
-    <% if comment.user.id == current_user.id || @content.user_id %>
+    <% if comment.user.id == current_user.id || content.user_id %>
       <span class="float-right">
         <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#myModal"></i>
       </span>
     <% end %>
   <% end %>
 </div>
-
 <!-- モーダルの設定 -->
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <%= link_to "コメントを削除", content_comment_path(@content,comment), method: :delete, class: "denger-link" %>
+        <%= link_to "コメントを削除", content_comment_path(comment.content,comment), method: :delete, class: "denger-link" %>
       </div>
       <div class="modal-body-b">
         <span class="s-font pointer" data-dismiss="modal">キャンセル</span>

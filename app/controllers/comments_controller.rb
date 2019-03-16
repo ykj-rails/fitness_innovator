@@ -4,12 +4,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    redirect_to @comment.content
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
     @comment.destroy if @comment.user_id == current_user.id
-    redirect_to @comment.content
+    redirect_back(fallback_location: root_path)
   end
 
   private

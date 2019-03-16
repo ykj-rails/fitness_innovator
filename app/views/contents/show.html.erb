@@ -1,26 +1,8 @@
-<div class="container-fluid mt-4">
+<div class="container-fluid mt-6">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-10">
       <div class="content-show-main">
-        <header class="header-user">
-          <div>
-          <% if @content.user.avatar.attached? %>
-            <%= link_to image_tag(@content.user.avatar, class: "user-image-icon-sm"), user_path(@content) %>
-          <% else %>
-            <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content) %>
-          <% end %>
-          <%= link_to @content.user.nickname, user_path(@content), class: "user-name mx-2" %>
-          </div>
-          <% if @content.user.id == current_user.id %>
-            <div>
-              <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#link-Modal"></i>
-            </div>
-         <% end %>
-        </header>
-        <div class="content-show-img">
-          <%= image_tag(@content.befor_image, class: "show-preview") %>
-          <%= image_tag(@content.after_image, class: "show-preview") %>
-        </div>
+        <%= render "content_top" %>
         <div class="content-show">
           <div class="row content-border">
             <div class="col-12 col-sm-6">
@@ -71,20 +53,7 @@
               <%= render @comments %>
             <% end %>
             <% if current_user %>
-              <div class="col-12">
-                <%= form_for [@content, @comment], html: {name: "new_comment", onsubmit: "return check()"} do |f| %>
-                  <div class="form-comment">
-                    <% if current_user.avatar.attached? %>
-                      <%= image_tag(current_user.avatar, class: "user-image-icon-sm mr-2") %>
-                    <% else %>
-                      <%= image_tag("power-icon.jpg", class: "user-image-icon-sm mr-2") %>
-                    <% end %>
-                    <%= f.text_field :text, autocomplete: "off", placeholder: "コメントを追加...", class: "form-control" do %>
-                      <%= f.submit %>
-                    <% end %>
-                  </div>
-                <% end %>
-              </div>
+              <%= render "comments/comment_form" %>
             <% end %>
           </div>
         </div>
@@ -92,20 +61,4 @@
     </div>
   </div>
 </div>
-<!-- モーダルの設定 -->
-<div class="modal" id="link-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <%= link_to "編集する", edit_content_path(@content), class: "modal-font" %>
-      </div>
-      <div class="modal-body">
-        <%= link_to "削除する", content_path(@content), method: :delete, class: "denger-link" %>
-      </div>
-      <div class="modal-body-b">
-        <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- モーダルの設定 -->
+

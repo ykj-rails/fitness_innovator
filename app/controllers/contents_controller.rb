@@ -3,7 +3,8 @@ class ContentsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @contents = Content.all
+    @contents = Content.all.includes(:user)
+    @comment = Comment.new
   end
 
   def show

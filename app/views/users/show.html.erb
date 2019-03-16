@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-6">
   <div class="row">
     <div class="col-12">
       <div class="user-show">
@@ -26,20 +26,20 @@
       <div class="user-profile">
         <%= simple_format @user.profile %>
       </div>
-      <!-- モーダルの設定 -->
-      <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "denger-link" %>
-            </div>
-            <div class="modal-body-b">
-              <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- モーダルの設定 -->
     </div>
   </div>
 </div>
+<!-- モーダルの設定 -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "denger-link" %>
+      </div>
+      <div class="modal-body-b">
+        <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- モーダルの設定 -->

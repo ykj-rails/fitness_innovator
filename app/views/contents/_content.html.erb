@@ -1,0 +1,33 @@
+<div class="container-fluid mt-6">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10">
+      <div class="content-show-main">
+        <header class="header-user">
+          <div>
+            <% if content.user.avatar.attached? %>
+              <%= link_to image_tag(content.user.avatar, class: "user-image-icon-sm"), user_path(content) %>
+            <% else %>
+              <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(content) %>
+            <% end %>
+            <%= link_to content.user.nickname, user_path(content), class: "user-name mx-2" %>
+          </div>
+        </header>
+        <div class="content-show-img">
+          <%= image_tag(content.befor_image, class: "show-preview") %>
+          <%= image_tag(content.after_image, class: "show-preview") %>
+        </div>
+        <div class="col-12">
+          <i class="fas fa-angle-double-right fa-2x faa-horizontal animated work-link-font"></i>
+          <%= link_to "ワークアウトと食事内容を見る", content_path(content), class: "work-link-font" %>
+        </div>
+        <div class="col-12 my-2">
+          <time><%= simple_time(content[:created_at]) %></time>
+        </div>
+        <% if content.comments.present? %>
+          <div class="my-border"></div>
+          <%= render content.comments %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
