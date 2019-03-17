@@ -1,6 +1,6 @@
 <div class="container mt-6">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 px-2">
       <div class="user-show">
         <div class="user-image-show">
           <% if @user.avatar.attached? %>
@@ -17,9 +17,7 @@
             <% end %>
           </div>
           <% if current_user.id == @user.id %>
-            <div class="">
-              <%= link_to 'プロフィールを編集', edit_user_path(@user), class: "label-border" %>
-            </div>
+            <%= link_to 'プロフィールを編集', edit_user_path(@user), class: "label-border" %>
           <% end %>
         </div>
       </div>
@@ -27,6 +25,11 @@
         <%= simple_format @user.profile %>
       </div>
     </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+      <%= render partial: "user_image", collection: @contents %>
   </div>
 </div>
 <!-- モーダルの設定 -->
