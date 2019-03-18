@@ -1,14 +1,14 @@
-<div class="col-12 my-1">
+<div class="col-12 my-2">
   <% if comment.user.avatar.attached? %>
-    <%= link_to image_tag(comment.user.avatar, class: "user-image-icon-sm"), user_path(comment.user) %>
+    <%= link_to image_tag(comment.user.avatar, class: "user-image-icon-sm"), user_path(comment.user_id) %>
   <% else %>
-    <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(comment.user) %>
+    <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(comment.user_id) %>
   <% end %>
-  <%= link_to comment.user.nickname, user_path(comment), class: "user-name mx-1" %>
+  <%= link_to comment.user.nickname, user_path(comment.user_id), class: "user-name mx-1" %>
   <span class="s-font"><%= comment.text %></span><br />
   <time><%= time_ago_in_words comment.created_at %>前</time>
   <% if user_signed_in? %>
-    <% if comment.user.id == current_user.id || content.user_id %>
+    <% if comment.user_id == current_user.id || content.user_id %>
       <span class="float-right">
         <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#myModal"></i>
       </span>

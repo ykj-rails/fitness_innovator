@@ -45,7 +45,7 @@
               </div>
               <%= render @content.meals %>
             </div>
-            <div class="col-12 mb-2">
+            <div class="col-12 my-3">
               <time><%= simple_time(@content[:created_at]) %></time>
             </div>
             <% if @comments.present? %>
@@ -53,7 +53,7 @@
               <%= render @comments %>
             <% end %>
             <% if current_user %>
-              <%= render "comments/comment_form" %>
+              <%= render "comments/comment_form", content: @content %>
             <% end %>
           </div>
         </div>

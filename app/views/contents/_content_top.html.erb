@@ -1,13 +1,13 @@
 <header class="header-user">
   <div>
     <% if @content.user.avatar.attached? %>
-      <%= link_to image_tag(@content.user.avatar, class: "user-image-icon-sm"), user_path(@content) %>
+      <%= link_to image_tag(@content.user.avatar, class: "user-image-icon-sm"), user_path(@content.user_id) %>
     <% else %>
-      <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content) %>
+      <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content.user_id) %>
     <% end %>
-    <%= link_to @content.user.nickname, user_path(@content), class: "user-name mx-2" %>
+    <%= link_to @content.user.nickname, user_path(@content.user_id), class: "user-name mx-2" %>
   </div>
-  <% if @content.user.id == current_user.id %>
+  <% if user_signed_in? && @content.user_id == current_user.id %>
     <div>
       <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#link-Modal"></i>
     </div>

@@ -12,13 +12,13 @@
         <div class="user-show-right">
           <div class="user-name-show">
             <%= @user.nickname %>
-            <% if current_user.id == @user.id %>
+            <% if user_signed_in? && current_user.id == @user.id %>
               <i class="fas fa-cog pb-1 pointer" data-toggle="modal" data-target="#myModal"></i>
             <% end %>
           </div>
-          <% if current_user.id == @user.id %>
-            <%= link_to 'プロフィールを編集', edit_user_path(@user), class: "label-border" %>
-          <% end %>
+            <% if user_signed_in? && current_user.id == @user.id %>
+              <%= link_to 'プロフィールを編集', edit_user_path(@user), class: "label-border" %>
+            <% end %>
         </div>
       </div>
       <div class="user-profile">
@@ -27,6 +27,7 @@
     </div>
   </div>
 </div>
+
 <div class="container-fluid">
   <div class="row x">
       <%= render partial: "user_image", collection: @contents %>
