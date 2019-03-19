@@ -38,6 +38,9 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
+        <%= link_to "パスワードを変更", edit_user_password_path(@user), class: "label-font"%>
+      </div>
+      <div class="modal-body">
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "denger-link" %>
       </div>
       <div class="modal-body-b">
