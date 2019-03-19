@@ -22,6 +22,10 @@
         </div>
       </div>
       <div class="user-profile">
+        <div class="profile-nav">
+          <% if @user.height %><span class="label-font"><%= @user.height %>cm</span><% end %>
+          <% if @user.weight %><span class="label-font"><%= @user.weight %>kg</span><% end %>
+        </div>
         <%= simple_format @user.profile %>
       </div>
     </div>

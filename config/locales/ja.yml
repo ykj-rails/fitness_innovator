@@ -3,8 +3,10 @@ ja:
     attributes:
       user:
         nickname: アカウント名
+        height: 身長
+        weight: 体重
         password: パスワード
         current_password: 現在のパスワード
         password_confirmation: パスワード確認
         email: メールアドレス
-        remember_me: "パスワードを記憶する"
+        remember_me: パスワードを記憶する

@@ -3,58 +3,69 @@
     <div class="col-12">
       <div class="user-edit">
         <div class="user-image-show">
-            <%= form_for @user do |f| %>
-              <h4 class="p-2">プロフィールを編集</h4>
-                <% if @user.avatar.attached? %>
-                  <%= image_tag(@user.avatar, class: "pointer", id: "user-image", data: {toggle: "modal", target: "#myModal"} ) %>
-                <% else %>
-                  <%= image_tag("power-icon.jpg", class: "pointer", id: "user-image", data: {toggle: "modal", target: "#myModal"} ) %>
-                <% end %>
-                <div class="link-font mt-2" data-toggle="modal" data-target="#myModal">
-                  プロフィール写真を変更
-                </div>
-
-              </div>
-                <div class="user-edit-right">
-                  <div class="form-group col-12 mb-4">
-                    <%= f.label :nickname, class: "label-font mb-2" %>
-                    <%= f.text_field :nickname, placeholder: "10文字以内で入力",
-                         maxlength: "10" ,autofocus: true, class: "form-control" %>
-                  </div>
-                  <div class="form-group col-12 mb-4">
-                    <%= f.label :自己紹介, class: "label-font mb-2" %>
-                    <%= f.text_area :profile, placeholder: "筋トレ歴◯◯年", rows: 5, autofocus: true, class: "form-control" %>
-                  </div>
-                  <div class="form-group col-12">
-                    <%= f.submit "送信する", class: "btn btn-primary btn-sm" %>
-                  </div>
-                </div>
-                <!-- モーダルの設定 -->
-                <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title mx-auto" id="exampleModalLabel">プロフィール写真を変更</h4>
-                      </div>
-                      <div class="modal-body">
-                        <%= f.label :avatar, class: "link-font", id: "file-user" do %>
-                          <span>写真をアップロード</span>
-                          <%= f.file_field :avatar, accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
-                        <% end %>
-                      </div>
-                      <% if @user.avatar.attached? %>
-                        <div class="modal-body">
-                          <%= link_to "現在の写真を削除", avatar_destroy_user_path(@user), method: :delete, class: "denger-link" %>
-                        </div>
-                      <% end %>
-                      <div class="modal-body-b">
-                        <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- モーダルの設定 -->
+          <%= form_for @user do |f| %>
+            <h4 class="p-2">プロフィールを編集</h4>
+            <% if @user.avatar.attached? %>
+              <%= image_tag(@user.avatar, class: "pointer", id: "user-image", data: {toggle: "modal", target: "#myModal"} ) %>
+            <% else %>
+              <%= image_tag("power-icon.jpg", class: "pointer", id: "user-image", data: {toggle: "modal", target: "#myModal"} ) %>
             <% end %>
+            <div class="link-font mt-2" data-toggle="modal" data-target="#myModal">
+              プロフィール写真を変更
+            </div>
+        </div>
+        <div class="user-edit-right">
+          <div class="row">
+            <div class="form-group col-12">
+              <%= f.label :nickname, class: "label-font mb-2" %>
+              <%= f.text_field :nickname, placeholder: "10文字以内で入力",
+                  maxlength: "10" ,autofocus: true, class: "form-control" %>
+            </div>
+            <div class="col-4">
+              <%= f.label :height, class: "label-font mb-2" %>
+              <small class="xs-font">cm</small>
+              <%= f.number_field :height, min: 1, max: 272, class: "form-control" %>
+            </div>
+            <div class="col-4">
+              <%= f.label :weight, class: "label-font mb-2" %>
+              <small class="xs-font">kg</small>
+              <%= f.number_field :weight, min: 1, max: 635, class: "form-control" %>
+            </div>
+            <div class="form-group col-12 mb-4">
+              <%= f.label :自己紹介, class: "label-font mb-2" %>
+              <%= f.text_area :profile, placeholder: "筋トレ歴◯◯年", rows: 5, class: "form-control" %>
+            </div>
+            <div class="form-group col-12">
+              <%= f.submit "送信する", class: "btn btn-primary btn-sm" %>
+            </div>
+          </div>
+        </div>
+        <!-- モーダルの設定 -->
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title mx-auto" id="exampleModalLabel">プロフィール写真を変更</h4>
+              </div>
+              <div class="modal-body">
+                <%= f.label :avatar, class: "link-font", id: "file-user" do %>
+                  <span>写真をアップロード</span>
+                  <%= f.file_field :avatar, accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
+                <% end %>
+              </div>
+              <% if @user.avatar.attached? %>
+                <div class="modal-body">
+                  <%= link_to "現在の写真を削除", avatar_destroy_user_path(@user), method: :delete, class: "denger-link" %>
+                </div>
+              <% end %>
+              <div class="modal-body-b">
+                <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- モーダルの設定 -->
+      <% end %>
       </div>
     </div>
   </div>

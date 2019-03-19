@@ -12,4 +12,6 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :nickname, presence: true, length: { maximum: 10 }
   validates :profile, length: { maximum: 150 }
+  validates :height, :weight, length: { maximum: 3 }
+
 end

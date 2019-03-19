@@ -1,4 +1,4 @@
-<div class="col-12 my-2">
+<div class="col-12 my-1">
   <% if comment.user.avatar.attached? %>
     <%= link_to image_tag(comment.user.avatar, class: "user-image-icon-sm"), user_path(comment.user_id) %>
   <% else %>

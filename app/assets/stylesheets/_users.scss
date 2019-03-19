@@ -6,6 +6,7 @@
   height: auto;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .user-image-show{
@@ -23,10 +24,15 @@
   margin: 30px 0 15px;
 }
 
+.profile-nav{
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
 .user-profile{
   max-width: 500px;
   height: auto;
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 0 7px;
   p{
     font-size: 15px;
