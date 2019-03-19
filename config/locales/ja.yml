@@ -4,6 +4,7 @@ ja:
       user:
         nickname: アカウント名
         password: パスワード
+        current_password: 現在のパスワード
         password_confirmation: パスワード確認
         email: メールアドレス
         remember_me: "パスワードを記憶する"

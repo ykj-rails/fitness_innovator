@@ -27,7 +27,6 @@
     </div>
   </div>
 </div>
-
 <div class="container-fluid">
   <div class="row x">
       <%= render partial: "user_image", collection: @contents %>
@@ -38,7 +37,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <%= link_to "パスワードを変更", edit_user_password_path(@user), class: "label-font"%>
+        <%= link_to "登録情報の変更", edit_user_registration_path, class: "modal-font"%>
       </div>
       <div class="modal-body">
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "denger-link" %>
