@@ -47,7 +47,15 @@
             </div>
             <% if @comments.present? %>
               <div class="my-border"></div>
-              <%= render @comments %>
+              <% if @comments.count <= 4 %>
+                <%= render @comments %>
+              <% else %>
+              <details>
+                <summary><span>コメント<%= @comments.count %>件を全て表示</span></summary>
+                <%= render get_remaining_comments(@comments) %>
+              </details>
+              <%= render get_4_comments(@comments) %>
+              <% end %>
             <% end %>
             <div class="col-12">
               <time><%= simple_time(@content[:created_at]) %></time>
