@@ -12,13 +12,10 @@
 //
 //= require rails-ujs
 //= require activestorage
-
 //= require jquery
 //= require jquery3
 //= require cocoon
 //= require_tree .
-
 //= require jquery_ujs
-
 //= require popper
 //= require bootstrap-sprockets

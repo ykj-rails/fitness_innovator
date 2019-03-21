@@ -3,18 +3,15 @@
   min-width: 320px;
   max-width: 760px;
 }
-
 // コンテナ左右のpadding打ち消し
 .container-fluid{
   padding: 0;
 }
-
 // フラッシュメッセージサイズ変更
 .alert{
   font-size: 14px;
   padding: 0.5rem 1.25rem;
 }
-
 // アラートスタイル新定義
 .alert-custom{
   color: #FFF;
@@ -22,25 +19,21 @@
   border-color: #0070BF;
   opacity: 0.9;
 }
-
 // 警告アラートカスタム
 .alert-mydanger {
   color: #ed4956;
   text-align: center;
   font-weight: 600;
 }
-
 // 入力フォームのmargin
 .form-group{
   margin: 12px auto;
 }
-
 // モーダル設定
 .modal.fade .modal-dialog.modal-dialog-centered{
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-
 .modal-content{
   width: 80%;
   margin: 0 auto;
@@ -48,12 +41,10 @@
   border: 0px;
   border-radius: 12px;
 }
-
 .modal-header{
   padding: 25px;
   border-bottom: 1px solid #efefef;
 }
-
 .modal-body{
   padding: 11px;
   border-bottom: 1px solid #efefef;
@@ -62,18 +53,31 @@
 .modal-body label{
   margin-bottom: 0;
 }
-
 .modal-body-b{
   padding: 11px;
 }
-
 // カラー上書き
 .btn-primary, .btn-primary:hover{
   background-color: #0070BF;
   border-color: #0070BF;
 }
-
 // マージン設定
 .mt-6{
   margin-top: 60px;
+}
+// ページネーション
+.nav-page{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.page-link{
+  color: #0070BF;
+}
+.page-item.active{
+  .page-link, a.page-link:hover{
+    color: #fff;
+    background-color: #0070BF;
+    border-color: #0070BF;
+  }
 }

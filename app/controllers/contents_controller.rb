@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @contents = Content.all.includes(:user, :comments)
+    @contents = Content.page(params[:page]).per(4).order('created_at DESC').includes(:user, :comments)
     @comment = Comment.new
   end
 

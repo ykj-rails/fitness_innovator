@@ -10,3 +10,10 @@ ja:
         password_confirmation: パスワード確認
         email: メールアドレス
         remember_me: パスワードを記憶する
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前へ"
+      next: "次へ &rsaquo;"
+      truncate: "..."
