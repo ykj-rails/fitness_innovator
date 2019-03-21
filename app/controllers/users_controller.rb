@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def show
-    @contents = @user.contents
+    @contents = @user.contents.page(params[:page]).per(9).order('created_at DESC')
   end
 
   def edit

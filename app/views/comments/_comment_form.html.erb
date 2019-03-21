@@ -1,5 +1,5 @@
 <div class="col-12">
-  <%= form_for [content, @comment], html: {name: "new_comment", onsubmit: "return check()"} do |f| %>
+  <%= form_for [content, @comment], html: {name: "new_comment", onsubmit: "return check()" } do |f| %>
     <div class="form-comment">
       <% if current_user.avatar.attached? %>
         <%= image_tag(current_user.avatar, class: "user-image-icon-sm mr-2") %>

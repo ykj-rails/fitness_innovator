@@ -45,13 +45,13 @@
               </div>
               <%= render @content.meals %>
             </div>
-            <div class="col-12 my-3">
-              <time><%= simple_time(@content[:created_at]) %></time>
-            </div>
             <% if @comments.present? %>
               <div class="my-border"></div>
               <%= render @comments %>
             <% end %>
+            <div class="col-12">
+              <time><%= simple_time(@content[:created_at]) %></time>
+            </div>
             <% if current_user %>
               <%= render "comments/comment_form", content: @content %>
             <% end %>

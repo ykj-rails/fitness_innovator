@@ -7,6 +7,25 @@ body{
   "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
+time{
+  font-size: 10px;
+  color: #999;
+}
+
+details{
+  margin-top: 8px;
+}
+summary{
+  color: transparent;
+}
+
+summary span{
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+  list-style: none;
+}
+
 ul{
   list-style-type: none;
 }
