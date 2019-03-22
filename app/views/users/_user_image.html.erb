@@ -1,5 +1,5 @@
 <div class="col-4">
-  <div class="user-show-img-box">
+  <%= link_to content_path(user_image.id), class: "user-show-img-box" do %>
     <%= image_tag(resize_m(user_image.after_image), class: "user-show-img-index") %>
-  </div>
+  <% end %>
 </div>
