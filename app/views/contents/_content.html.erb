@@ -13,10 +13,10 @@
             <% if content.user.height %><span class="user-name"><%= content.user.height %>cm</span><% end %>
           </div>
         </header>
-        <div class="content-show-img mb-2">
-          <%= image_tag(resize_l(content.befor_image), class: "show-preview") %>
-          <%= image_tag(resize_l(content.after_image), class: "show-preview") %>
-        </div>
+          <%= link_to content_path(content), class: "content-show-img mb-2" do %>
+            <%= image_tag(resize_l(content.befor_image), class: "show-preview") %>
+            <%= image_tag(resize_l(content.after_image), class: "show-preview") %>
+          <% end %>
         <div class="col-12 my-2">
           <i class="fas fa-angle-double-right fa-2x faa-horizontal animated work-link-font"></i>
           <%= link_to "ワークアウトと食事内容を見る", content_path(content), class: "work-link-font" %>

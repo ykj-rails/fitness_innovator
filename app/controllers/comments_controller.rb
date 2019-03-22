@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy if @comment.user_id == current_user.id
+    @comment.destroy if @comment.user_id == current_user.id || @comment.content.user.id == current_user.id
     redirect_back(fallback_location: root_path)
   end
 

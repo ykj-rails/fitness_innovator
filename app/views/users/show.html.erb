@@ -26,7 +26,11 @@
           <% if @user.height %><span class="label-font"><%= @user.height %>cm</span><% end %>
           <% if @user.weight %><span class="label-font"><%= @user.weight %>kg</span><% end %>
         </div>
-        <%= simple_format @user.profile %>
+        <% if @user.profile? %>
+          <%= simple_format @user.profile %>
+        <% else %>
+          <span class="s-font fw">プロフィールを編集しよう！</span>
+        <% end %>
       </div>
     </div>
   </div>
