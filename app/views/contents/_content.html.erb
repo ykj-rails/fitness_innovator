@@ -32,6 +32,8 @@
           <%= render partial: "comments/comment_index", collection: get_4_comments(content.comments), as: "comment" %>
           <% end %>
         <% end %>
+          <div id="index_comments_<%= content.id %>">
+          </div>
         <div class="col-12">
           <time><%= simple_time(content[:created_at]) %></time>
         </div>

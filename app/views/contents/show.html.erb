@@ -57,6 +57,8 @@
               <%= render get_4_comments(@comments) %>
               <% end %>
             <% end %>
+            <div id="comments_<%= @content.id %>">
+            </div>
             <div class="col-12">
               <time><%= simple_time(@content[:created_at]) %></time>
             </div>
