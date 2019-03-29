@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
-  before_action :set_content, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_content, only: [:show, :comments_show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show, :comments_show]
 
   def index
     @contents = Content.page(params[:page]).per(9).order('created_at DESC').includes(:user, :comments)
@@ -8,6 +8,11 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @content.comments.includes(:user)
+  end
+
+  def comments_show
     @comment = Comment.new
     @comments = @content.comments.includes(:user)
   end
