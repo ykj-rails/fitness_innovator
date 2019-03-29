@@ -24,8 +24,7 @@
             </div>
             <div class="col-12 my-3 user-profile">
               <%= link_to @content.user.nickname, user_path(@content), class: "user-name" %>
-              <span class="m-font"><%= @content.title %></span>
-              <div class="mt-1"><%= simple_format @content.comment %></div>
+              <div class="mb-2"><%= simple_format @content.comment %></div>
             </div>
           </div>
         </div>

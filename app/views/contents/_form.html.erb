@@ -1,15 +1,6 @@
 <div class="container mt-4">
   <%= form_for @content do |f| %>
     <form>
-      <div class="row">
-        <div class="col-12 col-sm-10 mx-auto mb-2">
-          <div class="form-group">
-            <%= f.label :title, "タイトル", class: "label-font" %>
-            <%= f.text_field :title, required: true, class: "form-control" %>
-            <small class="text-muted">例: 増量期 / 夏に向けて減量</small>
-          </div>
-        </div>
-      </div>
       <div class="row justify-content-center">
         <div class="col-6 text-center">
           <% if @content.befor_image.attached? %>
@@ -20,7 +11,7 @@
           <%= f.label :befor_image, class: "link-border mt-3", id: "before-sample" do %>
             <span>beforeの写真を<br />アップロード</span>
             <i class="fas fa-camera-retro fa-lg"></i>
-            <%= f.file_field :befor_image, required: true, style: "display:none" %>
+            <%= f.file_field :befor_image, style: "display:none" %>
           <% end %>
         </div>
         <div class="col-6 text-center">
@@ -32,7 +23,7 @@
           <%= f.label :after_image, class: "link-border mt-3", id: "after-sample" do %>
             <span>afterの写真を<br />アップロード</span>
             <i class="fas fa-camera-retro fa-lg"></i>
-            <%= f.file_field :after_image, required: true, style: "display:none" %>
+            <%= f.file_field :after_image, style: "display:none" %>
           <% end %>
         </div>
       </div>

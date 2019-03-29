@@ -10,6 +10,6 @@ class Content < ApplicationRecord
   has_one_attached :befor_image
   has_one_attached :after_image
 
-  validates :title, :befor_image, :after_image,
+  validates :befor_image, :after_image,
             :before_body_weight, :after_body_weight, :period, presence: true
 end
