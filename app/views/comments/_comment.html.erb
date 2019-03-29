@@ -10,7 +10,7 @@
   <% if user_signed_in? %>
     <% if comment.user_id == current_user.id || comment.content.user_id == current_user.id %>
       <span class="float-right">
-        <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#comment_id_<%= comment.id %>"></i>
+        <i class="fas fa-ellipsis-h" id="my-ellipsis" data-toggle="modal" data-target="#comment_id_<%= comment.id %>"></i>
       </span>
     <% end %>
   <% end %>

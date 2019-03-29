@@ -51,13 +51,16 @@
                 <%= render @comments %>
               <% else %>
               <details>
-                <summary><span>コメント<%= @comments.count %>件を全て表示</span></summary>
+                <summary><span id="comment_count_id_<%= @content.id %>">コメント<%= @comments.count %>件を全て表示</span></summary>
                 <%= render get_remaining_comments(@comments) %>
               </details>
               <%= render get_4_comments(@comments) %>
               <% end %>
             <% end %>
-            <div id="comments_<%= @content.id %>">
+            <div id="show_comments">
+            </div>
+            <div class="col-12">
+              <i class="fa fa-spinner fa-spin" id="form-spinner" aria-hidden="true"></i>
             </div>
             <div class="col-12">
               <time><%= simple_time(@content[:created_at]) %></time>

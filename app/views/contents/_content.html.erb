@@ -26,13 +26,16 @@
             <%= render partial: "comments/comment_index", collection: content.comments, as: "comment" %>
           <% else %>
           <details>
-            <summary><span>コメント<%= content.comments.count %>件を全て表示</span></summary>
+            <summary><span id="comment_count_id_<%= content.id %>">コメント<%= content.comments.count %>件を全て表示</span></summary>
             <%= render partial: "comments/comment_index", collection: get_remaining_comments(content.comments), as: "comment" %>
           </details>
           <%= render partial: "comments/comment_index", collection: get_4_comments(content.comments), as: "comment" %>
           <% end %>
         <% end %>
           <div id="index_comments_<%= content.id %>">
+          </div>
+          <div class="col-12">
+            <i class="fa fa-spinner fa-spin" id="form-spinner" aria-hidden="true"></i>
           </div>
         <div class="col-12">
           <time><%= simple_time(content[:created_at]) %></time>

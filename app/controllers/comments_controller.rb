@@ -3,6 +3,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
+    @content = @comment.content
+    @count = @content.comments.count
     respond_to do |format|
       format.html { redirect_back(fallback_location: root_path) }
       format.json
