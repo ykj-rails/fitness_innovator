@@ -7,13 +7,13 @@ $(function(){
     return html;
   }
   function buildShowHTML(comment,img,content_id){
-    var html = `<div class="col-12 my-1">
+    var html = `<div class="col-12 my-1" id="show_comment_id_${comment.id}">
                   <a href="/users/${comment.user_id}"><img class="user-image-icon-sm" src="${img}"></a>
                   <a class="user-name mx-1" href="/users/${comment.user_id}">${comment.user_name}</a>
                   <span class="s-font">${comment.text}</span><br>
                   <time>たった今</time>
                   <span class="float-right">
-                    <svg class="svg-inline--fa fa-ellipsis-h fa-w-16" id="my-ellipsis" data-toggle="modal" data-target="#comment_id_${comment.id}" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <i class="fas fa-ellipsis-h pointer" data-toggle="modal" data-target="#comment_id_349"></i> -->
+                    <svg class="svg-inline--fa fa-ellipsis-h fa-w-16" id="my-ellipsis" data-toggle="modal" data-target="#comment_id_${comment.id}" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg>
                   </span>
                 </div>
 
@@ -21,7 +21,7 @@ $(function(){
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-body">
-                        <a class="denger-link" rel="nofollow" data-method="delete" href="/contents/${content_id}/comments/${comment.id}">コメントを削除</a>
+                        <a class="denger-link delete_comment" rel="nofollow" data-method="delete" href="/contents/${content_id}/comments/${comment.id}">コメントを削除</a>
                       </div>
                       <div class="modal-body-b">
                         <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
@@ -39,7 +39,6 @@ $(function(){
 
   $('.new_comment').on('submit', function(e){
     var formSpinner = $('#form-spinner');
-    formSpinner.css('display', 'inline');
     var id = $(this).attr('id');
     var img = $(this).find('#form-user-icon').attr('src');
     var input = $(this).find('input[type="text"]').val();
@@ -49,9 +48,9 @@ $(function(){
       return false;
     } else {
     e.preventDefault();
+    formSpinner.css('display', 'inline');
     var formData = new FormData(this);
     var href = $(location).attr('origin') + url
-    console.log(href)
     $.ajax({
       url: href,
       type: "POST",
@@ -74,5 +73,33 @@ $(function(){
       formSpinner.css('display', 'none');
       alert('入力エラーです');
     })
-  }})
+  }});
+
+  $('.delete_comment').on('click', function(e){
+    e.preventDefault();
+    var formSpinner = $('#form-spinner');
+    formSpinner.css('display', 'inline');
+    var url = $(this).attr('href');
+    var formData = new FormData(this);
+    var href = $(location).attr('origin') + url
+    $.ajax({
+      url: href,
+      method: 'DELETE',
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(data){
+      var counthtml = buildCommentCountHTML(data);
+      formSpinner.css('display', 'none');
+      $(`#show_comment_id_${data.id}`).remove();
+      $('.modal').modal('hide');
+      $(`#comment_count_id_${data.content_id}`).text(counthtml);
+    })
+    .fail(function(){
+      formSpinner.css('display', 'none');
+      alert('エラーです');
+    })
+  });
 });
