@@ -17,22 +17,22 @@
         <div class="user-edit-right">
           <div class="row">
             <div class="form-group col-12">
-              <%= f.label :nickname, class: "label-font mb-2" %>
+              <%= f.label :nickname, class: "label-font" %>
               <%= f.text_field :nickname, placeholder: "10文字以内で入力",
                   maxlength: "10" ,autofocus: true, class: "form-control" %>
             </div>
             <div class="col-4">
-              <%= f.label :height, class: "label-font mb-2" %>
+              <%= f.label :height, class: "label-font" %>
               <small class="xs-font">cm</small>
               <%= f.number_field :height, min: 1, max: 272, class: "form-control" %>
             </div>
             <div class="col-4">
-              <%= f.label :weight, class: "label-font mb-2" %>
+              <%= f.label :weight, class: "label-font" %>
               <small class="xs-font">kg</small>
               <%= f.number_field :weight, min: 1, max: 635, class: "form-control" %>
             </div>
             <div class="form-group col-12 mb-4">
-              <%= f.label :自己紹介, class: "label-font mb-2" %>
+              <%= f.label :自己紹介, class: "label-font" %>
               <%= f.text_area :profile, placeholder: "筋トレ歴◯◯年", rows: 5, class: "form-control" %>
             </div>
             <div class="form-group col-12">

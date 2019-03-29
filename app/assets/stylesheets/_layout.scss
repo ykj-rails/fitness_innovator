@@ -7,9 +7,17 @@ body{
   "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
+p{
+  font-size: 14px;
+}
+
 time{
   font-size: 10px;
   color: #999;
+}
+
+label{
+  margin-bottom: 0.2rem;
 }
 
 details{

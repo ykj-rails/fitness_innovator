@@ -3,7 +3,7 @@
 @media (max-width: 576px){
   // ヘッダー
   .site-header{
-    height: 57px;
+    height: 59px;
   }
   .header-logo img{
     width: 184px;
@@ -17,12 +17,15 @@
     }
   }
   // フォント
+  .user-show{
+    margin: 20px 0;
+  }
   .user-name-show{
     font-size: 20px;
-    margin: 20px 0 10px;
+    margin: 3px 0;
   }
   .user-image-show{
-    margin: 20px 20px 0 8px;
+    margin-right: 25px;
   }
   .user-profile{
     p{
@@ -31,12 +34,12 @@
   }
   // ユーザー画像アイコン
   #user-image{
-    width: 80px;
-    height: 80px;
+    width: 78px;
+    height: 78px;
   }
   .user-image-icon{
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
   // レイアウト
   .user-edit{
@@ -60,6 +63,10 @@
   .row.x .col-4{
     padding: 0 2px 0 2px;
     margin-bottom: 4px;
+  }
+
+  .my-border2{
+    margin: 20px auto;
   }
 
 }

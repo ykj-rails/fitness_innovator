@@ -27,7 +27,10 @@
 }
 // 入力フォームのmargin
 .form-group{
-  margin: 12px auto;
+  margin: 10px auto;
+}
+.form-control{
+  font-size: 14px;
 }
 // モーダル設定
 .modal.fade .modal-dialog.modal-dialog-centered{
@@ -69,10 +72,12 @@
 .nav-page{
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 .page-link{
+  font-size: 14px;
   color: #0070BF;
+  padding: 6px 12px;
 }
 .page-item.active{
   .page-link, a.page-link:hover{

@@ -7,15 +7,13 @@
 }
 
 .header-nav{
-  margin: auto;
   height: 100%;
   display: flex;
-  width: 100%;
+  align-items: center;
   justify-content: center;
 }
 
 .header-content{
-  margin: auto 0px;
   margin-right: 10px;
 }
 
@@ -51,8 +49,8 @@ footer{
 
 .user-image-icon-sm{
   object-fit: cover;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 1px solid #C1BFC0;
 }
@@ -77,6 +75,11 @@ footer{
   border-top: 1px solid #efefef;
   margin: 0px auto 10px;
   width: 95%;
+}
+
+.my-border2{
+  border-top: 1px solid #efefef;
+  margin: 30px auto;
 }
 
 // devise画面下リンクボタン

@@ -10,7 +10,7 @@ h4{
 }
 
 .fw{
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .my-black{
@@ -34,7 +34,7 @@ h4{
 .user-name, a.user-name{
   color: #262626;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .modal-font, a.modal-font:hover{
@@ -54,7 +54,7 @@ h4{
   font-size: 14px;
   border: 1px solid #dbdbdb;
   border-radius: 5px;
-  padding: 5px 25px;
+  padding: 5px 20px;
   cursor: pointer;
 }
 
@@ -80,8 +80,8 @@ h4{
   font-size: 14px;
   text-align: center;
   border: 1px solid;
-  border-radius: 5px;
-  padding: 5px 5px;
+  border-radius: 15px;
+  padding: 4px;
   max-width: 240px;
 }
 
@@ -122,9 +122,9 @@ h4{
 
 .denger-round{
   color: #ed4956;
-  font-weight: 600;
+  font-weight: 500;
   border: 2px solid;
-  border-radius: 4px;
+  border-radius: 15px;
   padding: 2px 4px;
 }
 
@@ -135,4 +135,10 @@ h4{
 
 .field_with_errors .form-control{
   border: 2px solid #ed4956;
+}
+
+.comment-count-font, a.comment-count-font:hover{
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
 }
