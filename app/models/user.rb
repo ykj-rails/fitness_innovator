@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :timeoutable, :confirmable, :trackable
 
-  has_many :contents
-  has_many :comments
+  has_many :contents, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_one_attached :avatar
 
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }

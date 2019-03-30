@@ -3,6 +3,7 @@ class Content < ApplicationRecord
   has_many :workouts, dependent: :destroy
   has_many :meals, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   accepts_nested_attributes_for :workouts, allow_destroy: true
   accepts_nested_attributes_for :meals, allow_destroy: true
