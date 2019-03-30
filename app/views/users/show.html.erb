@@ -4,7 +4,7 @@
       <div class="user-show">
         <div class="user-image-show">
           <% if @user.avatar.attached? %>
-            <%= image_tag(@user.avatar, id: "user-image") %>
+            <%= image_tag(resize_s(@user.avatar), id: "user-image") %>
           <% else %>
             <%= image_tag("power-icon.jpg", id: "user-image") %>
           <% end %>

@@ -1,6 +1,6 @@
 <div class="col-12 my-1" id="show_comment_id_<%= comment.id %>">
   <% if comment.user.avatar.attached? %>
-    <%= link_to image_tag(comment.user.avatar, class: "user-image-icon-sm"), user_path(comment.user_id) %>
+    <%= link_to image_tag(resize_s(comment.user.avatar), class: "user-image-icon-sm"), user_path(comment.user_id) %>
   <% else %>
     <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(comment.user_id) %>
   <% end %>

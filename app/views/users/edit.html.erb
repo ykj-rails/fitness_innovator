@@ -6,7 +6,7 @@
           <%= form_for @user do |f| %>
             <h4 class="p-2">プロフィールを編集</h4>
             <% if @user.avatar.attached? %>
-              <%= image_tag(@user.avatar, class: "pointer", id: "user-image", data: {toggle: "modal", target: "#myModal"} ) %>
+              <%= image_tag(resize_s(@user.avatar), class: "pointer", id: "user-image", data: {toggle: "modal", target: "#myModal"} ) %>
             <% else %>
               <%= image_tag("power-icon.jpg", class: "pointer", id: "user-image", data: {toggle: "modal", target: "#myModal"} ) %>
             <% end %>

@@ -6,7 +6,7 @@
           <div class="row content-border">
             <div class="col-12 my-3">
               <% if @content.user.avatar.attached? %>
-                <%= link_to image_tag(@content.user.avatar, class: "user-image-icon-sm"), user_path(@content.user_id) %>
+                <%= link_to image_tag(resize_s(@content.user.avatar), class: "user-image-icon-sm"), user_path(@content.user_id) %>
               <% else %>
                 <%= link_to image_tag("power-icon.jpg", class: "user-image-icon-sm"), user_path(@content.user_id) %>
               <% end %>
