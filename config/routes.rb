@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       delete 'avatar_destroy'
     end
   end
+  resources :likes, only: [:create, :destroy]
 end
