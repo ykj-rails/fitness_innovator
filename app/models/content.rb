@@ -13,4 +13,12 @@ class Content < ApplicationRecord
 
   validates :befor_image, :after_image,
             :before_body_weight, :after_body_weight, :period, presence: true
+
+  def like_it(user)
+    likes.create(user_id: user.id)
+  end
+
+  def unlike_it(user)
+    likes.find_by(user_id: user.id).destroy
+  end
 end
