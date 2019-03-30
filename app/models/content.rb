@@ -5,6 +5,8 @@ class Content < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  has_many :like_it_users, through: :likes, source: :user
+
   accepts_nested_attributes_for :workouts, allow_destroy: true
   accepts_nested_attributes_for :meals, allow_destroy: true
 
@@ -20,5 +22,9 @@ class Content < ApplicationRecord
 
   def unlike_it(user)
     likes.find_by(user_id: user.id).destroy
+  end
+
+  def like_it?(user)
+    like_it_users.include?(user)
   end
 end
