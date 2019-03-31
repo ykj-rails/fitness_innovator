@@ -1,20 +1,24 @@
-<div class="col-12 my-2">
   <% if current_user %>
-    <span class="like">
+    <span class="like" id="like_content_id<%= content.id %>">
       <% if content.like_it?(current_user) %>
         <%= form_for(content.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
-          <%= button_tag(class: "like_button") do %>
-            <i class="fas fa-heart"></i>
+          <%= button_tag(class: "like_button", id: "unlike_do_id_#{content.id}", onfocus: "this.blur();") do %>
+            <i class="fas fa-heart fmy-lg myheart"></i>
           <% end %>
+        <% end %>
+        <% if 0 < content.likes.count %>
+          <div class="label-font">いいね！<%= content.likes.count %>件</div>
         <% end %>
       <% else %>
         <%= form_for(content.likes.build, remote: true) do |f| %>
           <div><%= hidden_field_tag :content_id, content.id %></div>
-          <%= button_tag(class: "like_button") do %>
-            <i class="far fa-heart fa-lg"></i>
+          <%= button_tag(class: "like_button", id: "like_do_id_#{content.id}", onfocus: "this.blur();") do %>
+            <i class="far fa-heart fmy-lg"></i>
           <% end %>
+        <% end %>
+        <% if 0 < content.likes.count %>
+          <div class="label-font">いいね！<%= content.likes.count %>件</div>
         <% end %>
       <% end %>
     </span>
   <% end %>
-</div>

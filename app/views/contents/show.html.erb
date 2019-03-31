@@ -5,6 +5,11 @@
         <%= render "content_top" %>
         <div class="content-show">
           <div class="row content-border">
+            <div class="col-12 mb-1">
+              <span id="content-<%= @content.id %>" data-content-id="<%= @content.id %>">
+                <%= render "likes/like", content: @content %>
+              </span>
+            </div>
             <div class="col-12 col-sm-6">
               <span class="s-font">
                 <i class="fas fa-weight"></i> 体重
