@@ -13,6 +13,10 @@ module ContentsHelper
     return img.variant(combine_options: { resize:"150x150^", crop:"150x150+0+0", gravity: :center }).processed
   end
 
+  def resize_sm(img)
+    return img.variant(combine_options: { resize:"300x300^", crop:"300x300+0+0", gravity: :center }).processed
+  end
+
   def resize_m(img)
     return img.variant(combine_options: { resize:"480x480^", crop:"480x480+0+0", gravity: :center }).processed
   end

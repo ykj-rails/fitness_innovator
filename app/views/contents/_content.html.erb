@@ -46,7 +46,7 @@
           <time><%= simple_time(content[:created_at]) %></time>
         </div>
         <% if current_user %>
-          <span id="mobile-non"><%= render "comments/comment_form", content: content %></span>
+          <span id="mobile-none"><%= render "comments/comment_form", content: content %></span>
         <% end %>
       </div>
     </div>
