@@ -5,6 +5,9 @@
           <%= button_tag(class: "like_button", id: "unlike_do_id_#{content.id}", onfocus: "this.blur();") do %>
             <i class="fas fa-heart fmy-lg myheart"></i>
           <% end %>
+          <%= link_to comments_show_content_path(content), class: "ml-2 black" do %>
+            <i class="far fa-comment fmy-lg"></i>
+          <% end %>
         <% end %>
         <% if 0 < content.likes.count %>
           <div class="label-font">いいね！<%= content.likes.count %>件</div>
@@ -14,6 +17,9 @@
           <div><%= hidden_field_tag :content_id, content.id %></div>
           <%= button_tag(class: "like_button", id: "like_do_id_#{content.id}", onfocus: "this.blur();") do %>
             <i class="far fa-heart fmy-lg"></i>
+          <% end %>
+          <%= link_to comments_show_content_path(content), class: "ml-2 black" do %>
+            <i class="far fa-comment fmy-lg"></i>
           <% end %>
         <% end %>
         <% if 0 < content.likes.count %>

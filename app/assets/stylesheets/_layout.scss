@@ -11,6 +11,10 @@ p{
   font-size: 14px;
 }
 
+input::placeholder{
+  color: #999;
+}
+
 time{
   font-size: 10px;
   color: #999;
@@ -18,22 +22,6 @@ time{
 
 label{
   margin-bottom: 0.2rem;
-}
-
-details{
-  width: 100%;
-  margin-top: 8px;
-}
-
-summary{
-  color: transparent;
-}
-
-summary span{
-  font-size: 14px;
-  color: #999;
-  font-weight: 500;
-  list-style: none;
 }
 
 ul{
