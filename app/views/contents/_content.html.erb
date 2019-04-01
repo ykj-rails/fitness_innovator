@@ -30,7 +30,7 @@
           <% if content.comments.count <= 4 %>
             <%= render partial: "comments/comment_index", collection: content.comments, as: "comment" %>
           <% else %>
-            <div class="col-12 ml-1">
+            <div class="col-12">
               <%= link_to "コメント#{content.comments.count}件を全て表示", comments_show_content_path(content),
                   class: "comment-count-font", id: "comment_count_id_#{content.id}" %>
             </div>
