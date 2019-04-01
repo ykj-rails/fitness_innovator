@@ -10,14 +10,15 @@
 // フラッシュメッセージサイズ変更
 .alert{
   font-size: 14px;
+  font-weight: 600;
   padding: 0.5rem 1.25rem;
+  border-radius: 0;
 }
 // アラートスタイル新定義
 .alert-custom{
   color: #FFF;
-  background-color: #0070BF;
-  border-color: #0070BF;
-  opacity: 0.9;
+  background-color: #3897f0;
+  border-color: #3897f0;
 }
 // 警告アラートカスタム
 .alert-mydanger {

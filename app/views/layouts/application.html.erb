@@ -4,14 +4,12 @@
     <title>fitness innovator</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
     <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
   </head>
-
   <body>
     <div id="wrapper">
       <header class="site-header">
@@ -29,9 +27,7 @@
                 <% end %>
               <% else %>
                 <%= link_to new_user_session_path do %>
-                <span class="faa-parent animated-hover">
-                  <i class="fas fa-user-plus fa-lg faa-bounce work-font"></i>
-                </span>
+                  <i class="fas fa-user-plus fa-lg work-font"></i>
                 <% end %>
               <% end %>
             </div>
@@ -39,7 +35,7 @@
       </header>
       <div class=main-content>
         <% if notice %>
-          <div class="alert alert-custom" role="alert">
+          <div class="alert alert-custom" id="alert-notice" role="alert">
             <%= notice %>
           </div>
         <% end %>

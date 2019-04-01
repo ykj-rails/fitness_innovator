@@ -75,7 +75,12 @@
   .my-border2{
     margin: 20px auto;
   }
+  // indexページのコメントフォーム非表示
   #mobile-none{
     display: none;
+  }
+  .alert{
+    font-size: 13px;
+    padding: 0.25rem 1rem;
   }
 }

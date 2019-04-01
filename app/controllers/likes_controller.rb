@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
     @content = Content.find(params[:content_id])
@@ -21,4 +22,5 @@ class LikesController < ApplicationController
       end
     end
   end
+
 end

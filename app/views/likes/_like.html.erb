@@ -1,30 +1,28 @@
-  <% if current_user %>
-    <span class="like" id="like_content_id<%= content.id %>">
-      <% if content.like_it?(current_user) %>
-        <%= form_for(content.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
-          <%= button_tag(class: "like_button", id: "unlike_do_id_#{content.id}", onfocus: "this.blur();") do %>
-            <i class="fas fa-heart fmy-lg myheart"></i>
-          <% end %>
-          <%= link_to comments_show_content_path(content), class: "ml-2 black" do %>
-            <i class="far fa-comment fmy-lg"></i>
-          <% end %>
-        <% end %>
-        <% if 0 < content.likes.count %>
-          <div class="label-font">いいね！<%= content.likes.count %>件</div>
-        <% end %>
-      <% else %>
-        <%= form_for(content.likes.build, remote: true) do |f| %>
-          <div><%= hidden_field_tag :content_id, content.id %></div>
-          <%= button_tag(class: "like_button", id: "like_do_id_#{content.id}", onfocus: "this.blur();") do %>
-            <i class="far fa-heart fmy-lg"></i>
-          <% end %>
-          <%= link_to comments_show_content_path(content), class: "ml-2 black" do %>
-            <i class="far fa-comment fmy-lg"></i>
-          <% end %>
-        <% end %>
-        <% if 0 < content.likes.count %>
-          <div class="label-font">いいね！<%= content.likes.count %>件</div>
-        <% end %>
+<span class="like" id="like_content_id<%= content.id %>">
+  <% if content.like_it?(current_user) %>
+    <%= form_for(content.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
+      <%= button_tag(class: "like_button", id: "unlike_do_id_#{content.id}", onfocus: "this.blur();") do %>
+        <i class="fas fa-heart fmy-lg myheart"></i>
       <% end %>
-    </span>
+      <%= link_to comments_show_content_path(content), class: "ml-2 black" do %>
+        <i class="far fa-comment fmy-lg"></i>
+      <% end %>
+    <% end %>
+    <% if 0 < content.likes.count %>
+      <div class="label-font">いいね！<%= content.likes.count %>件</div>
+    <% end %>
+  <% else %>
+    <%= form_for(content.likes.build, remote: true) do |f| %>
+      <div><%= hidden_field_tag :content_id, content.id %></div>
+      <%= button_tag(class: "like_button", id: "like_do_id_#{content.id}", onfocus: "this.blur();") do %>
+        <i class="far fa-heart fmy-lg"></i>
+      <% end %>
+      <%= link_to comments_show_content_path(content), class: "ml-2 black" do %>
+        <i class="far fa-comment fmy-lg"></i>
+      <% end %>
+    <% end %>
+    <% if 0 < content.likes.count %>
+      <div class="label-font">いいね！<%= content.likes.count %>件</div>
+    <% end %>
   <% end %>
+</span>
