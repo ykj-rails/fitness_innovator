@@ -5,9 +5,10 @@ $(function() {
 
   $(window).on('load scroll', function() {
   var value = $(this).scrollTop();
-  if ( value > 100 ) {
+  console.log(value);
+  if ( value > 60 ) {
     $header.addClass(animation);
-  } else {
+  } else if ( value < 30 ) {
     $header.removeClass(animation);
   }});
 });
