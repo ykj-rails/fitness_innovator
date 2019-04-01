@@ -1,13 +1,24 @@
 // ヘッダー
 .site-header{
-  height: 77px;
+  height: 78px;
   width: 100%;
   background-color:#FFF;
   border-bottom: 1px solid #dee2e6;
-  transition: .3s;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  transition: .4s;
 }
 .header-animation{
-  height: 52px;
+  height: 53px;
+  .user-image-icon{
+    width: 34px;
+    height: 34px;
+  }
+  .header-logo img{
+    width: 184px;
+    height: 36px;
+  }
 }
 .header-nav{
   height: 100%;
@@ -22,6 +33,7 @@
   margin-top: 8px;
   width: 230px;
   height: 45px;
+  transition: .4s;
 }
 // フッター
 footer{
@@ -44,6 +56,7 @@ footer{
   height: 50px;
   border: 1px solid #C1BFC0;
   border-radius: 50%;
+  transition: .4s;
 }
 .user-image-icon-sm{
   object-fit: cover;

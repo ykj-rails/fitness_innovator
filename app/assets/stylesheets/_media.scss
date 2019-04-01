@@ -3,11 +3,18 @@
 @media (max-width: 576px){
   // ヘッダー
   .site-header{
-    height: 65px;
+    height: 75px;
   }
   .header-logo img{
     width: 184px;
     height: 36px;
+  }
+  .header-animation{
+    height: 50px;
+    .header-logo img{
+      width: 161px;
+      height: 32px;
+    }
   }
   // フッター
   footer{
