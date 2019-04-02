@@ -1,7 +1,8 @@
 <!--ユーザー情報変更画面 -->
 <div class="container-fluid mt-4">
-  <div class="row">
-    <div class="col-10 col-sm-6 mx-auto text-center">
+  <div class="row justify-content-center">
+    <div class="devise-border">
+    <div class="col-12 text-center">
       <h4 class="my-4">登録情報の変更</h4>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
@@ -41,6 +42,7 @@
           </div>
         </form>
       <% end %>
+    </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,9 @@
 // スマートフォン画面
 
 @media (max-width: 576px){
+  body{
+    background-color:#FFF;
+  }
   // ヘッダー
   .site-header{
     height: 75px;
@@ -53,9 +56,10 @@
     margin-top: 0;
     margin-bottom: 20px;
     padding: 15px;
+    border: none;
   }
   .content-show-main{
-    background-color:#FAFAFA;
+    background-color:#FFF;
     border: none;
   }
   .mt-6{
@@ -66,12 +70,10 @@
     margin-right: -6px;
     margin-left: -6px;
   }
-
   .row.x .col-4{
     padding: 0 2px 0 2px;
     margin-bottom: 4px;
   }
-
   .my-border2{
     margin: 20px auto;
   }
@@ -79,8 +81,13 @@
   #mobile-none{
     display: none;
   }
+  // アラートサイズカスタム
   .alert{
     font-size: 13px;
     padding: 0.25rem 1rem;
+  }
+  // devise関連画面のボーダー
+  .devise-border{
+    border: none;
   }
 }
