@@ -12,27 +12,27 @@
   </head>
   <body>
     <div id="wrapper">
-      <header class="site-header">
-        <div class="header-nav">
-          <div class="header-content">
-            <%= link_to image_tag("fitness_innovator_logo.png"), root_path, class: "header-logo mx-2"%>
-              <% if user_signed_in? %>
-                <% if current_user.avatar.attached? %>
-                  <%= link_to image_tag(resize_s(current_user.avatar), class: "user-image-icon mx-2"), user_path(current_user) %>
-                <% else %>
-                  <%= link_to image_tag("power-icon.jpg", class: "user-image-icon mx-2"), user_path(current_user) %>
-                <% end %>
-                <%= link_to new_content_path, class: "mx-2" do %>
-                  <i class="fas fa-dumbbell fa-lg work-font"></i>
-                <% end %>
+      <% if user_signed_in? %>
+        <header class="site-header">
+          <div class="header-nav">
+            <div class="header-content">
+              <div class="logo-box">
+                <%= link_to "Fitness innovator", root_path, class: "header-logo mx-3"%>
+              </div>
+              <% if current_user.avatar.attached? %>
+                <%= link_to image_tag(resize_s(current_user.avatar), class: "user-image-icon mx-2"), user_path(current_user) %>
               <% else %>
-                <%= link_to new_user_session_path do %>
-                  <i class="fas fa-user-plus fa-lg work-font"></i>
-                <% end %>
+                <%= link_to image_tag("power-icon.jpg", class: "user-image-icon mx-2"), user_path(current_user) %>
               <% end %>
+              <div class="icon-box">
+                <%= link_to new_content_path, class: "mx-2" do %>
+                  <i class="fas fa-dumbbell fmy-lg black"></i>
+                <% end %>
+              </div>
             </div>
-        </div>
-      </header>
+          </div>
+        </header>
+      <% end %>
       <div class=main-content>
         <% if notice %>
           <div class="alert alert-custom" id="alert-notice" role="alert">

@@ -8,15 +8,10 @@
   .site-header{
     height: 75px;
   }
-  .header-logo img{
-    width: 184px;
-    height: 36px;
-  }
   .header-animation{
     height: 50px;
-    .header-logo img{
-      width: 161px;
-      height: 32px;
+    a.header-logo{
+      font-size: 26px;
     }
   }
   // フッター
@@ -37,19 +32,10 @@
   .user-image-show{
     margin-right: 25px;
   }
-  .user-profile{
-    p{
-      font-size: 14px;
-    }
-  }
   // ユーザー画像アイコン
   #user-image{
     width: 78px;
     height: 78px;
-  }
-  .user-image-icon{
-    width: 36px;
-    height: 36px;
   }
   // レイアウト
   .user-edit{

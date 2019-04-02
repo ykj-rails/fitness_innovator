@@ -12,12 +12,14 @@
 .header-animation{
   height: 53px;
   .user-image-icon{
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
   }
-  .header-logo img{
-    width: 184px;
-    height: 36px;
+  a.header-logo{
+    font-size: 26px;
+  }
+  .fmy-lg{
+    font-size: 1.25em;
   }
 }
 .header-nav{
@@ -27,12 +29,21 @@
   justify-content: center;
 }
 .header-content{
-  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
 }
-.header-logo img{
-  margin-top: 8px;
-  width: 230px;
-  height: 45px;
+.logo-box{
+  margin-top: 6px;
+}
+.icon-box{
+  margin-top: 4px;
+}
+a.header-logo{
+  color: #262626;
+  font-size: 36px;
+  font-family: 'Billabong';
   transition: .6s;
 }
 // フッター
@@ -52,8 +63,8 @@ footer{
 // ユーザーアイコン
 .user-image-icon{
   object-fit: cover;
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border: 1px solid #C1BFC0;
   border-radius: 50%;
   transition: .6s;
