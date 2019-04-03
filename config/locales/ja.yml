@@ -2,7 +2,7 @@ ja:
   activerecord:
     attributes:
       user:
-        nickname: アカウント名
+        nickname: ユーザーネーム
         height: 身長
         weight: 体重
         password: パスワード

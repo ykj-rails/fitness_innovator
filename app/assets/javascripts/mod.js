@@ -10,4 +10,8 @@ $(function() {
   } else if ( value < 30 ) {
     $header.removeClass(animation);
   }});
+
+  $('#header-none').load(function(){
+    $header.remove();
+  });
 });

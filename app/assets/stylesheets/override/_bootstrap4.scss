@@ -7,6 +7,9 @@
 .container-fluid{
   padding: 0;
 }
+#alert-notice{
+  display: none;
+}
 // フラッシュメッセージサイズ変更
 .alert{
   font-size: 14px;
@@ -29,6 +32,7 @@
 // 入力フォームのmargin
 .form-group{
   margin: 10px auto;
+  position: relative;
 }
 .form-control{
   font-size: 14px;

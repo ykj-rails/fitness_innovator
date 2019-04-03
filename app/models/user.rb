@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  validates :nickname, presence: true, length: { maximum: 10 }
+  validates :nickname, presence: true, length: { maximum: 25 }
   validates :profile, length: { maximum: 150 }
   validates :height, :weight, length: { maximum: 3 }
 

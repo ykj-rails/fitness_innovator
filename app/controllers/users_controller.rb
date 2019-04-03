@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_content
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def show
     @contents = @user.contents.page(params[:page]).per(9).order('created_at DESC')
@@ -12,12 +12,12 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(update_params)
-    redirect_to current_user
+    redirect_to current_user, notice: "プロフィールを編集しました"
   end
 
   def avatar_destroy
     @user.avatar.purge if @user.id == current_user.id
-    redirect_to action: :edit
+    redirect_to current_user, notice: "プロフィール写真を削除しました"
   end
 
   private

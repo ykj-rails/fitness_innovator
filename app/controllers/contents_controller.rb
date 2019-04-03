@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :comments_show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show, :comments_show]
 
   def index
     @contents = Content.page(params[:page]).per(9).order('created_at DESC').includes(:user, :comments)
@@ -28,17 +28,17 @@ class ContentsController < ApplicationController
 
   def create
     @content = Content.create(content_params)
-    redirect_to :root
+    redirect_to :root, notice: "投稿しました。"
   end
 
   def update
     @content.update(content_params) if @content.user_id == current_user.id
-    redirect_to :root
+    redirect_to content_path(@content), notice: "編集しました。"
   end
 
   def destroy
     @content.destroy if @content.user_id == current_user.id
-    redirect_to :root
+    redirect_to :root, notice: "削除しました。"
   end
 
   private

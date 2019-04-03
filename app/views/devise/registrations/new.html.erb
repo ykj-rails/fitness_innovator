@@ -1,50 +1,52 @@
 <!-- 新規登録画面 -->
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-6">
   <div class="row justify-content-center">
     <div class="devise-border">
       <div class="col-12 text-center">
+        <h1>Fitness innovator</h1>
+        <h2 class="mt-2 mb-4">フィットネスの成果を記録しよう</h2>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
           <form>
             <div class="form-group mb-3">
-              <%= f.label :nickname, class: "form-font" do %>
-                <i class="far fa-user"></i> アカウント名
+              <%= f.label :nickname, class: "form-label", id: "user_nickname-label" do %>
+                <i class="far fa-user fmy-sm"></i>ユーザーネーム
               <% end %>
-              <%= f.text_field :nickname, required: true, maxlength: "10",
-                  placeholder: "10文字以内で入力", autofocus: true, class: "form-control" %>
+              <%= f.text_field :nickname, required: true, maxlength: "25", class: "form-x" %>
             </div>
             <div class="form-group mb-3">
-              <%= f.label :email, class: "form-font" do %>
-                <i class="far fa-envelope"></i> メールアドレス
+              <%= f.label :email, class: "form-label", id: "user_email-label" do %>
+                <i class="far fa-envelope fmy-sm"></i>メールアドレス
               <% end %>
-              <%= f.email_field :email, required: true, autocomplete: "email", class: "form-control" %>
+              <%= f.email_field :email, required: true, autocomplete: "email", class: "form-x" %>
             </div>
             <div class="form-group mb-3">
-              <%= f.label :password, class: "form-font" do %>
-                <i class="fas fa-key"></i> パスワード
+              <%= f.label :password, class: "form-label", id: "user_password-label" do %>
+                <i class="fas fa-key fmy-sm"></i>パスワード
               <% end %>
-              <%= f.password_field :password, required: true, minlength: "6", autocomplete: "new-password",
-                  placeholder: "#{@minimum_password_length}文字以上で入力", class: "form-control" %>
-            </div>
-            <div class="form-group">
-              <%= f.label :password_confirmation, class: "form-font" do %>
-                <i class="fas fa-key"></i> パスワード確認
-              <% end %>
-              <%= f.password_field :password_confirmation, required: true,
-                  minlength: "6", class: "form-control" %>
+              <%= f.password_field :password, required: true, minlength: "6",
+              autocomplete: "new-password", class: "form-x" %>
             </div>
             <div class="form-group border-bottom">
-              <%= f.submit "新規登録する", class: "btn btn-primary btn-block my-4" %>
+              <%= f.submit "新規登録する", class: "btn btn-primary btn-sm btn-block my-4" %>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-1">
               <%= link_to "登録確認メールが届かない場合", new_confirmation_path(resource_name), class: "link-font" %>
             </div>
           </form>
         <% end %>
-        <div class="more_link_box">
-          <%= render "devise/shared/links" %>
-        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="devise-border-box">
+      <div class="col-12">
+        <%= render "devise/shared/links" %>
       </div>
     </div>
   </div>
 </div>
+<%# ヘッダー非表示 %>
+<style>
+.site-header{display: none;}
+</style>

@@ -1,6 +1,6 @@
 <%- if controller_name != 'sessions' %>
   アカウントをお持ちですか？
-  <%= link_to "ログイン", new_session_path(resource_name), class: "link-font" %><br />
+  <%= link_to "ログインする", new_session_path(resource_name), class: "link-font" %><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
