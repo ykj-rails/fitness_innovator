@@ -161,8 +161,27 @@ footer{
   border-radius: 2px;
   transition: .1s;
 }
-// ラベルアニメーション
+// 入力フォームラベルアニメーション
 .form-animation{
   font-size: 12px;
   padding: 14px 0 2px 8px;
+}
+// 新規登録画面モックレイアウト
+.moc-sample{
+  position: relative;
+  margin-right: 8px;
+}
+.moc-sample-img{
+  position: absolute;
+  top: 8px;
+  left: 90px;
+}
+.moc-sample-img2{
+  position: absolute;
+  top: 0;
+  right: 100px;
+}
+.moc-img{
+  height: 100%;
+  width: 100%;
 }

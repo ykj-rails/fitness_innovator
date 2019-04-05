@@ -1,3 +1,4 @@
+// devise関連フォーム入力のエフェクト
 $(function() {
   var form = $(".form-x");
 

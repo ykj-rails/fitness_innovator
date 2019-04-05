@@ -1,5 +1,11 @@
-// スマートフォン画面
+// モック画面表示ブレークポイント
+@media (max-width: 992px){
+  .moc-sample{
+    display: none;
+  }
+}
 
+// スマートフォン画面
 @media (max-width: 576px){
   body{
     background-color:#FFF;

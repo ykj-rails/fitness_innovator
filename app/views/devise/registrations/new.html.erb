@@ -1,52 +1,61 @@
 <!-- 新規登録画面 -->
 <div class="container-fluid mt-6">
   <div class="row justify-content-center">
-    <div class="devise-border">
-      <div class="col-12 text-center">
-        <h1>Fitness innovator</h1>
-        <h2 class="mt-2 mb-4">フィットネスの成果を記録しよう</h2>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-          <form>
-            <div class="form-group mb-3">
-              <%= f.label :nickname, class: "form-label", id: "user_nickname-label" do %>
-                <i class="far fa-user fmy-sm"></i>ユーザーネーム
-              <% end %>
-              <%= f.text_field :nickname, required: true, maxlength: "25", class: "form-x" %>
-            </div>
-            <div class="form-group mb-3">
-              <%= f.label :email, class: "form-label", id: "user_email-label" do %>
-                <i class="far fa-envelope fmy-sm"></i>メールアドレス
-              <% end %>
-              <%= f.email_field :email, required: true, autocomplete: "email", class: "form-x" %>
-            </div>
-            <div class="form-group mb-3">
-              <%= f.label :password, class: "form-label", id: "user_password-label" do %>
-                <i class="fas fa-key fmy-sm"></i>パスワード
-              <% end %>
-              <%= f.password_field :password, required: true, minlength: "6",
-              autocomplete: "new-password", class: "form-x" %>
-            </div>
-            <div class="form-group border-bottom">
-              <%= f.submit "新規登録する", class: "btn btn-primary btn-sm btn-block my-4" %>
-            </div>
-            <div class="form-group mt-1">
-              <%= link_to "登録確認メールが届かない場合", new_confirmation_path(resource_name), class: "link-font" %>
-            </div>
-          </form>
-        <% end %>
+    <div class="col-12 col-lg-6 mt-2">
+      <div class="moc-sample">
+        <div class="moc-sample-img2">
+          <%= image_tag("fit-sample2_moc.png", class: "moc-img") %>
+        </div>
+        <div class="moc-sample-img">
+          <%= image_tag("fit-sample1_moc.png", class: "moc-img") %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="devise-border-box">
-      <div class="col-12">
-        <%= render "devise/shared/links" %>
+    <div class="col-12 col-lg-6">
+      <div class="devise-border-box">
+        <div class="devise-border">
+          <h1>Fitness innovator</h1>
+          <h2 class="mt-2 mb-4">フィットネスの成果を記録しよう</h2>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+            <form>
+              <div class="col-11 mx-auto">
+                <div class="form-group mb-3">
+                  <%= f.label :nickname, class: "form-label", id: "user_nickname-label" do %>
+                    <i class="far fa-user fmy-sm"></i>ユーザーネーム
+                  <% end %>
+                  <%= f.text_field :nickname, required: true, maxlength: "25", class: "form-x" %>
+                </div>
+                <div class="form-group mb-3">
+                  <%= f.label :email, class: "form-label", id: "user_email-label" do %>
+                    <i class="far fa-envelope fmy-sm"></i>メールアドレス
+                  <% end %>
+                  <%= f.email_field :email, required: true, autocomplete: "email", class: "form-x" %>
+                </div>
+                <div class="form-group mb-3">
+                  <%= f.label :password, class: "form-label", id: "user_password-label" do %>
+                    <i class="fas fa-key fmy-sm"></i>パスワード
+                  <% end %>
+                  <%= f.password_field :password, required: true, minlength: "6",
+                  autocomplete: "new-password", class: "form-x" %>
+                </div>
+                <div class="form-group border-bottom">
+                  <%= f.submit "新規登録する", class: "btn btn-primary btn-sm btn-block my-4" %>
+                </div>
+                <div class="form-group mt-1">
+                  <%= link_to "登録確認メールが届かない場合", new_confirmation_path(resource_name), class: "link-font" %>
+                </div>
+              </div>
+            </form>
+          <% end %>
+        </div>
+        <div class="devise-border">
+          <div><%= render "devise/shared/links" %></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<%# ヘッダー非表示 %>
-<style>
-.site-header{display: none;}
-</style>
+
+<%# #ヘッダー非表示 %>
+<style>.site-header{display: none;}</style>
