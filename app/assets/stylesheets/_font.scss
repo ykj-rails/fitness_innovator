@@ -12,36 +12,31 @@ h2{
   font-weight: 600;
   color: #999;
 }
-
-h4{
-  font-weight: 600;
+h3{
   font-size: 18px;
 }
-
+h4{
+  font-size: 18px;
+  font-weight: 600;
+}
 .pointer{
   cursor: pointer;
 }
-
 .fw{
   font-weight: 500;
 }
-
 .my-black{
   color: #4b4b4b;
 }
-
 .work-font{
   color: #0070BF;
 }
-
 .meal-font{
   color: #29A745;
 }
-
 .myheart{
   color: #ED4956
 }
-
 .black, a.black:hover{
   color: #262626;
 }
@@ -64,6 +59,12 @@ h4{
 
 .label-font, a.label-font:hover{
   color: #262626;
+  font-weight: 600;
+}
+
+.label-font-xs{
+  color: #262626;
+  font-size: 12px;
   font-weight: 600;
 }
 

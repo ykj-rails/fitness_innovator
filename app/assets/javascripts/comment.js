@@ -1,7 +1,7 @@
 $(function(){
   function buildIndexHTML(comment){
     var html = `<div class="col-12 mb-1">
-                  <a class="user-name mx-1" href=/users/${comment.user_id}>${comment.user_name}</a>
+                  <a class="user-name mr-1" href=/users/${comment.user_id}>${comment.user_name}</a>
                   <span class="s-font">${comment.text}</span><br>
                 </div>`
     return html;

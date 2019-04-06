@@ -12,7 +12,6 @@
 //
 //= require activestorage
 //= require jquery
-//= require jquery3
 //= require rails-ujs
 //= require cocoon
 //= require_tree .
