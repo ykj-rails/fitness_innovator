@@ -48,10 +48,10 @@
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row x" id="user_image">
+  <div class="row x user_image">
     <%= render partial: "user_image", collection: @contents %>
   </div>
-  <div class="row x" id="user_bookmark_image">
+  <div class="row x user_bookmark_image none">
     <%= render partial: "user_bookmark_image", collection: @bookmark_contents %>
   </div>
 </div>
@@ -74,5 +74,5 @@
 <!-- モーダルの設定 -->
 
 <!-- ページネーション -->
-<div id="user_image_paginate"><%= paginate @contents %></div>
-<div id="user_bookmark_image_paginate"><%= paginate @bookmark_contents %></div>
+<div class="user_image"><%= paginate @contents %></div>
+<div class="user_bookmark_image none"><%= paginate @bookmark_contents %></div>
