@@ -12,9 +12,12 @@
               <% end %>
               <%= link_to @content.user.nickname, user_path(@content.user_id), class: "user-name ml-1" %>
               <% if @content.user.height %><span class="user-name"><%= @content.user.height %>cm</span><% end %>
-              <div class="col-12 mt-2 p-1">
+              <div class="col-12 mt-2 p-1 d-flex">
                 <span id="content-<%= @content.id %>" data-content-id="<%= @content.id %>">
                   <%= render "likes/like", content: @content %>
+                </span>
+                <span class="ml-auto" id="content-bookmark-<%= @content.id %>" data-content-id="<%= @content.id %>">
+                  <%= render "bookmarks/bookmark", content: @content %>
                 </span>
               </div>
               <div class="col-12 mb-1 p-0">

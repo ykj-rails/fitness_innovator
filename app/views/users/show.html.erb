@@ -32,13 +32,27 @@
           <span class="s-font fw">プロフィールを編集しよう！</span>
         <% end %>
       </div>
-      <div class="my-border2"></div>
+      <div class="user-show-nav">
+        <div class="nav-button active-top" id="user_image-button">
+          <span>
+            <i class="fas fa-th"></i><span class="ml-1">投稿</span>
+          </span>
+        </div>
+        <div class="nav-button" id="user_bookmark_image-button">
+          <span>
+            <i class="far fa-bookmark"></i><span class="ml-1">お気に入り</span>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row x">
-      <%= render partial: "user_image", collection: @contents %>
+  <div class="row x" id="user_image">
+    <%= render partial: "user_image", collection: @contents %>
+  </div>
+  <div class="row x" id="user_bookmark_image">
+    <%= render partial: "user_bookmark_image", collection: @bookmark_contents %>
   </div>
 </div>
 <!-- モーダルの設定 -->
@@ -58,4 +72,7 @@
   </div>
 </div>
 <!-- モーダルの設定 -->
-<%= paginate @contents %>
+
+<!-- ページネーション -->
+<div id="user_image_paginate"><%= paginate @contents %></div>
+<div id="user_bookmark_image_paginate"><%= paginate @bookmark_contents %></div>

@@ -17,9 +17,12 @@
           <%= image_tag(resize_l(content.befor_image), class: "show-preview") %>
           <%= image_tag(resize_l(content.after_image), class: "show-preview") %>
         <% end %>
-        <div class="col-12 mt-2">
+        <div class="col-12 mt-2 d-flex">
           <span id="content-<%= content.id %>" data-content-id="<%= content.id %>">
             <%= render "likes/like", content: content %>
+          </span>
+          <span class="ml-auto" id="content-bookmark-<%= content.id %>" data-content-id="<%= content.id %>">
+            <%= render "bookmarks/bookmark", content: content %>
           </span>
         </div>
         <div class="col-12 my-1">

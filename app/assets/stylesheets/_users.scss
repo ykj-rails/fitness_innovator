@@ -1,5 +1,4 @@
 // ユーザーページ
-
 .user-show{
   width: 100%;
   max-width: 680px;
@@ -62,17 +61,46 @@
   object-fit: cover;
 }
 
-// ユーザーshowページ画像間隔
+.user-show-nav{
+  border-top: 1px solid #efefef;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #999;
+}
+
+.nav-button{
+  height: 54px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+// ユーザーshowページ下部レイアウト
 .row.x{
   margin-right: -25px;
   margin-left: -25px;
 }
-
 .row.x .col-4{
   padding: 0 14px 0 14px;
   margin-bottom: 28px;
 }
-
 #show_comments{
   width: 100%;
+}
+#user_bookmark_image,#user_bookmark_image_paginate{
+  display: none;
+}
+.nav-button{
+  height: 54px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.active-top{
+  border-top: 1px solid #262626;
+  color: #262626
 }

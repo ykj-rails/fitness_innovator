@@ -5,9 +5,12 @@
         <%= render "content_top" %>
         <div class="content-show">
           <div class="row content-border">
-            <div class="col-12 mb-1">
+            <div class="col-12 mb-1 d-flex">
               <span id="content-<%= @content.id %>" data-content-id="<%= @content.id %>">
                 <%= render "likes/like", content: @content %>
+              </span>
+              <span class="ml-auto" id="content-bookmark-<%= @content.id %>" data-content-id="<%= @content.id %>">
+                <%= render "bookmarks/bookmark", content: @content %>
               </span>
             </div>
             <div class="col-12 col-sm-6">

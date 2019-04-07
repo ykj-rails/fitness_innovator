@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :contents, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_contents, through: :bookmarks, source: :content
   has_one_attached :avatar
 
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
