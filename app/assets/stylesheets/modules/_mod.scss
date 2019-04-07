@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   z-index: 1020;
-  transition: .6s;
+  transition: .4s;
 }
 .header-animation{
   height: 53px;
@@ -44,7 +44,7 @@ a.header-logo{
   color: #262626;
   font-size: 36px;
   font-family: 'Billabong';
-  transition: .6s;
+  transition: .4s;
 }
 // フッター
 footer{
@@ -67,7 +67,7 @@ footer{
   height: 46px;
   border: 1px solid #C1BFC0;
   border-radius: 50%;
-  transition: .6s;
+  transition: .4s;
 }
 .user-image-icon-sm{
   object-fit: cover;

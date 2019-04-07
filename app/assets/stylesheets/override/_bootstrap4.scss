@@ -7,7 +7,8 @@
 .container-fluid{
   padding: 0;
 }
-#alert-notice{
+// アラート非表示(アニメーションのため)
+#alert-notice,#like-alert{
   display: none;
 }
 // フラッシュメッセージサイズ変更
@@ -16,12 +17,19 @@
   font-weight: 600;
   padding: 0.5rem 1.25rem;
   border-radius: 0;
+  position: sticky;
+  top: 0px;
 }
 // アラートスタイル新定義
 .alert-custom{
   color: #FFF;
   background-color: #3897f0;
   border-color: #3897f0;
+}
+.like-alert-custom{
+  color: #ed4956;
+  background-color: #F8D7DA;
+  border-color: #F8D7DA;
 }
 // 警告アラートカスタム
 .alert-mydanger {

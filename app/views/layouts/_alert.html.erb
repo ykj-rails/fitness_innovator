@@ -1,0 +1,15 @@
+<% unless current_user %>
+  <div class="alert like-alert-custom" id="like-alert" role="alert">
+    <span>「いいね！」するためにはログインして下さい。</span>
+  </div>
+<% end %>
+<% if notice %>
+  <div class="alert alert-custom" id="alert-notice" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<% if alert %>
+  <div class="alert alert-mydanger" role="alert">
+    <%= alert %>
+  </div>
+<% end %>

@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag('favicon.ico') %>
     <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
@@ -38,18 +39,9 @@
             <% end %>
           </div>
         </div>
+      <%= render 'layouts/alert' %>
       </header>
       <div class=main-content>
-        <% if notice %>
-          <div class="alert alert-custom" id="alert-notice" role="alert">
-            <%= notice %>
-          </div>
-        <% end %>
-        <% if alert %>
-          <div class="alert alert-mydanger" role="alert">
-            <%= alert %>
-          </div>
-        <% end %>
         <%= yield %>
       </div>
       <footer>
