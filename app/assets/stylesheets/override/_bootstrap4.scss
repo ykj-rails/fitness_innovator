@@ -8,7 +8,7 @@
   padding: 0;
 }
 // アラート非表示(アニメーションのため)
-#alert-notice,#like-alert{
+#alert-notice,#like_button-alert,#bookmark_button-alert{
   display: none;
 }
 // フラッシュメッセージサイズ変更
@@ -26,7 +26,7 @@
   background-color: #3897f0;
   border-color: #3897f0;
 }
-.like-alert-custom{
+.error-alert-custom{
   color: #ed4956;
   background-color: #F8D7DA;
   border-color: #F8D7DA;

@@ -8,7 +8,7 @@
 
     <div class="col-12 mt-3">
       <%= f.label :menu, "食事メニュー", class: "label-font" %>
-      <%= f.text_area :menu, required: true, rows: 5, placeholder: "例: オートミール60g", class: "form-control" %>
+      <%= f.text_area :menu, required: true, rows: 5, class: "form-control" %>
       <%= link_to_remove_association f, class: "label-font float-right" do %>
         <span class="denger-link"><i class="fas fa-times fa-lg"></i></span>
       <% end %>

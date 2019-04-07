@@ -2,14 +2,14 @@
   <% if content.bookmark_add?(current_user) %>
     <%= form_for(content.bookmarks.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
       <%= button_tag(class: "bookmark_button", onfocus: "this.blur();") do %>
-        <i class="fas fa-bookmark fmy-lg work-font"></i>
+        <i class="fas fa-bookmark fmy-lg my-black pointer"></i>
       <% end %>
     <% end %>
   <% else %>
     <%= form_for(content.bookmarks.build, remote: true) do |f| %>
       <div><%= hidden_field_tag :content_id, content.id %></div>
       <%= button_tag(class: "bookmark_button", onfocus: "this.blur();") do %>
-        <i class="far fa-bookmark fmy-lg"></i>
+        <i class="far fa-bookmark fmy-lg pointer"></i>
       <% end %>
     <% end %>
   <% end %>
