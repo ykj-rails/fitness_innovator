@@ -108,12 +108,31 @@ footer{
   width: 70%;
   padding: 5px;
 }
-// いいねボタン
+// いいね/ブックマークボタン
 .like_button,.bookmark_button{
   border: none;
   outline: none;
   background-color: transparent;
   padding: 0;
+  cursor: pointer;
+}
+.password_check_button-box{
+  height: 100%;
+  width: 90px;
+  top: 0;
+  left: 180px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.password_check_button{
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0 0 0 auto;
   cursor: pointer;
 }
 // いいねアニメーション

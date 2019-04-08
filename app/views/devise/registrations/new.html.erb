@@ -1,7 +1,7 @@
 <!-- 新規登録画面 -->
 <div class="container-fluid mt-6">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6 mt-2">
+    <div class="col-12 col-lg-6 mt-4">
       <div class="moc-sample">
         <div class="moc-sample-img2">
           <%= image_tag("fit-sample2_moc.png", class: "moc-img") %>
@@ -38,6 +38,9 @@
                   <% end %>
                   <%= f.password_field :password, required: true, minlength: "6",
                   autocomplete: "new-password", class: "form-x" %>
+                  <div class="password_check_button-box">
+                    <div class="password_check_button none">表示する</div>
+                  </div>
                 </div>
                 <div class="form-group border-bottom">
                   <%= f.submit "新規登録する", class: "btn btn-primary btn-sm btn-block my-4" %>
