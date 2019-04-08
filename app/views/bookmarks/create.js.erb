@@ -1,1 +1,9 @@
 $("#content-bookmark-<%= @content.id %> .bookmark").html("<%= escape_javascript(render "bookmarks/bookmark", content: @content) %>");
+
+$(function() {
+  var html = '<div class="alert alert-custom" id="bookmark_success-alert"><%= @success %></div>'
+  setTimeout(function(){
+  $('#success-alert-<%= @content.id %>').html(html).slideUp(200);
+    },3000);
+  $('#success-alert-<%= @content.id %>').html(html).slideDown(200);
+});

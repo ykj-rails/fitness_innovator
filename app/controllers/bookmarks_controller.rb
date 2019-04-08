@@ -4,6 +4,7 @@ class BookmarksController < ApplicationController
   def create
     @content = Content.find(params[:content_id])
     unless @content.bookmark_add?(current_user)
+      @success = "お気に入りに保存しました。"
       @content.bookmark_add(current_user)
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }

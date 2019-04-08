@@ -120,6 +120,7 @@ footer{
 .like_button .fa-heart{
   animation: heartAnime 200ms;
 }
+
 @keyframes heartAnime{
   0% {transform: scale(1);}
   11% {transform: scale(1.1, 1.1);}
