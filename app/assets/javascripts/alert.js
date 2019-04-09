@@ -1,7 +1,6 @@
 // アラートアニメーション
 $(function() {
-  var notice = $('#alert-notice'),
-      success = $('#bookmark_success-alert');
+  var notice = $('#alert-notice');
   // notice(通知系)アラート
   setTimeout(function(){
     notice.slideUp(400);

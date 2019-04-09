@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 
   def show
     @contents = @user.contents.page(params[:page]).per(9).order('created_at DESC')
-    @bookmark_contents = @user.bookmark_contents.page(params[:page]).per(9).order('created_at DESC')
+    if user_signed_in? && @user.id == current_user.id
+      @bookmark_contents = @user.bookmark_contents.page(params[:page]).per(9).order('created_at DESC')
+    end
   end
 
   def edit

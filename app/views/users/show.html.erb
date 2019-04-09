@@ -38,41 +38,46 @@
             <i class="fas fa-th"></i><span class="ml-1">投稿</span>
           </span>
         </div>
-        <div class="nav-button" id="user_bookmark_image-button">
-          <span>
-            <i class="far fa-bookmark"></i><span class="ml-1">お気に入り</span>
-          </span>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <div class="nav-button" id="user_bookmark_image-button">
+            <span>
+              <i class="far fa-bookmark"></i><span class="ml-1">お気に入り</span>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<ul class="content-list user-show-jscroll">
+  <div class="container-fluid">
+    <div class="row x user_image">
+      <%= render partial: "user_image", collection: @contents %>
+    </div>
+    <div class="row x user_bookmark_image none">
+      <%= render partial: "user_bookmark_image", collection: @bookmark_contents %>
+    </div>
+  </div>
+  <!-- ページネーション -->
+  <div class="user_image"><%= paginate @contents %></div>
+  <% if user_signed_in? && current_user.id == @user.id %>
+    <div class="user_bookmark_image none"><%= paginate @bookmark_contents %></div>
+  <% end %>
+</ul>
+<!-- モーダルの設定 -->
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <%= link_to "登録情報の変更", edit_user_registration_path, class: "modal-font"%>
+        </div>
+        <div class="modal-body">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "denger-link" %>
+        </div>
+        <div class="modal-body-b">
+          <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container-fluid">
-  <div class="row x user_image">
-    <%= render partial: "user_image", collection: @contents %>
-  </div>
-  <div class="row x user_bookmark_image none">
-    <%= render partial: "user_bookmark_image", collection: @bookmark_contents %>
-  </div>
-</div>
-<!-- モーダルの設定 -->
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <%= link_to "登録情報の変更", edit_user_registration_path, class: "modal-font"%>
-      </div>
-      <div class="modal-body">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "denger-link" %>
-      </div>
-      <div class="modal-body-b">
-        <span class="s-font pointer" data-dismiss="modal">キャンセル</span>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- モーダルの設定 -->
-
-<!-- ページネーション -->
-<div class="user_image"><%= paginate @contents %></div>
-<div class="user_bookmark_image none"><%= paginate @bookmark_contents %></div>
+  <!-- モーダルの設定 -->
