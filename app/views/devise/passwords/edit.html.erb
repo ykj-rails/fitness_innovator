@@ -15,6 +15,9 @@
                     <i class="fas fa-key"></i>新しいパスワード
                   <% end %>
                   <%= f.password_field :password, required: true, minlength: "6", autocomplete: "new-password", class: "form-x" %>
+                  <div class="password_check_button-box">
+                    <div class="password_check_button none">表示する</div>
+                  </div>
                 </div>
                 <div class="form-group">
                   <%= f.submit "パスワードを変更する", class: "btn btn-primary btn-block btn-sm my-4" %>
