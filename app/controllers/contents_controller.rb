@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :comments_show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :comments_show]
+  # before_action :authenticate_user!, except: [:index, :show, :comments_show]
 
   def index
     @contents = Content.page(params[:page]).per(9).order('created_at DESC').includes(:user, :comments)
