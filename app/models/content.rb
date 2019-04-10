@@ -15,8 +15,7 @@ class Content < ApplicationRecord
   has_one_attached :befor_image
   has_one_attached :after_image
 
-  validates :befor_image, :after_image,
-            :before_body_weight, :after_body_weight, :period, presence: true
+  validates :before_body_weight, :after_body_weight, :period, presence: true
   # いいね関連メソッド
   def like_it(user)
     likes.create(user_id: user.id)

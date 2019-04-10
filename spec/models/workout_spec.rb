@@ -2,7 +2,7 @@ require 'rails_helper'
 describe Workout do
   describe '#create' do
 
-    it "titleとmenu、week_idとcontent_idがあれば登録できる" do
+    it "titleとmenu、week_idがあれば登録できる" do
       workout = build(:workout)
       expect(workout).to be_valid
     end
@@ -23,12 +23,6 @@ describe Workout do
       workout = build(:workout, week_id: "")
       workout.valid?
       expect(workout.errors[:week_id]).to include("を入力してください。")
-    end
-
-    it "content_idが空だと登録できない" do
-      workout = build(:workout, content_id: "")
-      workout.valid?
-      expect(workout.errors[:content_id]).to include("を入力してください。")
     end
 
   end

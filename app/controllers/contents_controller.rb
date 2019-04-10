@@ -28,6 +28,7 @@ class ContentsController < ApplicationController
 
   def create
     @content = Content.create(content_params)
+    binding.pry
     redirect_to :root, notice: "投稿しました。"
   end
 
@@ -48,7 +49,7 @@ class ContentsController < ApplicationController
 
     def content_params
       params.require(:content).permit(
-        :title, :before_body_weight, :after_body_weight, :period, :comment, :befor_image, :after_image,
+        :before_body_weight, :after_body_weight, :period, :comment, :befor_image, :after_image,
         workouts_attributes: [:id, :title, :menu, :week_id, :_destroy],
         meals_attributes: [:id, :title, :menu, :_destroy]).merge(user_id: current_user.id)
     end
