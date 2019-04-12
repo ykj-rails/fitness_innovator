@@ -43,7 +43,7 @@ describe CommentsController do
         expect(assigns(:comment)).to eq comment
       end
 
-      it 'Commentモデルのレコードが1件削除される' do
+      it 'user.idとcomment.user_idが等しいとCommentモデルのレコードが1件削除される' do
         comment.reload
         expect{ subject }.to change(Comment, :count).by(-1)
       end

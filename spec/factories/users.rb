@@ -4,6 +4,7 @@ FactoryBot.define do
     nickname  {"yuki"}
     password  {"00000000"}
     sequence(:email) {Faker::Internet.email}
+    profile   {"テストプロフィール"}
     before(:create){ |user|
       user.skip_confirmation!
     }
