@@ -25,7 +25,11 @@ class UsersController < ApplicationController
 
   private
   def set_content
-    @user = User.find(params[:id])
+    if User.exists?(id: params[:id])
+      @user = User.find(params[:id])
+    else
+      redirect_to :root
+    end
   end
 
   def update_params

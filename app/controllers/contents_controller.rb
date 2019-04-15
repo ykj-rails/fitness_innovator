@@ -43,7 +43,11 @@ class ContentsController < ApplicationController
 
   private
     def set_content
-      @content = Content.find(params[:id])
+      if Content.exists?(id: params[:id])
+        @content = Content.find(params[:id])
+      else
+        redirect_to :root
+      end
     end
 
     def content_params
