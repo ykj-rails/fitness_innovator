@@ -13,8 +13,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
   </head>
   <body>
-    <div id="wrapper">
-      <header class="site-header">
+    <header class="site-header">
         <div class="header-nav">
           <div class="header-content">
             <div class="logo-box">
@@ -41,7 +40,8 @@
           </div>
         </div>
       <%= render 'layouts/alert' %>
-      </header>
+    </header>
+    <div id="wrapper">
       <div class=main-content>
         <%= yield %>
       </div>
