@@ -49,7 +49,7 @@
               <div class="modal-body">
                 <%= f.label :avatar, class: "link-font", id: "file-user" do %>
                   <span>写真をアップロード</span>
-                  <%= f.file_field :avatar, accept: 'image/jpg,image/jpeg,image/png,image/gif', style: "display:none" %>
+                  <%= f.file_field :avatar, accept: 'image/jpg,image/jpeg,image/png,image/gif', direct_upload: true, style: "display:none" %>
                 <% end %>
               </div>
               <% if @user.avatar.attached? %>
