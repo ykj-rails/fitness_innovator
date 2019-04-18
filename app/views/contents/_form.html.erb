@@ -11,7 +11,7 @@
           <%= f.label :befor_image, class: "link-border mt-3", id: "before-sample" do %>
             <span>beforeの写真を<br />アップロード</span>
             <i class="fas fa-camera-retro fa-lg"></i>
-            <%= f.file_field :befor_image, required: true, style: "display:none" %>
+            <%= f.file_field :befor_image, style: "display:none" %>
           <% end %>
         </div>
         <div class="col-6 text-center">
@@ -23,7 +23,7 @@
           <%= f.label :after_image, class: "link-border mt-3", id: "after-sample" do %>
             <span>afterの写真を<br />アップロード</span>
             <i class="fas fa-camera-retro fa-lg"></i>
-            <%= f.file_field :after_image, required: true, style: "display:none" %>
+            <%= f.file_field :after_image, style: "display:none" %>
           <% end %>
         </div>
       </div>
