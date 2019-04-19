@@ -61,7 +61,7 @@
             <%= link_to_add_association f, :workouts,
               data: {
               association_insertion_node: '#workouts',
-              association_insertion_method: 'prepend'
+              association_insertion_method: 'append'
               }, class: "btn btn-outline-primary work-font btn-sm mt-3 mb-1" do %>
                 ワークアウトを追加 <i class="fas fa-running fa-lg"></i>
             <% end %>
@@ -77,7 +77,7 @@
             <%= link_to_add_association f, :meals,
               data: {
               association_insertion_node: '#meals',
-              association_insertion_method: 'prepend'
+              association_insertion_method: 'append'
               }, class: "btn btn-outline-success btn-sm mt-3 mb-1" do %>
                 食事を追加 <i class="fas fa-utensils fa-lg"></i>
             <% end %>
