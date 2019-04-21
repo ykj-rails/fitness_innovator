@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_032324) do
+ActiveRecord::Schema.define(version: 2019_04_21_030423) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2019_04_07_032324) do
 
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "period"
-    t.integer "before_body_weight"
-    t.integer "after_body_weight"
+    t.decimal "before_body_weight", precision: 10, scale: 1
+    t.decimal "after_body_weight", precision: 10, scale: 1
     t.text "comment"
     t.integer "user_id"
     t.datetime "created_at", null: false
