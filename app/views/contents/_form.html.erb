@@ -42,7 +42,7 @@
             <%= f.label :before_body_weight, class: "label-font" do %>
               体重 <i class="fas fa-weight"></i> (before)
             <% end %>
-            <%= f.number_field :before_body_weight, required: true, class: "form-control" %>
+            <%= f.number_field :before_body_weight, step: "0.1", required: true, class: "form-control" %>
             <small class="text-muted">※数字のみで入力 単位/kg</small>
           </div>
         </div>
@@ -51,7 +51,7 @@
             <%= f.label :after_body_weight, class: "label-font" do %>
               体重 <i class="fas fa-weight"></i> (after)
             <% end %>
-            <%= f.number_field :after_body_weight, required: true, class: "form-control" %>
+            <%= f.number_field :after_body_weight, , step: "0.1", required: true, class: "form-control" %>
           </div>
         </div>
       </div>
