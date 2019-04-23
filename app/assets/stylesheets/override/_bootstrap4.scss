@@ -48,7 +48,7 @@
   color: #262626;
 }
 // モーダル設定
-.modal.fade .modal-dialog.modal-dialog-centered{
+.modal .modal-dialog.modal-dialog-centered{
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
@@ -73,6 +73,7 @@
 }
 .modal-body-b{
   padding: 11px;
+  cursor: pointer;
 }
 // カラー上書き
 .btn-primary, .btn-primary:hover{
