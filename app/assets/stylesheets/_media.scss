@@ -83,8 +83,9 @@
     padding: 0.25rem 1rem;
   }
   // devise関連画面のボーダー
-  .devise-border, .devise-border-box{
+  .devise-border{
     border: none;
+    padding: 10px;
   }
 }
 
