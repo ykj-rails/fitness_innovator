@@ -44,6 +44,10 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'capybara'
 end
 
 group :development do
@@ -74,11 +78,6 @@ gem 'pry-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise'
-gem 'omniauth-twitter'
 gem 'cocoon'
 gem 'kaminari'
-gem 'rspec-rails'
-gem 'factory_bot_rails'
-gem 'rails-controller-testing'
-gem 'capybara'
 gem 'aws-sdk-s3'
