@@ -2,7 +2,7 @@
 
 フィットネスの記録と写真共有サービス
 
-URL:[fitness innovator](http://52.194.24.80/)
+URL:[fitness innovator](http://fitness-innovator.com/)
 
 Ruby(2.5.3) / Ruby on Rails(5.2.2)
 
