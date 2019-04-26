@@ -3,5 +3,5 @@ $(function() {
     dots: true,
     speed: 500,
     adaptiveHeight: true
-  });
+  })
 });
