@@ -1,8 +1,7 @@
 $(function() {
   $('.slider').slick({
-    lazyLoad: 'progressive',
     dots: true,
-    speed: 600,
+    speed: 500,
     adaptiveHeight: true
   });
 });
