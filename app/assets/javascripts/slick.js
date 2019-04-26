@@ -1,6 +1,7 @@
 $(function() {
   $('.slider').slick({
     dots: true,
-    lazyLoad: 'ondemand'
+    speed: 600,
+    adaptiveHeight: true
   });
 });
