@@ -92,7 +92,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   # default url
-  config.action_mailer.default_url_options = { host: '52.194.24.80' }
+  config.action_mailer.default_url_options = { host: 'fitness-innovator.com' }
   # mail setting
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp

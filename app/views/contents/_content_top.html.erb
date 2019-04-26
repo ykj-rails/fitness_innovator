@@ -14,9 +14,9 @@
     </div>
   <% end %>
 </header>
-<div class="content-show-img">
-  <%= image_tag(resize_l(@content.befor_image), class: "show-preview") %>
-  <%= image_tag(resize_l(@content.after_image), class: "show-preview") %>
+<div class="content-show-img slider">
+  <%= image_tag(resize_l(@content.after_image)) %>
+  <%= image_tag(resize_l(@content.befor_image)) %>
 </div>
 <div class="none" id="success-alert-<%= @content.id %>" role="alert">
 </div>

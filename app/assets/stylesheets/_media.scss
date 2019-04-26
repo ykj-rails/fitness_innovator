@@ -87,6 +87,10 @@
     border: none;
     padding: 10px;
   }
+  // slickボタン
+  button.slick-prev.slick-arrow::before,button.slick-next.slick-arrow::before{
+    display: none;
+  }
 }
 
 @media (max-width: 320px){

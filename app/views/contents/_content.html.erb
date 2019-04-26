@@ -13,13 +13,13 @@
             <% if content.user.height %><span class="user-name"><%= content.user.height %>cm</span><% end %>
           </div>
         </header>
-        <%= link_to content_path(content), class: "content-show-img" do %>
-          <%= image_tag(resize_l(content.befor_image), class: "show-preview") %>
-          <%= image_tag(resize_l(content.after_image), class: "show-preview") %>
-        <% end %>
+        <div class="content-show-img slider">
+          <%= image_tag(resize_l(content.after_image)) %>
+          <%= image_tag(resize_l(content.befor_image)) %>
+        </div>
         <div class="none" id="success-alert-<%= content.id %>" role="alert">
         </div>
-        <div class="col-12 mt-2 d-flex">
+        <div class="col-12 m-t-2 d-flex">
           <span id="content-<%= content.id %>" data-content-id="<%= content.id %>">
             <%= render "likes/like", content: content %>
           </span>

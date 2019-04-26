@@ -1,0 +1,16 @@
+// 矢印カスタム
+button.slick-prev.slick-arrow{
+  margin-left: 30px;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+button.slick-next.slick-arrow{
+  margin-right: 30px;
+  opacity: 0.7;
+}
+
+// ドットカスタム
+ul.slick-dots {
+  bottom: -30px;
+}
