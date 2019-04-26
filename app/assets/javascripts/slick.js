@@ -2,6 +2,7 @@ $(function() {
   $('.slider').slick({
     dots: true,
     speed: 500,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    mobileFirst: true
   });
 });
