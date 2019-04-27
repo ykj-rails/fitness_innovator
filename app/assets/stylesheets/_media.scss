@@ -92,8 +92,8 @@
     display: none;
   }
   // slickモバイル端末表示バグ
-  .slick-list.draggable{
-    height: 375px !important;
+  .slick-list.draggable img{
+    height: auto !important;
   }
 }
 
