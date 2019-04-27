@@ -1,5 +1,5 @@
 // margin打ち消し
-.content-show-img.slider.slick-initialized.slick-slider.slick-dotted{
+.slider.slick-initialized.slick-slider.slick-dotted{
   margin-bottom: 0px;
 }
 // 矢印カスタム
@@ -24,8 +24,4 @@ ul.slick-dots {
 .slick-dots li button:before{
   color: #dbdbdb !important;
   opacity: 1 !important;
-}
-
-.slick-slide {
-  min-height: 100%;
 }
