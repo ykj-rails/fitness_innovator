@@ -16,7 +16,7 @@
         <div class="content-show-img">
           <div class="slider">
             <%= image_tag(resize_l(content.after_image)) %>
-            <%= image_tag(resize_l(content.after_image), data: {lazy: resize_l(content.befor_image)}) %>
+            <%= image_tag(resize_l(content.befor_image), data: {lazy: resize_l(content.befor_image)}) %>
           </div>
         </div>
         <div class="none" id="success-alert-<%= content.id %>" role="alert">
