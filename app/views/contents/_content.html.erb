@@ -38,18 +38,18 @@
           <%= link_to "ワークアウトと食事内容を見る", content_path(content), class: "work-link-font" %>
         </div>
         <% if content.comments.present? %>
-          <% if content.comments.count <= 4 %>
+          <% if content.comments.count <= 3 %>
             <%= render partial: "comments/comment_index", collection: content.comments, as: "comment" %>
           <% else %>
             <div class="col-12">
               <%= link_to "コメント#{content.comments.count}件を全て表示", comments_show_content_path(content),
                   class: "comment-count-font", id: "comment_count_id_#{content.id}" %>
             </div>
-            <%= render partial: "comments/comment_index", collection: get_4_comments(content.comments), as: "comment" %>
+            <%= render partial: "comments/comment_index", collection: get_3_comments(content.comments), as: "comment" %>
           <% end %>
         <% end %>
           <div id="index_comments_<%= content.id %>">
-          </div> 
+          </div>
           <div class="col-12">
             <i class="fa fa-spinner fa-spin" id="form-spinner" aria-hidden="true"></i>
           </div>
