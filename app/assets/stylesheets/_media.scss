@@ -91,6 +91,10 @@
   button.slick-prev.slick-arrow::before,button.slick-next.slick-arrow::before{
     display: none;
   }
+  // slickモバイル端末表示バグ
+  .slick-list.draggable{
+    height: 375px !important;
+  }
 }
 
 @media (max-width: 320px){
