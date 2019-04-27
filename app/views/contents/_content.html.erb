@@ -15,8 +15,12 @@
         </header>
         <div class="content-show-img">
           <div class="slider">
-            <%= image_tag(resize_l(content.after_image)) %>
-            <%= image_tag(resize_l(content.befor_image)) %>
+            <% if content.after_image.attached? %>
+              <%= image_tag(resize_l(content.after_image)) %>
+            <% end %>
+            <% if content.befor_image.attached? %>
+              <%= image_tag(resize_l(content.befor_image)) %>
+            <% end %>
           </div>
         </div>
         <div class="none" id="success-alert-<%= content.id %>" role="alert">
