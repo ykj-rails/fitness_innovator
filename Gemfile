@@ -48,6 +48,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'capybara'
+  gem 'capistrano-rails-console'
 end
 
 group :development do
