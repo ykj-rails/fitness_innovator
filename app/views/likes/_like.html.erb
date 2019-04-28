@@ -9,7 +9,7 @@
       <% end %>
     <% end %>
     <% if 0 < content.likes.count %>
-      <div class="label-font">いいね！<%= content.likes.count %>件</div>
+      <div class="label-font mt-1">「いいね！」<%= content.likes.count %>件</div>
     <% end %>
   <% else %>
     <%= form_for(content.likes.build, remote: true) do |f| %>
@@ -22,7 +22,7 @@
       <% end %>
     <% end %>
     <% if 0 < content.likes.count %>
-      <div class="label-font">いいね！<%= content.likes.count %>件</div>
+      <div class="label-font mt-1">「いいね！」<%= content.likes.count %>件</div>
     <% end %>
   <% end %>
 </span>

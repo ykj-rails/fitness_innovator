@@ -95,6 +95,12 @@
   .slick-list.draggable img{
     height: auto !important;
   }
+  // ドットカスタム
+ul.slick-dots {
+  li{
+    width: 3px;
+  }
+}
 }
 
 @media (max-width: 320px){

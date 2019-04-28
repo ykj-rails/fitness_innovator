@@ -44,7 +44,6 @@
   position: relative;
 }
 .form-control{
-  font-size: 14px;
   color: #262626;
 }
 // モーダル設定
@@ -81,6 +80,9 @@
   border-color: #0070BF;
 }
 // マージン設定
+.mt-2_5{
+  margin-top: 10px;
+}
 .mt-6{
   margin-top: 60px;
 }
