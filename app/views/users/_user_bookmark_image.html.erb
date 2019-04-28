@@ -1,5 +1,11 @@
 <div class="col-4">
-  <%= link_to content_path(user_bookmark_image.id), class: "user-show-img-box" do %>
-    <%= image_tag(resize_m(user_bookmark_image.after_image), class: "user-show-img-index") %>
+  <% if user_bookmark_image.after_image.attached? %>
+    <%= link_to content_path(user_bookmark_image.id), class: "user-show-img-box" do %>
+      <%= image_tag(resize_m(user_bookmark_image.after_image), class: "user-show-img-index") %>
+    <% end %>
+  <% elsif user_bookmark_image.befor_image.attached? %>
+    <%= link_to content_path(user_bookmark_image.id), class: "user-show-img-box" do %>
+      <%= image_tag(resize_m(user_bookmark_image.befor_image), class: "user-show-img-index") %>
+    <% end %>
   <% end %>
 </div>
