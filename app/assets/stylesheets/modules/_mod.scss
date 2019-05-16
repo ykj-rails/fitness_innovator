@@ -15,6 +15,11 @@
     width: 32px;
     height: 32px;
   }
+  .logo-box .sub-title{
+    top: 25px;
+    left: 5px;
+    transform: scale(0.8);
+  }
   a.header-logo{
     font-size: 26px;
   }
@@ -35,7 +40,16 @@
   margin-right: 40px;
 }
 .logo-box{
-  margin-top: 6px;
+  position: relative;
+  .sub-title{
+    position: absolute;
+    top: 37px;
+    left: 30px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #999;
+    transition: .1s;
+  }
 }
 .icon-box{
   margin-top: 4px;
