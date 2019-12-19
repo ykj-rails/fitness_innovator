@@ -3,6 +3,7 @@
 フィットネスの記録と写真共有サービス
 
 URL:[fitness innovator](http://fitness-innovator.com/)
+※現在停止中
 
 Ruby(2.5.3) / Ruby on Rails(5.2.2)
 
